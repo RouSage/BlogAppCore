@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BlogAppCore.Persistence.Migrations
 {
@@ -12,8 +13,8 @@ namespace BlogAppCore.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Created = table.Column<DateTime>(type: "datetime", nullable: false),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Created = table.Column<DateTime>(nullable: false),
                     Name = table.Column<string>(maxLength: 30, nullable: false),
                     Slug = table.Column<string>(maxLength: 30, nullable: false)
                 },
@@ -27,8 +28,8 @@ namespace BlogAppCore.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Created = table.Column<DateTime>(type: "datetime", nullable: false),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Created = table.Column<DateTime>(nullable: false),
                     Name = table.Column<string>(maxLength: 20, nullable: false),
                     Slug = table.Column<string>(maxLength: 20, nullable: false)
                 },
@@ -42,8 +43,8 @@ namespace BlogAppCore.Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Created = table.Column<DateTime>(type: "datetime", nullable: false),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Created = table.Column<DateTime>(nullable: false),
                     Title = table.Column<string>(maxLength: 500, nullable: false),
                     Slug = table.Column<string>(maxLength: 30, nullable: false),
                     Description = table.Column<string>(maxLength: 5000, nullable: false),

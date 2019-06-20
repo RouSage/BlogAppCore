@@ -22,9 +22,6 @@ namespace BlogAppCore.Persistence.Configurations
                 .IsUnique()
                 .HasName("IX_Category_Slug");
 
-            builder.Property(c => c.Created)
-                .HasColumnType("datetime");
-
             builder.Metadata
                 .FindNavigation("Posts")
                 .SetPropertyAccessMode(PropertyAccessMode.Field);

@@ -5,26 +5,28 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BlogAppCore.Persistence.Migrations
 {
     [DbContext(typeof(BlogAppCoreDbContext))]
-    [Migration("20190620090921_InitialCreate")]
+    [Migration("20190620114628_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
+                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("BlogAppCore.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("Created");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -53,8 +55,7 @@ namespace BlogAppCore.Persistence.Migrations
                     b.Property<string>("Content")
                         .IsRequired();
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("Created");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -95,8 +96,7 @@ namespace BlogAppCore.Persistence.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("Created");
 
                     b.Property<string>("Name")
                         .IsRequired()

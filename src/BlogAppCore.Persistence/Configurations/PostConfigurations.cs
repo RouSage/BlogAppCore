@@ -25,9 +25,6 @@ namespace BlogAppCore.Persistence.Configurations
             builder.Property(c => c.Content)
                 .IsRequired();
 
-            builder.Property(cr => cr.Created)
-                .HasColumnType("datetime");
-
             builder
                 .HasOne(c => c.Category)
                 .WithMany(p => p.Posts)
