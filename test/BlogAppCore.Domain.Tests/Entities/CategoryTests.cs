@@ -27,7 +27,7 @@ namespace BlogAppCore.Domain.Tests.Entities
         public void ShouldUpdateTagCorrectly(string oldName, string newName,
             bool updateSlug, string expectedSlug)
         {
-            var entity = new Tag(oldName);
+            var entity = new Category(oldName);
             entity.Update(newName, updateSlug);
 
             Assert.Equal(newName, entity.Name);
