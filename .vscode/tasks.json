@@ -45,7 +45,7 @@
                 "${workspaceFolder}/BlogAppCore.sln",
                 "/p:CollectCoverage=true",
                 "/p:CoverletOutputFormat=\"lcov\"",
-                "/p:CoverletOutput=../../lcov"
+                "/p:CoverletOutput=../lcov"
             ],
             "problemMatcher": "$msCompile"
         }

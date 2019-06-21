@@ -10,7 +10,7 @@ namespace BlogAppCore.Application.Tags.Commands.Create
     {
         private readonly IBlogAppCoreDbContext _context;
 
-        public CreateTagCommandHandler(IBlogAppCoreDbContext context, IMediator mediator)
+        public CreateTagCommandHandler(IBlogAppCoreDbContext context)
         {
             _context = context;
         }
