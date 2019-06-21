@@ -5,12 +5,12 @@ namespace BlogAppCore.Domain.Entities
 {
     public class Tag : BaseEntity
     {
-        private const int SLUG_LENGTH = 20;
+        public const int MAX_LENGTH = 20;
 
         public Tag(string name)
         {
             Name = name;
-            Slug = name.GenerateSlug(SLUG_LENGTH);
+            Slug = name.GenerateSlug(MAX_LENGTH);
             _postTags = new List<PostTag>();
         }
 
@@ -27,7 +27,7 @@ namespace BlogAppCore.Domain.Entities
         public void Update(string name, bool updateSlug = false)
         {
             Name = name;
-            Slug = updateSlug ? name.GenerateSlug(SLUG_LENGTH) : Slug;
+            Slug = updateSlug ? name.GenerateSlug(MAX_LENGTH) : Slug;
         }
     }
 }

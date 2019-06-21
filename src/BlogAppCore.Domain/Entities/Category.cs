@@ -5,10 +5,12 @@ namespace BlogAppCore.Domain.Entities
 {
     public class Category : BaseEntity
     {
+        public const int MAX_LENGTH = 30;
+
         public Category(string name)
         {
             Name = name;
-            Slug = name.GenerateSlug(30);
+            Slug = name.GenerateSlug(MAX_LENGTH);
             _posts = new List<Post>();
         }
 
@@ -21,5 +23,11 @@ namespace BlogAppCore.Domain.Entities
         private List<Post> _posts;
 
         public IEnumerable<Post> Posts => _posts?.ToList();
+
+        public void Update(string name, bool updateSlug = false)
+        {
+            Name = name;
+            Slug = updateSlug ? name.GenerateSlug(MAX_LENGTH) : Slug;
+        }
     }
 }

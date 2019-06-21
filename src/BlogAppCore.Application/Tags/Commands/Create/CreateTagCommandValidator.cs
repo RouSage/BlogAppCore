@@ -1,3 +1,4 @@
+using BlogAppCore.Domain.Entities;
 using FluentValidation;
 
 namespace BlogAppCore.Application.Tags.Commands.Create
@@ -6,7 +7,7 @@ namespace BlogAppCore.Application.Tags.Commands.Create
     {
         public CreateTagCommandValidator()
         {
-            RuleFor(n => n.Name).NotEmpty().MaximumLength(20);
+            RuleFor(n => n.Name).NotEmpty().MaximumLength(Tag.MAX_LENGTH);
         }
     }
 }

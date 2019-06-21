@@ -12,11 +12,11 @@ namespace BlogAppCore.Persistence.Configurations
 
             builder.Property(n => n.Name)
                 .IsRequired()
-                .HasMaxLength(30);
+                .HasMaxLength(Category.MAX_LENGTH);
 
             builder.Property(s => s.Slug)
                 .IsRequired()
-                .HasMaxLength(30);
+                .HasMaxLength(Category.MAX_LENGTH);
 
             builder.HasIndex(s => s.Slug)
                 .IsUnique()
