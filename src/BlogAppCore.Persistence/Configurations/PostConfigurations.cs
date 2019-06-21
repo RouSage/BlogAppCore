@@ -16,7 +16,7 @@ namespace BlogAppCore.Persistence.Configurations
 
             builder.Property(s => s.Slug)
                 .IsRequired()
-                .HasMaxLength(30);
+                .HasMaxLength(Post.SLUG_LENGTH);
 
             builder.Property(d => d.Description)
                 .IsRequired()

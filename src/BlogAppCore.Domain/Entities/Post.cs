@@ -5,6 +5,8 @@ namespace BlogAppCore.Domain.Entities
 {
     public class Post : BaseEntity
     {
+        public const int SLUG_LENGTH = 30;
+
         public Post(
             string title,
             string description,
@@ -14,7 +16,7 @@ namespace BlogAppCore.Domain.Entities
             bool published = false)
         {
             Title = title;
-            Slug = title.GenerateSlug(30);
+            Slug = title.GenerateSlug(SLUG_LENGTH);
             Description = description;
             Content = content;
             Published = published;
@@ -49,6 +51,26 @@ namespace BlogAppCore.Domain.Entities
         private List<PostTag> _postTags;
 
         public IEnumerable<PostTag> PostTags => _postTags?.ToList();
+
+        public void Update(string title, string description, string content, int categoryId,
+            IEnumerable<int> tags, bool published, bool updateSlug = false)
+        {
+            Title = title;
+            Slug = updateSlug ? title.GenerateSlug(SLUG_LENGTH) : Slug;
+            Description = description;
+            Content = content;
+            CategoryId = categoryId;
+            Published = published;
+
+            if (tags != null)
+            {
+                _postTags.Clear();
+                foreach (var tagId in tags)
+                {
+                    AddTag(tagId);
+                }
+            }
+        }
 
         private void AddTag(int tagId)
         {
