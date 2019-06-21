@@ -9,7 +9,7 @@ namespace BlogAppCore.Domain.Entities
 
         public Category(string name)
         {
-            Name = name;
+            Name = name.Trim();
             Slug = name.GenerateSlug(MAX_LENGTH);
             _posts = new List<Post>();
         }
@@ -26,7 +26,7 @@ namespace BlogAppCore.Domain.Entities
 
         public void Update(string name, bool updateSlug = false)
         {
-            Name = name;
+            Name = name.Trim();
             Slug = updateSlug ? name.GenerateSlug(MAX_LENGTH) : Slug;
         }
     }

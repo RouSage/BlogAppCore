@@ -16,7 +16,7 @@ namespace BlogAppCore.Domain
             // Remove spaces
             str = Regex.Replace(str, @"\s+", "-").Trim();
 
-            str = str.Substring(0, str.Length <= length ? str.Length : 50).Trim();
+            str = str.Substring(0, str.Length <= length ? str.Length : length).Trim();
 
             return str;
         }

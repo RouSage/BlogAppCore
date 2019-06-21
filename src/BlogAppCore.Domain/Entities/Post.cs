@@ -15,7 +15,7 @@ namespace BlogAppCore.Domain.Entities
             IEnumerable<int> tags = null,
             bool published = false)
         {
-            Title = title;
+            Title = title.Trim();
             Slug = title.GenerateSlug(SLUG_LENGTH);
             Description = description;
             Content = content;
@@ -55,7 +55,7 @@ namespace BlogAppCore.Domain.Entities
         public void Update(string title, string description, string content, int categoryId,
             IEnumerable<int> tags, bool published, bool updateSlug = false)
         {
-            Title = title;
+            Title = title.Trim();
             Slug = updateSlug ? title.GenerateSlug(SLUG_LENGTH) : Slug;
             Description = description;
             Content = content;
