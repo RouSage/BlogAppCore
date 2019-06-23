@@ -9,20 +9,20 @@ using BlogAppCore.Application.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlogAppCore.Application.Categories.Queries.GetCategoriesPreview
+namespace BlogAppCore.Application.Categories.Queries.GetCategoriesList
 {
-    public class GetCategoriesPreviewQueryHandler : IRequestHandler<GetCategoriesPreviewQuery, List<CategoryListDto>>
+    public class GetCategoriesListQueryHandler : IRequestHandler<GetCategoriesListQuery, List<CategoryListDto>>
     {
         private readonly IBlogAppCoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetCategoriesPreviewQueryHandler(IBlogAppCoreDbContext context, IMapper mapper)
+        public GetCategoriesListQueryHandler(IBlogAppCoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
 
-        public async Task<List<CategoryListDto>> Handle(GetCategoriesPreviewQuery request, CancellationToken cancellationToken)
+        public async Task<List<CategoryListDto>> Handle(GetCategoriesListQuery request, CancellationToken cancellationToken)
         {
             return await _context.Categories
                 .AsNoTracking()
