@@ -45,5 +45,29 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
             // Assert
             Assert.IsType<NotFoundException>(ex);
         }
+
+        [Fact]
+        public async Task GivenValidCategoryWithPost_ShouldThrowDeleteFailureException()
+        {
+            // Arange
+            var sut = new DeleteCategoryCommandHandler(_context);
+            var category = new Category("Test Category 1");
+
+            _context.Categories.Add(category);
+            _context.SaveChanges();
+
+            var post = new Post("Test Post 1", "Description", "Content", category.Id, null, true);
+
+            _context.Posts.Add(post);
+            _context.SaveChanges();
+
+            // Act
+            var ex = await Assert.ThrowsAsync<DeleteFailureException>(() => sut.Handle(
+                new DeleteCategoryCommand { Id = category.Id }, CancellationToken.None));
+
+            // Assert
+            Assert.IsType<DeleteFailureException>(ex);
+            Assert.NotNull(category);
+        }
     }
 }
