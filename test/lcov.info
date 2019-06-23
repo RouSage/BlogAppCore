@@ -1,13 +1,13 @@
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/BlogAppCoreDbContext.cs
 FN:10,Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Post> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Posts()
-FNDA:29,Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Post> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Posts()
-DA:11,29
+FNDA:54,Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Post> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Posts()
+DA:11,54
 FN:12,Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Category> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Categories()
-FNDA:27,Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Category> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Categories()
-DA:13,27
+FNDA:47,Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Category> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Categories()
+DA:13,47
 FN:14,Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Tag> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Tags()
-FNDA:27,Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Tag> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Tags()
-DA:15,27
+FNDA:46,Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Tag> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Tags()
+DA:15,46
 FN:17,System.Void BlogAppCore.Persistence.BlogAppCoreDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
 FNDA:1,System.Void BlogAppCore.Persistence.BlogAppCoreDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
 DA:18,1
@@ -15,8 +15,8 @@ DA:19,1
 DA:21,1
 DA:22,1
 FN:8,System.Void BlogAppCore.Persistence.BlogAppCoreDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<BlogAppCore.Persistence.BlogAppCoreDbContext>)
-FNDA:48,System.Void BlogAppCore.Persistence.BlogAppCoreDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<BlogAppCore.Persistence.BlogAppCoreDbContext>)
-DA:9,48
+FNDA:51,System.Void BlogAppCore.Persistence.BlogAppCoreDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<BlogAppCore.Persistence.BlogAppCoreDbContext>)
+DA:9,51
 LF:8
 LH:8
 BRF:0
@@ -571,6 +571,68 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Models/TagDetailDto.cs
+FN:6,System.Int32 BlogAppCore.Application.Tags.Models.TagDetailDto::get_Id()
+FNDA:3,System.Int32 BlogAppCore.Application.Tags.Models.TagDetailDto::get_Id()
+DA:7,3
+FN:8,System.String BlogAppCore.Application.Tags.Models.TagDetailDto::get_Name()
+FNDA:3,System.String BlogAppCore.Application.Tags.Models.TagDetailDto::get_Name()
+DA:9,3
+FN:10,System.String BlogAppCore.Application.Tags.Models.TagDetailDto::get_Slug()
+FNDA:3,System.String BlogAppCore.Application.Tags.Models.TagDetailDto::get_Slug()
+DA:11,3
+FN:12,System.DateTime BlogAppCore.Application.Tags.Models.TagDetailDto::get_Created()
+FNDA:3,System.DateTime BlogAppCore.Application.Tags.Models.TagDetailDto::get_Created()
+DA:13,3
+FN:14,System.Int32 BlogAppCore.Application.Tags.Models.TagDetailDto::get_TotalPosts()
+FNDA:3,System.Int32 BlogAppCore.Application.Tags.Models.TagDetailDto::get_TotalPosts()
+DA:15,3
+LF:5
+LH:5
+BRF:0
+BRH:0
+FNF:5
+FNH:5
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Models/TagPreviewDto.cs
+FN:4,System.String BlogAppCore.Application.Tags.Models.TagPreviewDto::get_Name()
+FNDA:12,System.String BlogAppCore.Application.Tags.Models.TagPreviewDto::get_Name()
+DA:5,12
+FN:6,System.String BlogAppCore.Application.Tags.Models.TagPreviewDto::get_Slug()
+FNDA:12,System.String BlogAppCore.Application.Tags.Models.TagPreviewDto::get_Slug()
+DA:7,12
+LF:2
+LH:2
+BRF:0
+BRH:0
+FNF:2
+FNH:2
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Queries/GetAllTags/GetAllTagsQueryHandler.cs
+FN:18,System.Void BlogAppCore.Application.Tags.Commands.Queries.GetAllTags.GetAllTagsQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+FNDA:1,System.Void BlogAppCore.Application.Tags.Commands.Queries.GetAllTags.GetAllTagsQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+DA:19,1
+DA:20,1
+DA:21,1
+DA:22,1
+DA:23,1
+FN:25,System.Void BlogAppCore.Application.Tags.Commands.Queries.GetAllTags.GetAllTagsQueryHandler/<Handle>d__3::MoveNext()
+FNDA:1,System.Void BlogAppCore.Application.Tags.Commands.Queries.GetAllTags.GetAllTagsQueryHandler/<Handle>d__3::MoveNext()
+DA:26,1
+DA:27,1
+DA:28,1
+DA:29,1
+DA:30,1
+DA:31,1
+DA:32,1
+BRDA:27,149,1,1
+LF:12
+LH:12
+BRF:1
+BRH:1
+FNF:2
+FNH:2
+end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Update/UpdateTagCommand.cs
 FN:6,System.Int32 BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommand::get_Id()
 FNDA:5,System.Int32 BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommand::get_Id()
@@ -738,30 +800,233 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Update/UpdatePostCommand.cs
-FN:7,System.Int32 BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Id()
-FNDA:5,System.Int32 BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Id()
-DA:8,5
-FN:9,System.String BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Title()
-FNDA:3,System.String BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Title()
-DA:10,3
-FN:11,System.String BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Description()
-FNDA:2,System.String BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Description()
-DA:12,2
-FN:13,System.String BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Content()
-FNDA:2,System.String BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Content()
-DA:14,2
-FN:15,System.Int32 BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_CategoryId()
-FNDA:2,System.Int32 BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_CategoryId()
-DA:16,2
-FN:17,System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Tags()
-FNDA:2,System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Tags()
-DA:18,2
-FN:19,System.Boolean BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Published()
-FNDA:2,System.Boolean BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_Published()
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsPreview/GetPostsPreviewQueryHandler.cs
+FN:18,System.Void BlogAppCore.Application.Posts.Queries.GetPostsPreview.GetPostsPreviewQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+FNDA:1,System.Void BlogAppCore.Application.Posts.Queries.GetPostsPreview.GetPostsPreviewQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+DA:19,1
+DA:20,1
+DA:21,1
+DA:22,1
+DA:23,1
+FN:25,System.Void BlogAppCore.Application.Posts.Queries.GetPostsPreview.GetPostsPreviewQueryHandler/<Handle>d__3::MoveNext()
+FNDA:1,System.Void BlogAppCore.Application.Posts.Queries.GetPostsPreview.GetPostsPreviewQueryHandler/<Handle>d__3::MoveNext()
+DA:26,1
+DA:27,1
+DA:28,1
+DA:29,1
+DA:30,1
+DA:31,1
+DA:32,1
+DA:33,1
+DA:34,1
+BRDA:27,418,1,1
+LF:14
+LH:14
+BRF:1
+BRH:1
+FNF:2
+FNH:2
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsByTag/GetPostsByTagQuery.cs
+FN:8,System.String BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQuery::get_TagSlug()
+FNDA:4,System.String BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQuery::get_TagSlug()
+DA:9,4
+LF:1
+LH:1
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsByTag/GetPostsByTagQueryHandler.cs
+FN:18,System.Void BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+FNDA:2,System.Void BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+DA:19,2
 DA:20,2
-FN:21,System.Boolean BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_UpdateSlug()
-FNDA:3,System.Boolean BlogAppCore.Application.Posts.Update.UpdatePostCommand::get_UpdateSlug()
+DA:21,2
+DA:22,2
+DA:23,2
+FN:25,System.Void BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQueryHandler/<Handle>d__3::MoveNext()
+FNDA:2,System.Void BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQueryHandler/<Handle>d__3::MoveNext()
+DA:26,2
+DA:27,2
+DA:28,2
+DA:29,2
+DA:30,2
+DA:31,2
+DA:32,2
+DA:33,2
+DA:34,2
+DA:35,2
+DA:36,2
+DA:37,2
+BRDA:27,675,1,2
+LF:17
+LH:17
+BRF:1
+BRH:1
+FNF:2
+FNH:2
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsByCategory/GetPostsByCategoryQuery.cs
+FN:8,System.String BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQuery::get_CategorySlug()
+FNDA:4,System.String BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQuery::get_CategorySlug()
+DA:9,4
+LF:1
+LH:1
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsByCategory/GetPostsByCategoryQueryHandler.cs
+FN:18,System.Void BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+FNDA:2,System.Void BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+DA:19,2
+DA:20,2
+DA:21,2
+DA:22,2
+DA:23,2
+FN:25,System.Void BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQueryHandler/<Handle>d__3::MoveNext()
+FNDA:2,System.Void BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQueryHandler/<Handle>d__3::MoveNext()
+DA:26,2
+DA:27,2
+DA:28,2
+DA:29,2
+DA:30,2
+DA:31,2
+DA:32,2
+DA:33,2
+DA:34,2
+DA:35,2
+BRDA:27,582,1,2
+LF:15
+LH:15
+BRF:1
+BRH:1
+FNF:2
+FNH:2
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostDetail/GetPostDetailQuery.cs
+FN:7,System.String BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQuery::get_Slug()
+FNDA:5,System.String BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQuery::get_Slug()
+DA:8,5
+LF:1
+LH:1
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostDetail/GetPostDetailQueryHandler.cs
+FN:19,System.Void BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+FNDA:2,System.Void BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+DA:20,2
+DA:21,2
+DA:22,2
+DA:23,2
+DA:24,2
+FN:26,System.Void BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQueryHandler/<Handle>d__3::MoveNext()
+FNDA:2,System.Void BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQueryHandler/<Handle>d__3::MoveNext()
+DA:27,2
+DA:28,2
+DA:29,2
+DA:30,2
+DA:31,2
+DA:32,2
+DA:33,2
+DA:34,2
+DA:35,2
+DA:36,1
+DA:37,1
+DA:40,1
+DA:41,1
+BRDA:28,500,1,2
+BRDA:35,615,0,1
+BRDA:35,615,1,1
+LF:18
+LH:18
+BRF:3
+BRH:3
+FNF:2
+FNH:2
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Models/PostDetailDto.cs
+FN:9,System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Title()
+FNDA:2,System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Title()
+DA:10,2
+FN:11,System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Description()
+FNDA:2,System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Description()
+DA:12,2
+FN:13,System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Content()
+FNDA:2,System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Content()
+DA:14,2
+FN:15,System.DateTime BlogAppCore.Application.Posts.Models.PostDetailDto::get_Created()
+FNDA:1,System.DateTime BlogAppCore.Application.Posts.Models.PostDetailDto::get_Created()
+DA:16,1
+FN:17,BlogAppCore.Application.Categories.Models.CategoryPreviewDto BlogAppCore.Application.Posts.Models.PostDetailDto::get_Category()
+FNDA:5,BlogAppCore.Application.Categories.Models.CategoryPreviewDto BlogAppCore.Application.Posts.Models.PostDetailDto::get_Category()
+DA:18,5
+FN:19,System.Collections.Generic.List`1<BlogAppCore.Application.Tags.Models.TagPreviewDto> BlogAppCore.Application.Posts.Models.PostDetailDto::get_Tags()
+FNDA:3,System.Collections.Generic.List`1<BlogAppCore.Application.Tags.Models.TagPreviewDto> BlogAppCore.Application.Posts.Models.PostDetailDto::get_Tags()
+DA:20,3
+LF:6
+LH:6
+BRF:0
+BRH:0
+FNF:6
+FNH:6
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Models/PostPreviewDto.cs
+FN:9,System.String BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Title()
+FNDA:5,System.String BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Title()
+DA:10,5
+FN:11,System.String BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Slug()
+FNDA:5,System.String BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Slug()
+DA:12,5
+FN:13,System.String BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Description()
+FNDA:5,System.String BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Description()
+DA:14,5
+FN:15,System.DateTime BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Created()
+FNDA:5,System.DateTime BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Created()
+DA:16,5
+FN:17,BlogAppCore.Application.Categories.Models.CategoryListDto BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Category()
+FNDA:5,BlogAppCore.Application.Categories.Models.CategoryListDto BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Category()
+DA:18,5
+FN:19,System.Collections.Generic.List`1<BlogAppCore.Application.Tags.Models.TagPreviewDto> BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Tags()
+FNDA:5,System.Collections.Generic.List`1<BlogAppCore.Application.Tags.Models.TagPreviewDto> BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Tags()
+DA:20,5
+LF:6
+LH:6
+BRF:0
+BRH:0
+FNF:6
+FNH:6
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Update/UpdatePostCommand.cs
+FN:7,System.Int32 BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Id()
+FNDA:5,System.Int32 BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Id()
+DA:8,5
+FN:9,System.String BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Title()
+FNDA:3,System.String BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Title()
+DA:10,3
+FN:11,System.String BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Description()
+FNDA:2,System.String BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Description()
+DA:12,2
+FN:13,System.String BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Content()
+FNDA:2,System.String BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Content()
+DA:14,2
+FN:15,System.Int32 BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_CategoryId()
+FNDA:2,System.Int32 BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_CategoryId()
+DA:16,2
+FN:17,System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Tags()
+FNDA:2,System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Tags()
+DA:18,2
+FN:19,System.Boolean BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Published()
+FNDA:2,System.Boolean BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Published()
+DA:20,2
+FN:21,System.Boolean BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_UpdateSlug()
+FNDA:3,System.Boolean BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_UpdateSlug()
 DA:22,3
 LF:8
 LH:8
@@ -770,15 +1035,15 @@ BRH:0
 FNF:8
 FNH:8
 end_of_record
-SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Update/UpdatePostCommandHandler.cs
-FN:14,System.Void BlogAppCore.Application.Posts.Update.UpdatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
-FNDA:2,System.Void BlogAppCore.Application.Posts.Update.UpdatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Update/UpdatePostCommandHandler.cs
+FN:14,System.Void BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
+FNDA:2,System.Void BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
 DA:15,2
 DA:16,2
 DA:17,2
 DA:18,2
-FN:20,System.Void BlogAppCore.Application.Posts.Update.UpdatePostCommandHandler/<Handle>d__2::MoveNext()
-FNDA:2,System.Void BlogAppCore.Application.Posts.Update.UpdatePostCommandHandler/<Handle>d__2::MoveNext()
+FN:20,System.Void BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandHandler/<Handle>d__2::MoveNext()
+FNDA:2,System.Void BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandHandler/<Handle>d__2::MoveNext()
 DA:21,2
 DA:22,2
 DA:23,2
@@ -803,9 +1068,9 @@ BRH:5
 FNF:2
 FNH:2
 end_of_record
-SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Update/UpdatePostCommandValidator.cs
-FN:6,System.Void BlogAppCore.Application.Posts.Update.UpdatePostCommandValidator::.ctor()
-FNDA:0,System.Void BlogAppCore.Application.Posts.Update.UpdatePostCommandValidator::.ctor()
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Update/UpdatePostCommandValidator.cs
+FN:6,System.Void BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandValidator::.ctor()
+FNDA:0,System.Void BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandValidator::.ctor()
 DA:7,0
 DA:8,0
 DA:9,0
@@ -821,9 +1086,9 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Delete/DeletePostCommand.cs
-FN:6,System.Int32 BlogAppCore.Application.Posts.Delete.DeletePostCommand::get_Id()
-FNDA:5,System.Int32 BlogAppCore.Application.Posts.Delete.DeletePostCommand::get_Id()
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Delete/DeletePostCommand.cs
+FN:6,System.Int32 BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommand::get_Id()
+FNDA:5,System.Int32 BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommand::get_Id()
 DA:7,5
 LF:1
 LH:1
@@ -832,15 +1097,15 @@ BRH:0
 FNF:1
 FNH:1
 end_of_record
-SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Delete/DeletePostCommandHandler.cs
-FN:14,System.Void BlogAppCore.Application.Posts.Delete.DeletePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
-FNDA:2,System.Void BlogAppCore.Application.Posts.Delete.DeletePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Delete/DeletePostCommandHandler.cs
+FN:14,System.Void BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
+FNDA:2,System.Void BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
 DA:15,2
 DA:16,2
 DA:17,2
 DA:18,2
-FN:20,System.Void BlogAppCore.Application.Posts.Delete.DeletePostCommandHandler/<Handle>d__2::MoveNext()
-FNDA:2,System.Void BlogAppCore.Application.Posts.Delete.DeletePostCommandHandler/<Handle>d__2::MoveNext()
+FN:20,System.Void BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandHandler/<Handle>d__2::MoveNext()
+FNDA:2,System.Void BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandHandler/<Handle>d__2::MoveNext()
 DA:21,2
 DA:22,2
 DA:23,2
@@ -863,9 +1128,9 @@ BRH:5
 FNF:2
 FNH:2
 end_of_record
-SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Delete/DeletePostCommandValidator.cs
-FN:6,System.Void BlogAppCore.Application.Posts.Delete.DeletePostCommandValidator::.ctor()
-FNDA:0,System.Void BlogAppCore.Application.Posts.Delete.DeletePostCommandValidator::.ctor()
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Delete/DeletePostCommandValidator.cs
+FN:6,System.Void BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandValidator::.ctor()
+FNDA:0,System.Void BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandValidator::.ctor()
 DA:7,0
 DA:8,0
 DA:9,0
@@ -877,24 +1142,24 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
-SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Create/CreatePostCommand.cs
-FN:7,System.String BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Title()
-FNDA:2,System.String BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Title()
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Create/CreatePostCommand.cs
+FN:7,System.String BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Title()
+FNDA:2,System.String BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Title()
 DA:8,2
-FN:9,System.String BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Description()
-FNDA:2,System.String BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Description()
+FN:9,System.String BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Description()
+FNDA:2,System.String BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Description()
 DA:10,2
-FN:11,System.String BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Content()
-FNDA:2,System.String BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Content()
+FN:11,System.String BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Content()
+FNDA:2,System.String BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Content()
 DA:12,2
-FN:13,System.Int32 BlogAppCore.Application.Posts.Create.CreatePostCommand::get_CategoryId()
-FNDA:2,System.Int32 BlogAppCore.Application.Posts.Create.CreatePostCommand::get_CategoryId()
+FN:13,System.Int32 BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_CategoryId()
+FNDA:2,System.Int32 BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_CategoryId()
 DA:14,2
-FN:15,System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Tags()
-FNDA:2,System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Tags()
+FN:15,System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Tags()
+FNDA:2,System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Tags()
 DA:16,2
-FN:17,System.Boolean BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Published()
-FNDA:2,System.Boolean BlogAppCore.Application.Posts.Create.CreatePostCommand::get_Published()
+FN:17,System.Boolean BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Published()
+FNDA:2,System.Boolean BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Published()
 DA:18,2
 LF:6
 LH:6
@@ -903,15 +1168,15 @@ BRH:0
 FNF:6
 FNH:6
 end_of_record
-SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Create/CreatePostCommandHandler.cs
-FN:12,System.Void BlogAppCore.Application.Posts.Create.CreatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
-FNDA:1,System.Void BlogAppCore.Application.Posts.Create.CreatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Create/CreatePostCommandHandler.cs
+FN:12,System.Void BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
+FNDA:1,System.Void BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)
 DA:13,1
 DA:14,1
 DA:15,1
 DA:16,1
-FN:18,System.Void BlogAppCore.Application.Posts.Create.CreatePostCommandHandler/<Handle>d__2::MoveNext()
-FNDA:1,System.Void BlogAppCore.Application.Posts.Create.CreatePostCommandHandler/<Handle>d__2::MoveNext()
+FN:18,System.Void BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandHandler/<Handle>d__2::MoveNext()
+FNDA:1,System.Void BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandHandler/<Handle>d__2::MoveNext()
 DA:19,1
 DA:20,1
 DA:21,1
@@ -927,9 +1192,9 @@ BRH:1
 FNF:2
 FNH:2
 end_of_record
-SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Create/CreatePostCommandValidator.cs
-FN:6,System.Void BlogAppCore.Application.Posts.Create.CreatePostCommandValidator::.ctor()
-FNDA:0,System.Void BlogAppCore.Application.Posts.Create.CreatePostCommandValidator::.ctor()
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Create/CreatePostCommandValidator.cs
+FN:6,System.Void BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandValidator::.ctor()
+FNDA:0,System.Void BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandValidator::.ctor()
 DA:7,0
 DA:8,0
 DA:9,0
@@ -944,6 +1209,73 @@ BRH:0
 FNF:1
 FNH:0
 end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Infrastructure/AutoMapper/CategoryProfile.cs
+FN:9,System.Void BlogAppCore.Application.Infrastructure.AutoMapper.CategoryProfile::.ctor()
+FNDA:1,System.Void BlogAppCore.Application.Infrastructure.AutoMapper.CategoryProfile::.ctor()
+DA:10,1
+DA:11,1
+DA:12,1
+DA:13,2
+DA:15,1
+DA:16,2
+DA:18,1
+DA:19,1
+BRDA:12,77,0,1
+BRDA:12,77,1,1
+BRDA:15,177,0,1
+BRDA:15,177,1,1
+LF:8
+LH:8
+BRF:4
+BRH:4
+FNF:1
+FNH:1
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Infrastructure/AutoMapper/PostProfile.cs
+FN:9,System.Void BlogAppCore.Application.Infrastructure.AutoMapper.PostProfile::.ctor()
+FNDA:1,System.Void BlogAppCore.Application.Infrastructure.AutoMapper.PostProfile::.ctor()
+DA:10,1
+DA:11,1
+DA:12,1
+DA:13,2
+DA:14,2
+DA:16,1
+DA:17,2
+DA:18,2
+DA:19,1
+BRDA:12,77,0,1
+BRDA:12,77,1,1
+BRDA:12,170,0,1
+BRDA:12,170,1,1
+BRDA:16,270,0,1
+BRDA:16,270,1,1
+BRDA:16,363,0,1
+BRDA:16,363,1,1
+LF:9
+LH:9
+BRF:8
+BRH:8
+FNF:1
+FNH:1
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Infrastructure/AutoMapper/TagProfile.cs
+FN:9,System.Void BlogAppCore.Application.Infrastructure.AutoMapper.TagProfile::.ctor()
+FNDA:1,System.Void BlogAppCore.Application.Infrastructure.AutoMapper.TagProfile::.ctor()
+DA:10,1
+DA:11,1
+DA:12,1
+DA:13,2
+DA:15,1
+DA:16,1
+BRDA:12,77,0,1
+BRDA:12,77,1,1
+LF:6
+LH:6
+BRF:2
+BRH:2
+FNF:1
+FNH:1
+end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Exceptions/DeleteFailureException.cs
 FN:10,System.Void BlogAppCore.Application.Exceptions.DeleteFailureException::.ctor(System.String,System.String,System.Object,System.String)
 FNDA:3,System.Void BlogAppCore.Application.Exceptions.DeleteFailureException::.ctor(System.String,System.String,System.Object,System.String)
@@ -957,14 +1289,118 @@ FNH:1
 end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Exceptions/NotFoundException.cs
 FN:9,System.Void BlogAppCore.Application.Exceptions.NotFoundException::.ctor(System.String,System.String,System.Object)
-FNDA:18,System.Void BlogAppCore.Application.Exceptions.NotFoundException::.ctor(System.String,System.String,System.Object)
-DA:10,18
+FNDA:21,System.Void BlogAppCore.Application.Exceptions.NotFoundException::.ctor(System.String,System.String,System.Object)
+DA:10,21
 LF:1
 LH:1
 BRF:0
 BRH:0
 FNF:1
 FNH:1
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Queries/GetCategoriesList/GetCategoriesListQueryHandler.cs
+FN:18,System.Void BlogAppCore.Application.Categories.Queries.GetCategoriesList.GetCategoriesListQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+FNDA:1,System.Void BlogAppCore.Application.Categories.Queries.GetCategoriesList.GetCategoriesListQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+DA:19,1
+DA:20,1
+DA:21,1
+DA:22,1
+DA:23,1
+FN:25,System.Void BlogAppCore.Application.Categories.Queries.GetCategoriesList.GetCategoriesListQueryHandler/<Handle>d__3::MoveNext()
+FNDA:1,System.Void BlogAppCore.Application.Categories.Queries.GetCategoriesList.GetCategoriesListQueryHandler/<Handle>d__3::MoveNext()
+DA:26,1
+DA:27,1
+DA:28,1
+DA:29,1
+DA:30,1
+DA:31,1
+DA:32,1
+BRDA:27,149,1,1
+LF:12
+LH:12
+BRF:1
+BRH:1
+FNF:2
+FNH:2
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Queries/GetAllCategories/GetAllCategoriesQueryHandler.cs
+FN:18,System.Void BlogAppCore.Application.Categories.Queries.GetAllCategories.GetAllCategoriesQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+FNDA:1,System.Void BlogAppCore.Application.Categories.Queries.GetAllCategories.GetAllCategoriesQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)
+DA:19,1
+DA:20,1
+DA:21,1
+DA:22,1
+DA:23,1
+FN:25,System.Void BlogAppCore.Application.Categories.Queries.GetAllCategories.GetAllCategoriesQueryHandler/<Handle>d__3::MoveNext()
+FNDA:1,System.Void BlogAppCore.Application.Categories.Queries.GetAllCategories.GetAllCategoriesQueryHandler/<Handle>d__3::MoveNext()
+DA:26,1
+DA:27,1
+DA:28,1
+DA:29,1
+DA:30,1
+DA:31,1
+DA:32,1
+BRDA:27,149,1,1
+LF:12
+LH:12
+BRF:1
+BRH:1
+FNF:2
+FNH:2
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Models/CategoryDetailDto.cs
+FN:6,System.Int32 BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Id()
+FNDA:3,System.Int32 BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Id()
+DA:7,3
+FN:8,System.String BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Name()
+FNDA:3,System.String BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Name()
+DA:9,3
+FN:10,System.String BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Slug()
+FNDA:3,System.String BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Slug()
+DA:11,3
+FN:12,System.DateTime BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Created()
+FNDA:3,System.DateTime BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Created()
+DA:13,3
+FN:14,System.Int32 BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_TotalPosts()
+FNDA:3,System.Int32 BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_TotalPosts()
+DA:15,3
+LF:5
+LH:5
+BRF:0
+BRH:0
+FNF:5
+FNH:5
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Models/CategoryListDto.cs
+FN:4,System.String BlogAppCore.Application.Categories.Models.CategoryListDto::get_Name()
+FNDA:8,System.String BlogAppCore.Application.Categories.Models.CategoryListDto::get_Name()
+DA:5,8
+FN:6,System.String BlogAppCore.Application.Categories.Models.CategoryListDto::get_Slug()
+FNDA:8,System.String BlogAppCore.Application.Categories.Models.CategoryListDto::get_Slug()
+DA:7,8
+FN:8,System.Int32 BlogAppCore.Application.Categories.Models.CategoryListDto::get_TotalPosts()
+FNDA:8,System.Int32 BlogAppCore.Application.Categories.Models.CategoryListDto::get_TotalPosts()
+DA:9,8
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Models/CategoryPreviewDto.cs
+FN:4,System.String BlogAppCore.Application.Categories.Models.CategoryPreviewDto::get_Name()
+FNDA:2,System.String BlogAppCore.Application.Categories.Models.CategoryPreviewDto::get_Name()
+DA:5,2
+FN:6,System.String BlogAppCore.Application.Categories.Models.CategoryPreviewDto::get_Slug()
+FNDA:2,System.String BlogAppCore.Application.Categories.Models.CategoryPreviewDto::get_Slug()
+DA:7,2
+LF:2
+LH:2
+BRF:0
+BRH:0
+FNF:2
+FNH:2
 end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Update/UpdateCategoryCommand.cs
 FN:6,System.Int32 BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommand::get_Id()
@@ -1142,26 +1578,26 @@ FNH:0
 end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/SlugGenerator.cs
 FN:10,System.String BlogAppCore.Domain.SlugGenerator::GenerateSlug(System.String,System.Int32)
-FNDA:14,System.String BlogAppCore.Domain.SlugGenerator::GenerateSlug(System.String,System.Int32)
-DA:11,14
-DA:12,14
-DA:15,14
-DA:17,14
-DA:19,14
-DA:21,14
-DA:22,14
+FNDA:167,System.String BlogAppCore.Domain.SlugGenerator::GenerateSlug(System.String,System.Int32)
+DA:11,167
+DA:12,167
+DA:15,167
+DA:17,167
+DA:19,167
+DA:21,167
+DA:22,167
 BRDA:19,61,0,0
-BRDA:19,61,1,14
+BRDA:19,61,1,167
 FN:24,System.String BlogAppCore.Domain.SlugGenerator::RemoveDiacritics(System.String)
-FNDA:14,System.String BlogAppCore.Domain.SlugGenerator::RemoveDiacritics(System.String)
-DA:25,14
-DA:26,14
-DA:27,192
-DA:28,14
-DA:30,14
-DA:31,14
+FNDA:167,System.String BlogAppCore.Domain.SlugGenerator::RemoveDiacritics(System.String)
+DA:25,167
+DA:26,167
+DA:27,2178
+DA:28,167
+DA:30,167
+DA:31,167
 BRDA:26,14,0,1
-BRDA:26,14,1,14
+BRDA:26,14,1,167
 LF:13
 LH:13
 BRF:4
@@ -1171,11 +1607,11 @@ FNH:2
 end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/BaseEntity.cs
 FN:6,System.Int32 BlogAppCore.Domain.Entities.BaseEntity::get_Id()
-FNDA:189,System.Int32 BlogAppCore.Domain.Entities.BaseEntity::get_Id()
-DA:7,189
+FNDA:3158,System.Int32 BlogAppCore.Domain.Entities.BaseEntity::get_Id()
+DA:7,3158
 FN:8,System.DateTime BlogAppCore.Domain.Entities.BaseEntity::get_Created()
-FNDA:71,System.DateTime BlogAppCore.Domain.Entities.BaseEntity::get_Created()
-DA:9,71
+FNDA:1091,System.DateTime BlogAppCore.Domain.Entities.BaseEntity::get_Created()
+DA:9,1091
 LF:2
 LH:2
 BRF:0
@@ -1185,11 +1621,11 @@ FNH:2
 end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/Category.cs
 FN:18,System.String BlogAppCore.Domain.Entities.Category::get_Name()
-FNDA:34,System.String BlogAppCore.Domain.Entities.Category::get_Name()
-DA:19,34
+FNDA:445,System.String BlogAppCore.Domain.Entities.Category::get_Name()
+DA:19,445
 FN:20,System.String BlogAppCore.Domain.Entities.Category::get_Slug()
-FNDA:33,System.String BlogAppCore.Domain.Entities.Category::get_Slug()
-DA:21,33
+FNDA:441,System.String BlogAppCore.Domain.Entities.Category::get_Slug()
+DA:21,441
 FN:24,System.Collections.Generic.IEnumerable`1<BlogAppCore.Domain.Entities.Post> BlogAppCore.Domain.Entities.Category::get_Posts()
 FNDA:2,System.Collections.Generic.IEnumerable`1<BlogAppCore.Domain.Entities.Post> BlogAppCore.Domain.Entities.Category::get_Posts()
 DA:25,2
@@ -1204,13 +1640,13 @@ DA:31,1
 BRDA:30,16,0,0
 BRDA:30,16,1,1
 FN:9,System.Void BlogAppCore.Domain.Entities.Category::.ctor(System.String)
-FNDA:4,System.Void BlogAppCore.Domain.Entities.Category::.ctor(System.String)
-DA:10,4
-DA:11,4
-DA:12,4
-DA:13,4
-DA:14,4
-DA:15,4
+FNDA:55,System.Void BlogAppCore.Domain.Entities.Category::.ctor(System.String)
+DA:10,55
+DA:11,55
+DA:12,55
+DA:13,55
+DA:14,55
+DA:15,55
 FN:16,System.Void BlogAppCore.Domain.Entities.Category::.ctor()
 FNDA:0,System.Void BlogAppCore.Domain.Entities.Category::.ctor()
 DA:17,0
@@ -1223,26 +1659,26 @@ FNH:5
 end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/Post.cs
 FN:36,System.String BlogAppCore.Domain.Entities.Post::get_Title()
-FNDA:31,System.String BlogAppCore.Domain.Entities.Post::get_Title()
-DA:37,31
+FNDA:391,System.String BlogAppCore.Domain.Entities.Post::get_Title()
+DA:37,391
 FN:38,System.String BlogAppCore.Domain.Entities.Post::get_Slug()
-FNDA:31,System.String BlogAppCore.Domain.Entities.Post::get_Slug()
-DA:39,31
+FNDA:388,System.String BlogAppCore.Domain.Entities.Post::get_Slug()
+DA:39,388
 FN:40,System.String BlogAppCore.Domain.Entities.Post::get_Description()
-FNDA:32,System.String BlogAppCore.Domain.Entities.Post::get_Description()
-DA:41,32
+FNDA:389,System.String BlogAppCore.Domain.Entities.Post::get_Description()
+DA:41,389
 FN:42,System.String BlogAppCore.Domain.Entities.Post::get_Content()
-FNDA:32,System.String BlogAppCore.Domain.Entities.Post::get_Content()
-DA:43,32
+FNDA:389,System.String BlogAppCore.Domain.Entities.Post::get_Content()
+DA:43,389
 FN:44,System.Boolean BlogAppCore.Domain.Entities.Post::get_Published()
-FNDA:28,System.Boolean BlogAppCore.Domain.Entities.Post::get_Published()
-DA:45,28
+FNDA:334,System.Boolean BlogAppCore.Domain.Entities.Post::get_Published()
+DA:45,334
 FN:46,System.Int32 BlogAppCore.Domain.Entities.Post::get_CategoryId()
-FNDA:43,System.Int32 BlogAppCore.Domain.Entities.Post::get_CategoryId()
-DA:47,43
+FNDA:672,System.Int32 BlogAppCore.Domain.Entities.Post::get_CategoryId()
+DA:47,672
 FN:48,BlogAppCore.Domain.Entities.Category BlogAppCore.Domain.Entities.Post::get_Category()
-FNDA:20,BlogAppCore.Domain.Entities.Category BlogAppCore.Domain.Entities.Post::get_Category()
-DA:49,20
+FNDA:377,BlogAppCore.Domain.Entities.Category BlogAppCore.Domain.Entities.Post::get_Category()
+DA:49,377
 FN:52,System.Collections.Generic.IEnumerable`1<BlogAppCore.Domain.Entities.PostTag> BlogAppCore.Domain.Entities.Post::get_PostTags()
 FNDA:2,System.Collections.Generic.IEnumerable`1<BlogAppCore.Domain.Entities.PostTag> BlogAppCore.Domain.Entities.Post::get_PostTags()
 DA:53,2
@@ -1273,86 +1709,86 @@ BRDA:68,131,1,0
 BRDA:68,131,0,0
 BRDA:65,82,1,1
 FN:75,System.Void BlogAppCore.Domain.Entities.Post::AddTag(System.Int32)
-FNDA:0,System.Void BlogAppCore.Domain.Entities.Post::AddTag(System.Int32)
-DA:76,0
-DA:77,0
-DA:78,0
+FNDA:68,System.Void BlogAppCore.Domain.Entities.Post::AddTag(System.Int32)
+DA:76,68
+DA:77,68
+DA:78,68
 FN:9,System.Void BlogAppCore.Domain.Entities.Post::.ctor(System.String,System.String,System.String,System.Int32,System.Collections.Generic.IEnumerable`1<System.Int32>,System.Boolean)
-FNDA:4,System.Void BlogAppCore.Domain.Entities.Post::.ctor(System.String,System.String,System.String,System.Int32,System.Collections.Generic.IEnumerable`1<System.Int32>,System.Boolean)
-DA:10,4
-DA:11,4
-DA:12,4
-DA:13,4
-DA:14,4
-DA:15,4
-DA:16,4
-DA:17,4
-DA:18,4
-DA:19,4
-DA:20,4
-DA:21,4
-DA:22,4
-DA:23,4
-DA:24,4
-DA:26,4
-DA:27,0
-DA:28,0
-DA:29,0
-DA:30,0
-DA:31,0
-DA:32,0
-DA:33,4
-BRDA:26,88,0,0
-BRDA:28,125,1,0
-BRDA:28,125,0,0
-BRDA:26,88,1,4
+FNDA:55,System.Void BlogAppCore.Domain.Entities.Post::.ctor(System.String,System.String,System.String,System.Int32,System.Collections.Generic.IEnumerable`1<System.Int32>,System.Boolean)
+DA:10,55
+DA:11,55
+DA:12,55
+DA:13,55
+DA:14,55
+DA:15,55
+DA:16,55
+DA:17,55
+DA:18,55
+DA:19,55
+DA:20,55
+DA:21,55
+DA:22,55
+DA:23,55
+DA:24,55
+DA:26,55
+DA:27,34
+DA:28,238
+DA:29,68
+DA:30,68
+DA:31,68
+DA:32,34
+DA:33,55
+BRDA:26,88,0,34
+BRDA:28,125,1,68
+BRDA:28,125,0,34
+BRDA:26,88,1,55
 FN:34,System.Void BlogAppCore.Domain.Entities.Post::.ctor()
 FNDA:0,System.Void BlogAppCore.Domain.Entities.Post::.ctor()
 DA:35,0
 LF:51
-LH:34
+LH:43
 BRF:12
-BRH:4
+BRH:7
 FNF:12
-FNH:10
+FNH:11
 end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/PostTag.cs
 FN:12,System.Int32 BlogAppCore.Domain.Entities.PostTag::get_PostId()
-FNDA:0,System.Int32 BlogAppCore.Domain.Entities.PostTag::get_PostId()
-DA:13,0
+FNDA:1296,System.Int32 BlogAppCore.Domain.Entities.PostTag::get_PostId()
+DA:13,1296
 FN:14,BlogAppCore.Domain.Entities.Post BlogAppCore.Domain.Entities.PostTag::get_Post()
-FNDA:0,BlogAppCore.Domain.Entities.Post BlogAppCore.Domain.Entities.PostTag::get_Post()
-DA:15,0
+FNDA:612,BlogAppCore.Domain.Entities.Post BlogAppCore.Domain.Entities.PostTag::get_Post()
+DA:15,612
 FN:16,System.Int32 BlogAppCore.Domain.Entities.PostTag::get_TagId()
-FNDA:0,System.Int32 BlogAppCore.Domain.Entities.PostTag::get_TagId()
-DA:17,0
+FNDA:964,System.Int32 BlogAppCore.Domain.Entities.PostTag::get_TagId()
+DA:17,964
 FN:18,BlogAppCore.Domain.Entities.Tag BlogAppCore.Domain.Entities.PostTag::get_Tag()
-FNDA:0,BlogAppCore.Domain.Entities.Tag BlogAppCore.Domain.Entities.PostTag::get_Tag()
-DA:19,0
+FNDA:476,BlogAppCore.Domain.Entities.Tag BlogAppCore.Domain.Entities.PostTag::get_Tag()
+DA:19,476
 FN:4,System.Void BlogAppCore.Domain.Entities.PostTag::.ctor(System.Int32,System.Int32)
-FNDA:0,System.Void BlogAppCore.Domain.Entities.PostTag::.ctor(System.Int32,System.Int32)
-DA:5,0
-DA:6,0
-DA:7,0
-DA:8,0
-DA:9,0
+FNDA:68,System.Void BlogAppCore.Domain.Entities.PostTag::.ctor(System.Int32,System.Int32)
+DA:5,68
+DA:6,68
+DA:7,68
+DA:8,68
+DA:9,68
 FN:10,System.Void BlogAppCore.Domain.Entities.PostTag::.ctor()
 FNDA:0,System.Void BlogAppCore.Domain.Entities.PostTag::.ctor()
 DA:11,0
 LF:10
-LH:0
+LH:9
 BRF:0
 BRH:0
 FNF:6
-FNH:0
+FNH:5
 end_of_record
 SF:/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/Tag.cs
 FN:18,System.String BlogAppCore.Domain.Entities.Tag::get_Name()
-FNDA:26,System.String BlogAppCore.Domain.Entities.Tag::get_Name()
-DA:19,26
+FNDA:437,System.String BlogAppCore.Domain.Entities.Tag::get_Name()
+DA:19,437
 FN:20,System.String BlogAppCore.Domain.Entities.Tag::get_Slug()
-FNDA:26,System.String BlogAppCore.Domain.Entities.Tag::get_Slug()
-DA:21,26
+FNDA:434,System.String BlogAppCore.Domain.Entities.Tag::get_Slug()
+DA:21,434
 FN:24,System.Collections.Generic.IEnumerable`1<BlogAppCore.Domain.Entities.PostTag> BlogAppCore.Domain.Entities.Tag::get_PostTags()
 FNDA:2,System.Collections.Generic.IEnumerable`1<BlogAppCore.Domain.Entities.PostTag> BlogAppCore.Domain.Entities.Tag::get_PostTags()
 DA:25,2
@@ -1367,13 +1803,13 @@ DA:31,1
 BRDA:30,16,0,0
 BRDA:30,16,1,1
 FN:9,System.Void BlogAppCore.Domain.Entities.Tag::.ctor(System.String)
-FNDA:3,System.Void BlogAppCore.Domain.Entities.Tag::.ctor(System.String)
-DA:10,3
-DA:11,3
-DA:12,3
-DA:13,3
-DA:14,3
-DA:15,3
+FNDA:54,System.Void BlogAppCore.Domain.Entities.Tag::.ctor(System.String)
+DA:10,54
+DA:11,54
+DA:12,54
+DA:13,54
+DA:14,54
+DA:15,54
 FN:16,System.Void BlogAppCore.Domain.Entities.Tag::.ctor()
 FNDA:0,System.Void BlogAppCore.Domain.Entities.Tag::.ctor()
 DA:17,0
