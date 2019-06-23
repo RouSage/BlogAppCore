@@ -13,7 +13,7 @@ namespace BlogAppCore.Application.Tests.Tags.Commands
         [Fact]
         public void GivenValidRequest_ShouldUpdateTagCorrectly()
         {
-            // Arange
+            // Arrange
             var sut = new UpdateTagCommandHandler(_context);
             var entity = new Tag("Test Tag 1");
 
@@ -37,7 +37,7 @@ namespace BlogAppCore.Application.Tests.Tags.Commands
         [Fact]
         public async Task GivenInvalidRequest_ShouldThrowNotFoundException()
         {
-            // Arange
+            // Arrange
             var sut = new UpdateTagCommandHandler(_context);
             var tagId = 10;
 

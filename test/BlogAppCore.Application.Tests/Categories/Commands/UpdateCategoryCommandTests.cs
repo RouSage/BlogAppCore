@@ -13,7 +13,7 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
         [Fact]
         public void GivenValidRequest_ShouldUpdateCategoryCorrectly()
         {
-            // Arange
+            // Arrange
             var sut = new UpdateCategoryCommandHandler(_context);
             var entity = new Category("Test Category 1");
 
@@ -37,7 +37,7 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
         [Fact]
         public async Task GivenInvalidRequest_ShouldThrowNotFoundException()
         {
-            // Arange
+            // Arrange
             var sut = new UpdateCategoryCommandHandler(_context);
             var categoryId = 10;
 

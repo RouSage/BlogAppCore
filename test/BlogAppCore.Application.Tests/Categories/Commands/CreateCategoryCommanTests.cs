@@ -13,9 +13,9 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
         [Fact]
         public void GivenValidRequest_ShouldCreateCorrectCategoryEntity()
         {
-            // Arange
+            // Arrange
             var sut = new CreateCategoryCommandHandler(_context);
-            var newCategoryName = "Test Category 1";
+            var newCategoryName = "New Category 1";
 
             // Act
             var result = sut.Handle(new CreateCategoryCommand { Name = newCategoryName }, CancellationToken.None);
@@ -24,7 +24,7 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
             // Assert
             Assert.IsType<Unit>(result.Result);
             Assert.True(entity.Id > 0);
-            Assert.Equal("test-category-1", entity.Slug);
+            Assert.Equal("new-category-1", entity.Slug);
             Assert.Empty(entity.Posts);
             Assert.True(entity.Created < DateTime.UtcNow);
         }

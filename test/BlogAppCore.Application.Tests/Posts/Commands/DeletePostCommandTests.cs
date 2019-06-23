@@ -15,7 +15,7 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
         [Fact]
         public void GivenValidRequest_ShouldSuccessfullyDeletePost()
         {
-            // Arange
+            // Arrange
             var sut = new DeletePostCommandHandler(_context);
             var entity = new Post("Test Post 1", "Description", "Content", 1, null, true);
 
@@ -34,7 +34,7 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
         [Fact]
         public async Task GivenInvalidRequest_ShouldThrowNotFoundException()
         {
-            // Arange
+            // Arrange
             var sut = new DeletePostCommandHandler(_context);
             var postId = 10;
 

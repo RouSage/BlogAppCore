@@ -13,7 +13,7 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
         [Fact]
         public void GivenValidRequest_ShouldUpdatePostCorrectly()
         {
-            // Arange
+            // Arrange
             var sut = new UpdatePostCommandHandler(_context);
             var entity = new Post("Test Post 1", "", "", 1, null, false);
 
@@ -48,7 +48,7 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
         [Fact]
         public async Task GivenInvalidRequest_ShouldThrowNotFoundException()
         {
-            // Arange
+            // Arrange
             var sut = new UpdatePostCommandHandler(_context);
             var postId = 10;
 

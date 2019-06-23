@@ -13,9 +13,9 @@ namespace BlogAppCore.Application.Tests.Tags.Commands
         [Fact]
         public void GivenValidRequest_ShouldCreateCorrectTagEntity()
         {
-            // Arange
+            // Arrange
             var sut = new CreateTagCommandHandler(_context);
-            var newTagName = "Test Tag 1";
+            var newTagName = "New Tag 1";
 
             // Act
             var result = sut.Handle(new CreateTagCommand { Name = newTagName }, CancellationToken.None);
@@ -24,7 +24,7 @@ namespace BlogAppCore.Application.Tests.Tags.Commands
             // Assert
             Assert.IsType<Unit>(result.Result);
             Assert.True(entity.Id > 0);
-            Assert.Equal("test-tag-1", entity.Slug);
+            Assert.Equal("new-tag-1", entity.Slug);
             Assert.Empty(entity.PostTags);
             Assert.True(entity.Created < DateTime.UtcNow);
         }

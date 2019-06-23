@@ -15,7 +15,7 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
         [Fact]
         public void GivenValidRequest_ShouldSuccessfullyDeleteCategory()
         {
-            // Arange
+            // Arrange
             var sut = new DeleteCategoryCommandHandler(_context);
             var entity = new Category("Test Category 1");
 
@@ -34,7 +34,7 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
         [Fact]
         public async Task GivenInvalidRequest_ShouldThrowNotFoundException()
         {
-            // Arange
+            // Arrange
             var sut = new DeleteCategoryCommandHandler(_context);
             var categoryId = 10;
 
@@ -49,7 +49,7 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
         [Fact]
         public async Task GivenValidCategoryWithPost_ShouldThrowDeleteFailureException()
         {
-            // Arange
+            // Arrange
             var sut = new DeleteCategoryCommandHandler(_context);
             var category = new Category("Test Category 1");
 
