@@ -23,7 +23,6 @@ namespace BlogAppCore.Application.Tests.Tags.Commands
 
             // Assert
             Assert.IsType<Unit>(result.Result);
-            // Assert.True(entity.Id > 0);
             Assert.True(entity.Id > 0);
             Assert.Equal("test-tag-1", entity.Slug);
             Assert.Empty(entity.PostTags);
