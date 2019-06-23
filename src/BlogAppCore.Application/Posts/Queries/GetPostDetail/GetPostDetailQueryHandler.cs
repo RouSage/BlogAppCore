@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using BlogAppCore.Application.Exceptions;
 using BlogAppCore.Application.Interfaces;
@@ -14,10 +15,12 @@ namespace BlogAppCore.Application.Posts.Queries.GetPostDetail
     public class GetPostDetailQueryHandler : IRequestHandler<GetPostDetailQuery, PostDetailDto>
     {
         private readonly IBlogAppCoreDbContext _context;
+        private readonly IMapper _mapper;
 
-        public GetPostDetailQueryHandler(IBlogAppCoreDbContext context)
+        public GetPostDetailQueryHandler(IBlogAppCoreDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public async Task<PostDetailDto> Handle(GetPostDetailQuery request, CancellationToken cancellationToken)
@@ -27,7 +30,7 @@ namespace BlogAppCore.Application.Posts.Queries.GetPostDetail
                 .Include(c => c.Category)
                 .Include(pt => pt.PostTags).ThenInclude(t => t.Tag)
                 .Where(p => p.Slug.Equals(request.Slug) && p.Published == true)
-                .ProjectTo<PostDetailDto>()
+                .ProjectTo<PostDetailDto>(_mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(cancellationToken);
             if (post == null)
             {

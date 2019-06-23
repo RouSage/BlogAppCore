@@ -4,7 +4,7 @@ using BlogAppCore.Application.Interfaces;
 using BlogAppCore.Domain.Entities;
 using MediatR;
 
-namespace BlogAppCore.Application.Posts.Create
+namespace BlogAppCore.Application.Posts.Commands.Create
 {
     public class CreatePostCommandHandler : IRequestHandler<CreatePostCommand, Unit>
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using System.Threading;
-using BlogAppCore.Application.Posts.Create;
+using BlogAppCore.Application.Posts.Commands.Create;
 using BlogAppCore.Application.Tests.Infrastructure;
 using MediatR;
 using Xunit;

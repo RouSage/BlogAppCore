@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using BlogAppCore.Application.Exceptions;
-using BlogAppCore.Application.Posts.Update;
+using BlogAppCore.Application.Posts.Commands.Update;
 using BlogAppCore.Application.Tests.Infrastructure;
 using BlogAppCore.Domain.Entities;
 using Xunit;

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using BlogAppCore.Application.Interfaces;
 using BlogAppCore.Application.Posts.Models;
@@ -13,10 +14,12 @@ namespace BlogAppCore.Application.Posts.Queries.GetPostsByTag
     public class GetPostsByTagQueryHandler : IRequestHandler<GetPostsByTagQuery, List<PostPreviewDto>>
     {
         private readonly IBlogAppCoreDbContext _context;
+        private readonly IMapper _mapper;
 
-        public GetPostsByTagQueryHandler(IBlogAppCoreDbContext context)
+        public GetPostsByTagQueryHandler(IBlogAppCoreDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public async Task<List<PostPreviewDto>> Handle(GetPostsByTagQuery request, CancellationToken cancellationToken)
@@ -28,7 +31,7 @@ namespace BlogAppCore.Application.Posts.Queries.GetPostsByTag
                 .Where(
                     p => p.Published == true &&
                     p.PostTags.Any(t => t.Tag.Slug.Equals(request.TagSlug)))
-                .ProjectTo<PostPreviewDto>()
+                .ProjectTo<PostPreviewDto>(_mapper.ConfigurationProvider)
                 .OrderByDescending(p => p.Created)
                 .ToListAsync(cancellationToken);
         }

@@ -1,12 +1,10 @@
 using System.Collections.Generic;
 using MediatR;
 
-namespace BlogAppCore.Application.Posts.Update
+namespace BlogAppCore.Application.Posts.Commands.Create
 {
-    public class UpdatePostCommand : IRequest
+    public class CreatePostCommand : IRequest
     {
-        public int Id { get; set; }
-
         public string Title { get; set; }
 
         public string Description { get; set; }
@@ -18,7 +16,5 @@ namespace BlogAppCore.Application.Posts.Update
         public IEnumerable<int> Tags { get; set; }
 
         public bool Published { get; set; }
-
-        public bool UpdateSlug { get; set; }
     }
 }

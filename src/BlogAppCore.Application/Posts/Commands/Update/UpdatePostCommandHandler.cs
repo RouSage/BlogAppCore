@@ -6,7 +6,7 @@ using BlogAppCore.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlogAppCore.Application.Posts.Update
+namespace BlogAppCore.Application.Posts.Commands.Update
 {
     public class UpdatePostCommandHandler : IRequestHandler<UpdatePostCommand, Unit>
     {

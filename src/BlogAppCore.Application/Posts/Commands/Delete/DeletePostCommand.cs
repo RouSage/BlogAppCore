@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace BlogAppCore.Application.Posts.Delete
+namespace BlogAppCore.Application.Posts.Commands.Delete
 {
     public class DeletePostCommand : IRequest
     {

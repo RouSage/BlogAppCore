@@ -1,12 +1,11 @@
 using FluentValidation;
 
-namespace BlogAppCore.Application.Posts.Update
+namespace BlogAppCore.Application.Posts.Commands.Create
 {
-    public class UpdatePostCommandValidator : AbstractValidator<UpdatePostCommand>
+    public class CreatePostCommandValidator : AbstractValidator<CreatePostCommand>
     {
-        public UpdatePostCommandValidator()
+        public CreatePostCommandValidator()
         {
-            RuleFor(i => i.Id).GreaterThan(0);
             RuleFor(t => t.Title).NotEmpty().MaximumLength(500);
             RuleFor(d => d.Description).NotEmpty().MaximumLength(5000);
             RuleFor(c => c.Content).NotEmpty();

@@ -6,7 +6,7 @@ using BlogAppCore.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlogAppCore.Application.Posts.Delete
+namespace BlogAppCore.Application.Posts.Commands.Delete
 {
     public class DeletePostCommandHandler : IRequestHandler<DeletePostCommand, Unit>
     {

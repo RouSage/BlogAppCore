@@ -2,7 +2,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using BlogAppCore.Application.Exceptions;
-using BlogAppCore.Application.Posts.Delete;
+using BlogAppCore.Application.Posts.Commands.Delete;
 using BlogAppCore.Application.Tests.Infrastructure;
 using BlogAppCore.Domain.Entities;
 using MediatR;
