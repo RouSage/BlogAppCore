@@ -1,3 +1,5 @@
+using AutoMapper;
+using BlogAppCore.Application.Infrastructure.AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,6 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
+using MediatR;
+using BlogAppCore.Application.Posts.Queries.GetPostDetail;
+using BlogAppCore.Application.Infrastructure;
+using BlogAppCore.Persistence;
+using BlogAppCore.Application.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using FluentValidation.AspNetCore;
+using BlogAppCore.Application.Posts.Commands.Create;
 
 namespace BlogAppCore
 {
@@ -20,7 +31,23 @@ namespace BlogAppCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // Add AutoMapper
+            services.AddAutoMapper(new Assembly[] { typeof(PostProfile).GetTypeInfo().Assembly });
+
+            // Add MediatR
+            services.AddMediatR(typeof(GetPostDetailQueryHandler).GetTypeInfo().Assembly);
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehaviour<,>));
+
+            // Add DbContext using PostgreSQL provider
+            services.AddEntityFrameworkNpgsql()
+                .AddDbContext<IBlogAppCoreDbContext, BlogAppCoreDbContext>(options =>
+                    options.UseNpgsql(Configuration.GetConnectionString("BlogAppCore")))
+                .BuildServiceProvider();
+
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreatePostCommandValidator>());
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -35,6 +62,7 @@ namespace BlogAppCore
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {
