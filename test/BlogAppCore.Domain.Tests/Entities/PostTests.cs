@@ -10,9 +10,11 @@ namespace BlogAppCore.Domain.Tests.Entities
         [InlineData("Post Title", "Post Description", "Post content", 1, true, true, "post-title")]
         [InlineData("Post    Title", "", "", 0, false, false, "post-title")]
         public void ShouldCreateCorrectPostEntity(string title, string description, string content,
-            int categoryId, bool createTags, bool published, string expectedSlug)
+            int categoryId, bool createTags,
+            bool published, string expectedSlug)
         {
             Post entity;
+
             if (createTags)
             {
                 var tags = new List<int> { 1, 2, 5, 4 };
@@ -32,9 +34,13 @@ namespace BlogAppCore.Domain.Tests.Entities
             Assert.NotNull(entity.PostTags);
 
             if (createTags)
+            {
                 Assert.NotEmpty(entity.PostTags);
+            }
             else
+            {
                 Assert.Empty(entity.PostTags);
+            }
         }
     }
 }

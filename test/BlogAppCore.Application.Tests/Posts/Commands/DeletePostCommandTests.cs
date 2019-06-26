@@ -39,8 +39,11 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
             var postId = 10;
 
             // Act
-            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(
-                new DeletePostCommand { Id = postId }, CancellationToken.None));
+            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(new DeletePostCommand
+            {
+                Id = postId
+            },
+            CancellationToken.None));
 
             // Assert
             Assert.IsType<NotFoundException>(ex);

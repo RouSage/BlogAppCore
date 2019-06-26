@@ -29,8 +29,11 @@ namespace BlogAppCore.Application.Tests.Posts.Queries
             var sut = new GetPostsByCategoryQueryHandler(_context, _mapper);
 
             // Act
-            var result = await sut.Handle(
-                new GetPostsByCategoryQuery { CategorySlug = "test-category-1" }, CancellationToken.None);
+            var result = await sut.Handle(new GetPostsByCategoryQuery
+            {
+                CategorySlug = "test-category-1"
+            },
+            CancellationToken.None);
 
             // Assert
             Assert.IsType<List<PostPreviewDto>>(result);
@@ -44,8 +47,11 @@ namespace BlogAppCore.Application.Tests.Posts.Queries
             var sut = new GetPostsByCategoryQueryHandler(_context, _mapper);
 
             // Act
-            var result = await sut.Handle(
-                new GetPostsByCategoryQuery { CategorySlug = "random-category" }, CancellationToken.None);
+            var result = await sut.Handle(new GetPostsByCategoryQuery
+            {
+                CategorySlug = "random-category"
+            },
+            CancellationToken.None);
 
             // Assert
             Assert.IsType<List<PostPreviewDto>>(result);

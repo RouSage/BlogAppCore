@@ -21,19 +21,18 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
             _context.SaveChanges();
 
             // Act
-            var result = sut.Handle(
-                new UpdatePostCommand
-                {
-                    Id = entity.Id,
-                        Title = "Test Post 1",
-                        CategoryId = 1,
-                        Content = "Content",
-                        Description = "Description",
-                        Published = true,
-                        Tags = null,
-                        UpdateSlug = true
-                },
-                CancellationToken.None);
+            var result = sut.Handle(new UpdatePostCommand
+            {
+                Id = entity.Id,
+                Title = "Test Post 1",
+                CategoryId = 1,
+                Content = "Content",
+                Description = "Description",
+                Published = true,
+                Tags = null,
+                UpdateSlug = true
+            },
+            CancellationToken.None);
 
             Assert.True(entity.Id > 0);
             Assert.Equal("Test Post 1", entity.Title);
@@ -53,14 +52,13 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
             var postId = 10;
 
             // Act
-            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(
-                new UpdatePostCommand
-                {
-                    Id = postId,
-                        Title = "New Title",
-                        UpdateSlug = true
-                },
-                CancellationToken.None));
+            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(new UpdatePostCommand
+            {
+                Id = postId,
+                Title = "New Title",
+                UpdateSlug = true
+            },
+            CancellationToken.None));
 
             // Assert
             Assert.IsType<NotFoundException>(ex);

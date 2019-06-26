@@ -18,7 +18,11 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
             var newCategoryName = "New Category 1";
 
             // Act
-            var result = sut.Handle(new CreateCategoryCommand { Name = newCategoryName }, CancellationToken.None);
+            var result = sut.Handle(new CreateCategoryCommand
+            {
+                Name = newCategoryName
+            },
+            CancellationToken.None);
             var entity = _context.Categories.FirstOrDefault(x => x.Name.Equals(newCategoryName));
 
             // Assert

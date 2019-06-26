@@ -37,9 +37,12 @@ namespace BlogAppCore.Application.Tests.Infrastructure
 
             var posts = new List<Post>
             {
-                new Post("Test Post 1", "Description 1", "Content 1", categories[0].Id, tags.Select(t => t.Id).Take(2), true),
-                new Post("Test Post 2", "Description 2", "Content 2", categories[0].Id, tags.Select(t => t.Id).TakeLast(2), true),
-                new Post("Test Post 3", "", "", categories[2].Id, null, false)
+                new Post("Test Post 1", "Description 1", "Content 1",
+                    categories[0].Id, tags.Select(t => t.Id).Take(2), true),
+                new Post("Test Post 2", "Description 2", "Content 2",
+                    categories[0].Id, tags.Select(t => t.Id).TakeLast(2), true),
+                new Post("Test Post 3", "", "",
+                    categories[2].Id, null, false)
             };
             context.Posts.AddRange(posts);
             context.SaveChanges();

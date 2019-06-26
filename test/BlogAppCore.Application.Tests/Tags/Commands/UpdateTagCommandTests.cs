@@ -21,12 +21,13 @@ namespace BlogAppCore.Application.Tests.Tags.Commands
             _context.SaveChanges();
 
             // Act
-            var result = sut.Handle(
-                new UpdateTagCommand
-                {
-                    Id = entity.Id, Name = "New Tag 1 Name", UpdateSlug = true
-                },
-                CancellationToken.None);
+            var result = sut.Handle(new UpdateTagCommand
+            {
+                Id = entity.Id,
+                Name = "New Tag 1 Name",
+                UpdateSlug = true
+            },
+            CancellationToken.None);
 
             Assert.True(entity.Id > 0);
             Assert.Equal("New Tag 1 Name", entity.Name);
@@ -42,12 +43,13 @@ namespace BlogAppCore.Application.Tests.Tags.Commands
             var tagId = 10;
 
             // Act (Assert)
-            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(
-                new UpdateTagCommand
-                {
-                    Id = tagId, Name = "", UpdateSlug = false
-                },
-                CancellationToken.None));
+            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(new UpdateTagCommand
+            {
+                Id = tagId,
+                Name = "",
+                UpdateSlug = false
+            },
+            CancellationToken.None));
 
             // Assert
             Assert.IsType<NotFoundException>(ex);

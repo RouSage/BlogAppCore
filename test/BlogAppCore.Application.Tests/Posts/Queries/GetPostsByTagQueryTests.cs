@@ -29,8 +29,11 @@ namespace BlogAppCore.Application.Tests.Posts.Queries
             var sut = new GetPostsByTagQueryHandler(_context, _mapper);
 
             // Act
-            var result = await sut.Handle(
-                new GetPostsByTagQuery { TagSlug = "test-tag-1" }, CancellationToken.None);
+            var result = await sut.Handle(new GetPostsByTagQuery
+            {
+                TagSlug = "test-tag-1"
+            },
+            CancellationToken.None);
 
             // Assert
             Assert.IsType<List<PostPreviewDto>>(result);
@@ -44,8 +47,11 @@ namespace BlogAppCore.Application.Tests.Posts.Queries
             var sut = new GetPostsByTagQueryHandler(_context, _mapper);
 
             // Act
-            var result = await sut.Handle(
-                new GetPostsByTagQuery { TagSlug = "random-tag" }, CancellationToken.None);
+            var result = await sut.Handle(new GetPostsByTagQuery
+            {
+                TagSlug = "random-tag"
+            },
+            CancellationToken.None);
 
             // Assert
             Assert.IsType<List<PostPreviewDto>>(result);

@@ -21,12 +21,13 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
             _context.SaveChanges();
 
             // Act
-            var result = sut.Handle(
-                new UpdateCategoryCommand
-                {
-                    Id = entity.Id, Name = "New Category 1 Name", UpdateSlug = true
-                },
-                CancellationToken.None);
+            var result = sut.Handle(new UpdateCategoryCommand
+            {
+                Id = entity.Id,
+                Name = "New Category 1 Name",
+                UpdateSlug = true
+            },
+            CancellationToken.None);
 
             Assert.True(entity.Id > 0);
             Assert.Equal("New Category 1 Name", entity.Name);
@@ -41,13 +42,14 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
             var sut = new UpdateCategoryCommandHandler(_context);
             var categoryId = 10;
 
-            // Act (Assert)
-            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(
-                new UpdateCategoryCommand
-                {
-                    Id = categoryId, Name = "", UpdateSlug = false
-                },
-                CancellationToken.None));
+            // Act
+            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(new UpdateCategoryCommand
+            {
+                Id = categoryId,
+                Name = "",
+                UpdateSlug = false
+            },
+            CancellationToken.None));
 
             // Assert
             Assert.IsType<NotFoundException>(ex);

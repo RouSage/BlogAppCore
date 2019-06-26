@@ -20,12 +20,13 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
             var result = sut.Handle(new CreatePostCommand
             {
                 Title = "New Post 1",
-                    Description = "Test Post Description",
-                    Content = "Test Post Content",
-                    CategoryId = 1,
-                    Tags = null,
-                    Published = true
-            }, CancellationToken.None);
+                Description = "Test Post Description",
+                Content = "Test Post Content",
+                CategoryId = 1,
+                Tags = null,
+                Published = true
+            },
+            CancellationToken.None);
             var entity = _context.Posts.FirstOrDefault(x => x.Title.Equals("New Post 1"));
 
             // Assert

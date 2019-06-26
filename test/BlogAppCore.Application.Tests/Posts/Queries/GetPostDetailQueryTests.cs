@@ -32,8 +32,11 @@ namespace BlogAppCore.Application.Tests.Posts.Queries
             var sut = new GetPostDetailQueryHandler(_context, _mapper);
 
             // Act
-            var result = await sut.Handle(
-                new GetPostDetailQuery { Slug = "test-post-1" }, CancellationToken.None);
+            var result = await sut.Handle(new GetPostDetailQuery
+            {
+                Slug = "test-post-1"
+            },
+            CancellationToken.None);
 
             // Assert
             Assert.IsType<PostDetailDto>(result);
@@ -55,8 +58,11 @@ namespace BlogAppCore.Application.Tests.Posts.Queries
             var sut = new GetPostDetailQueryHandler(_context, _mapper);
 
             // Act
-            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(
-                new GetPostDetailQuery { Slug = "not-existing-slug" }, CancellationToken.None));
+            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(new GetPostDetailQuery
+            {
+                Slug = "not-existing-slug"
+            },
+            CancellationToken.None));
 
             // Assert
             Assert.IsType<NotFoundException>(ex);

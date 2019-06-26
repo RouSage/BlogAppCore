@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -40,8 +39,11 @@ namespace BlogAppCore.Application.Tests.Tags.Commands
             var tagId = 10;
 
             // Act (Assert)
-            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(
-                new DeleteTagCommand { Id = tagId }, CancellationToken.None));
+            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(new DeleteTagCommand
+            {
+                Id = tagId
+            },
+            CancellationToken.None));
 
             // Assert
             Assert.IsType<NotFoundException>(ex);

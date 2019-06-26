@@ -23,7 +23,11 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
             _context.SaveChanges();
 
             // Act
-            var result = sut.Handle(new DeleteCategoryCommand { Id = entity.Id }, CancellationToken.None);
+            var result = sut.Handle(new DeleteCategoryCommand
+            {
+                Id = entity.Id
+            },
+            CancellationToken.None);
             var category = _context.Tags.FirstOrDefault(i => i.Id == entity.Id);
 
             // Assert
@@ -39,8 +43,11 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
             var categoryId = 10;
 
             // Act
-            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(
-                new DeleteCategoryCommand { Id = categoryId }, CancellationToken.None));
+            var ex = await Assert.ThrowsAsync<NotFoundException>(() => sut.Handle(new DeleteCategoryCommand
+            {
+                Id = categoryId
+            },
+            CancellationToken.None));
 
             // Assert
             Assert.IsType<NotFoundException>(ex);
@@ -62,8 +69,11 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
             _context.SaveChanges();
 
             // Act
-            var ex = await Assert.ThrowsAsync<DeleteFailureException>(() => sut.Handle(
-                new DeleteCategoryCommand { Id = category.Id }, CancellationToken.None));
+            var ex = await Assert.ThrowsAsync<DeleteFailureException>(() => sut.Handle(new DeleteCategoryCommand
+            {
+                Id = category.Id
+            },
+            CancellationToken.None));
 
             // Assert
             Assert.IsType<DeleteFailureException>(ex);
