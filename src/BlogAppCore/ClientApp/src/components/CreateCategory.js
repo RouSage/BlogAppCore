@@ -1,47 +1,65 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export class CreateCategory extends Component {
+export default class CreateCategory extends Component {
   static displayName = CreateCategory.name;
 
   constructor(props) {
     super(props);
     this.state = { name: '', loading: false };
+  }
 
-    this.handleSave = this.handleSave.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
+  handleChange(event) {
+    this.setState({ name: event.target.value });
   }
 
   handleSave(event) {
     event.preventDefault();
-    const data = new FormData(event.target);
+
+    const { name } = this.state;
 
     fetch('api/Categories/Create', {
       method: 'POST',
-      body: data
-    }).then(_response => {
-      this.props.history.push('/categories');
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+      },
+      body: JSON.stringify({ name }),
+    }).then(() => {
+      const { history } = this.props;
+      history.push('/categories');
     });
   }
 
-  handleCancel(e) {
-    alert('Cancel clicked');
-    e.preventDefault();
-    // this.props.history.push('/categories');
+  handleCancel(event) {
+    event.preventDefault();
+
+    const { history } = this.props;
+    history.push('/categories');
   }
 
-  static renderCreateForm() {
+  renderCreateForm() {
+    const { name } = this.state;
     return (
-      <form onSubmit={this.handleSave}>
+      <form onSubmit={event => this.handleSave(event)}>
         <div className="form-group row">
-          <label htmlFor="Name" className="col-form-label col-md-12">
+          <label htmlFor="categoryName" className="col-form-label col-md-12">
             Name
+            <input
+              className="form-control"
+              type="text"
+              name="name"
+              id="categoryName"
+              value={name}
+              onChange={event => this.handleChange(event)}
+            />
           </label>
-          <div className="col-md-4">
-            <input className="form-control" type="text" name="name" />
-          </div>
         </div>
         <div className="form-group">
-          <button className="btn btn-danger" onClick={this.handleCancel}>
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={event => this.handleCancel(event)}
+          >
             Cancel
           </button>
           <input type="submit" className="btn btn-dark" value="Save" />
@@ -51,12 +69,13 @@ export class CreateCategory extends Component {
   }
 
   render() {
-    let contents = this.state.loading ? (
+    const { loading } = this.state;
+    const contents = loading ? (
       <p>
         <em>Loading...</em>
       </p>
     ) : (
-      CreateCategory.renderCreateForm()
+      this.renderCreateForm()
     );
 
     return (
@@ -67,3 +86,7 @@ export class CreateCategory extends Component {
     );
   }
 }
+
+CreateCategory.propTypes = {
+  history: PropTypes.object,
+};

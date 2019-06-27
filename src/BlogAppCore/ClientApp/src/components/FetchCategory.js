@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-export class FetchCategory extends Component {
+export default class FetchCategory extends Component {
   static displayName = FetchCategory.name;
 
   constructor(props) {
@@ -11,7 +11,7 @@ export class FetchCategory extends Component {
 
     fetch('api/Categories/GetAll')
       .then(response => response.json())
-      .then(data => {
+      .then((data) => {
         this.setState({ categories: data, loading: false });
       });
   }
@@ -38,6 +38,7 @@ export class FetchCategory extends Component {
         <tbody>
           {categories.map(category => (
             <tr key={category.id}>
+              <td>{category.id}</td>
               <td>{category.name}</td>
               <td>{category.slug}</td>
               <td>{category.created}</td>
@@ -50,12 +51,13 @@ export class FetchCategory extends Component {
   }
 
   render() {
-    let contents = this.state.loading ? (
+    const { categories, loading } = this.state;
+    const contents = loading ? (
       <p>
         <em>Loading...</em>
       </p>
     ) : (
-      FetchCategory.renderCategoriesTable(this.state.categories)
+      FetchCategory.renderCategoriesTable(categories)
     );
 
     return (

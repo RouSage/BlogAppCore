@@ -14,7 +14,7 @@ namespace BlogAppCore.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody]CreateCategoryCommand command)
+        public async Task<IActionResult> Create([FromBody] CreateCategoryCommand command)
         {
             await Mediator.Send(command);
 
