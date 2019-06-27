@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default class FetchCategory extends Component {
   static displayName = FetchCategory.name;
@@ -16,7 +16,12 @@ export default class FetchCategory extends Component {
       });
   }
 
-  static renderCategoriesTable(categories) {
+  handleEdit(id) {
+    const { history } = this.props;
+    history.push(`/edit-category/${id}`);
+  }
+
+  renderCategoriesTable(categories) {
     return (
       <table className="table table-striped">
         <thead>
@@ -27,11 +32,7 @@ export default class FetchCategory extends Component {
             <th>Created</th>
             <th>Total Posts</th>
             <th>
-              <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/category/create">
-                  Create New
-                </NavLink>
-              </NavItem>
+              <Link to="/create-category">Create New</Link>
             </th>
           </tr>
         </thead>
@@ -43,6 +44,11 @@ export default class FetchCategory extends Component {
               <td>{category.slug}</td>
               <td>{category.created}</td>
               <td>{category.totalPosts}</td>
+              <td>
+                <button type="button" onClick={() => this.handleEdit(category.id)}>
+                  Edit
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -57,7 +63,7 @@ export default class FetchCategory extends Component {
         <em>Loading...</em>
       </p>
     ) : (
-      FetchCategory.renderCategoriesTable(categories)
+      this.renderCategoriesTable(categories)
     );
 
     return (
@@ -69,3 +75,7 @@ export default class FetchCategory extends Component {
     );
   }
 }
+
+FetchCategory.propTypes = {
+  history: PropTypes.object,
+};
