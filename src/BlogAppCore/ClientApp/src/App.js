@@ -1,24 +1,32 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
-import { FetchCategory } from './components/FetchCategory';
-import CreateCategory from './components/CreateCategory';
+import Layout from './components/Layout';
+import Home from './components/Home';
+import FetchCategory from './components/Categories/FetchCategory';
+import CreateCategory from './components/Categories/CreateCategory';
+import EditCategory from './components/Categories/EditCategory';
 
-export default class App extends PureComponent {
-  static displayName = App.name;
+const App = () => (
+  <Layout>
+    <Route exact path="/" component={Home} />
+    <Route path="/categories" component={FetchCategory} />
+    <Route path="/create-category" component={CreateCategory} />
+    <Route path="/edit-category/:id" component={EditCategory} />
+  </Layout>
+);
 
-  render() {
-    return (
-      <Layout>
-        <Route exact path="/" component={Home} />
-        <Route path="/counter" component={Counter} />
-        <Route path="/fetch-data" component={FetchData} />
-        <Route path="/categories" component={FetchCategory} />
-        <Route path="/category/create" component={CreateCategory} />
-      </Layout>
-    );
-  }
-}
+export default App;
+// export default class App extends Component {
+//   static displayName = App.name;
+
+//   render() {
+//     return (
+//       <Layout>
+//         <Route exact path="/" component={Home} />
+//         <Route path="/categories" component={FetchCategory} />
+//         <Route path="/create-category" component={CreateCategory} />
+//         <Route path="/edit-category/:id" component={EditCategory} />
+//       </Layout>
+//     );
+//   }
+// }
