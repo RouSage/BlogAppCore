@@ -6,7 +6,7 @@ export default class CreateCategory extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { name: '', loading: false };
+    this.state = { name: '' };
   }
 
   handleChange(event) {
@@ -69,14 +69,7 @@ export default class CreateCategory extends Component {
   }
 
   render() {
-    const { loading } = this.state;
-    const contents = loading ? (
-      <p>
-        <em>Loading...</em>
-      </p>
-    ) : (
-      this.renderCreateForm()
-    );
+    const contents = this.renderCreateForm();
 
     return (
       <div>

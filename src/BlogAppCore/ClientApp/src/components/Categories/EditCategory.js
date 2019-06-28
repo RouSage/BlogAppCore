@@ -12,7 +12,9 @@ export default class EditCategory extends Component {
       slug: '',
       updateSlug: false,
     };
+  }
 
+  componentWillMount() {
     const { match } = this.props;
     const categoryId = Number(match.params.id);
 
