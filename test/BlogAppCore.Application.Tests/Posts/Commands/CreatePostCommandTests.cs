@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using BlogAppCore.Application.Posts.Commands.Create;
+using BlogAppCore.Application.Posts.Models;
 using BlogAppCore.Application.Tests.Infrastructure;
 using MediatR;
 using Xunit;
@@ -11,13 +13,13 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
     public class CreatePostCommandTests : CommandTestBase
     {
         [Fact]
-        public void GivenValidRequest_ShouldCreateCorrectTagEntity()
+        public async Task GivenValidRequest_ShouldCreateCorrectTagEntity()
         {
             // Arrange
-            var sut = new CreatePostCommandHandler(_context);
+            var sut = new CreatePostCommandHandler(_context, _mapper);
 
             // Act
-            var result = sut.Handle(new CreatePostCommand
+            var result = await sut.Handle(new CreatePostCommand
             {
                 Title = "New Post 1",
                 Description = "Test Post Description",
@@ -27,18 +29,14 @@ namespace BlogAppCore.Application.Tests.Posts.Commands
                 Published = true
             },
             CancellationToken.None);
-            var entity = _context.Posts.FirstOrDefault(x => x.Title.Equals("New Post 1"));
 
             // Assert
-            Assert.IsType<Unit>(result.Result);
-            Assert.True(entity.Id > 0);
-            Assert.Equal("new-post-1", entity.Slug);
-            Assert.Equal("Test Post Description", entity.Description);
-            Assert.Equal("Test Post Content", entity.Content);
-            Assert.Equal(1, entity.CategoryId);
-            Assert.Empty(entity.PostTags);
-            Assert.True(entity.Created < DateTime.UtcNow);
-            Assert.True(entity.Published);
+            Assert.IsType<PostDetailDto>(result);
+            Assert.Equal("new-post-1", result.Slug);
+            Assert.Equal("Test Post Description", result.Description);
+            Assert.Equal("Test Post Content", result.Content);
+            Assert.Empty(result.Tags);
+            Assert.True(result.Created < DateTime.UtcNow);
         }
     }
 }

@@ -8,7 +8,7 @@ using Xunit;
 
 namespace BlogAppCore.Application.Tests.Categories.Commands
 {
-    public class CreateCategoryCommanTests : CommandTestBase
+    public class CreateCategoryCommandTests : CommandTestBase
     {
         [Fact]
         public void GivenValidRequest_ShouldCreateCorrectCategoryEntity()
