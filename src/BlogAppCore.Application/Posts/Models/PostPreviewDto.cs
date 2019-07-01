@@ -7,6 +7,8 @@ namespace BlogAppCore.Application.Posts.Models
 {
     public class PostPreviewDto
     {
+        public int Id { get; set; }
+
         public string Title { get; set; }
 
         public string Slug { get; set; }

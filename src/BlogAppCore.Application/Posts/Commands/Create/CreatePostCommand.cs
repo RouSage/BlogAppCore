@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using BlogAppCore.Application.Posts.Models;
 using MediatR;
 
 namespace BlogAppCore.Application.Posts.Commands.Create
 {
-    public class CreatePostCommand : IRequest
+    public class CreatePostCommand : IRequest<PostDetailDto>
     {
         public string Title { get; set; }
 
