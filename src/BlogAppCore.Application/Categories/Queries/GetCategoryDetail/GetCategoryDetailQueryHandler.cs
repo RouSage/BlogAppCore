@@ -29,7 +29,7 @@ namespace BlogAppCore.Application.Categories.Queries.GetCategoryDetail
                 .AsNoTracking()
                 .Where(i => i.Id == request.Id)
                 .ProjectTo<CategoryDetailDto>(_mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync(cancellationToken);
             if (entity == null)
             {
                 throw new NotFoundException(nameof(Category), nameof(Category.Id), request.Id);

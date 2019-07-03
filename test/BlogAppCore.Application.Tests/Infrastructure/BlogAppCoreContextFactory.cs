@@ -25,6 +25,7 @@ namespace BlogAppCore.Application.Tests.Infrastructure
                 new Tag("Test Tag 3")
             };
             context.Tags.AddRange(tags);
+            context.SaveChanges();
 
             var categories = new List<Category>
             {
