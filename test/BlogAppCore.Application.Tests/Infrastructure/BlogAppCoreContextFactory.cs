@@ -18,7 +18,7 @@ namespace BlogAppCore.Application.Tests.Infrastructure
             context.Database.EnsureCreated();
 
             // Seed database
-            var tags = new List<Tag>
+            var tags = new[]
             {
                 new Tag("Test Tag 1"),
                 new Tag("Test Tag 2"),
@@ -27,7 +27,7 @@ namespace BlogAppCore.Application.Tests.Infrastructure
             context.Tags.AddRange(tags);
             context.SaveChanges();
 
-            var categories = new List<Category>
+            var categories = new[]
             {
                 new Category("Test Category 1"),
                 new Category("Test Category 2"),
@@ -36,7 +36,7 @@ namespace BlogAppCore.Application.Tests.Infrastructure
             context.Categories.AddRange(categories);
             context.SaveChanges();
 
-            var posts = new List<Post>
+            var posts = new[]
             {
                 new Post("Test Post 1", "Description 1", "Content 1",
                     categories[0].Id, tags.Select(t => t.Id).Take(2), true),

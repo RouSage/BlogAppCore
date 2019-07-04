@@ -10,6 +10,7 @@ using Xunit;
 
 namespace BlogAppCore.Application.Tests.Categories.Commands
 {
+    [Trait("Category", "Commands")]
     public class DeleteCategoryCommandTests : CommandTestBase
     {
         [Fact]
@@ -17,7 +18,7 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
         {
             // Arrange
             var sut = new DeleteCategoryCommandHandler(_context);
-            var entity = new Category("Test Category 1");
+            var entity = new Category("Delete Category 1");
 
             _context.Categories.Add(entity);
             _context.SaveChanges();
@@ -28,7 +29,7 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
                 Id = entity.Id
             },
             CancellationToken.None);
-            var category = _context.Tags.FirstOrDefault(i => i.Id == entity.Id);
+            var category = _context.Categories.FirstOrDefault(i => i.Id == entity.Id);
 
             // Assert
             Assert.IsType<Unit>(result.Result);
@@ -58,12 +59,12 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
         {
             // Arrange
             var sut = new DeleteCategoryCommandHandler(_context);
-            var category = new Category("Test Category 1");
+            var category = new Category("Delete Category 1");
 
             _context.Categories.Add(category);
             _context.SaveChanges();
 
-            var post = new Post("Test Post 1", "Description", "Content", category.Id, null, true);
+            var post = new Post("Post 1", "Description", "Content", category.Id, null, true);
 
             _context.Posts.Add(post);
             _context.SaveChanges();

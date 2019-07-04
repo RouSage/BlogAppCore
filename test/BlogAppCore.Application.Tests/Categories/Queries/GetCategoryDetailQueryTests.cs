@@ -11,6 +11,7 @@ using Xunit;
 namespace BlogAppCore.Application.Tests.Categories.Queries
 {
     [Collection("QueryCollection")]
+    [Trait("Category", "Queries")]
     public class GetCategoryDetailQueryTests
     {
         private readonly BlogAppCoreDbContext _context;

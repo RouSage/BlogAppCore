@@ -4,10 +4,12 @@ using BlogAppCore.Application.Categories.Commands.Update;
 using BlogAppCore.Application.Exceptions;
 using BlogAppCore.Application.Tests.Infrastructure;
 using BlogAppCore.Domain.Entities;
+using MediatR;
 using Xunit;
 
 namespace BlogAppCore.Application.Tests.Categories.Commands
 {
+    [Trait("Category", "Commands")]
     public class UpdateCategoryCommandTests : CommandTestBase
     {
         [Fact]
@@ -15,7 +17,7 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
         {
             // Arrange
             var sut = new UpdateCategoryCommandHandler(_context);
-            var entity = new Category("Test Category 1");
+            var entity = new Category("Update Category 1");
 
             _context.Categories.Add(entity);
             _context.SaveChanges();
@@ -24,14 +26,15 @@ namespace BlogAppCore.Application.Tests.Categories.Commands
             var result = sut.Handle(new UpdateCategoryCommand
             {
                 Id = entity.Id,
-                Name = "New Category 1 Name",
+                Name = "New Update Category 1 Name",
                 UpdateSlug = true
             },
             CancellationToken.None);
 
+            Assert.IsType<Unit>(result.Result);
             Assert.True(entity.Id > 0);
-            Assert.Equal("New Category 1 Name", entity.Name);
-            Assert.Equal("new-category-1-name", entity.Slug);
+            Assert.Equal("New Update Category 1 Name", entity.Name);
+            Assert.Equal("new-update-category-1-name", entity.Slug);
             Assert.Empty(entity.Posts);
         }
 

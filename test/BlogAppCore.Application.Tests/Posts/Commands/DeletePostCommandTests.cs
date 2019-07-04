@@ -10,6 +10,7 @@ using Xunit;
 
 namespace BlogAppCore.Application.Tests.Posts.Commands
 {
+    [Trait("Category", "Commands")]
     public class DeletePostCommandTests : CommandTestBase
     {
         [Fact]

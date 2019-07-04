@@ -42,10 +42,47 @@
             },
             "args": [
                 "test",
-                "${workspaceFolder}/BlogAppCore.sln",
                 "/p:CollectCoverage=true",
-                "/p:CoverletOutputFormat=\"lcov\"",
-                "/p:CoverletOutput=../lcov"
+                "/p:CoverletOutput=\"../coverage/\"",
+                "/p:MergeWith=../coverage/coverage.json",
+                "${workspaceFolder}/test/BlogAppCore.Domain.Tests/BlogAppCore.Domain.Tests.csproj",
+            ],
+            "dependsOn": [
+                "test queries",
+                "test commands"
+            ],
+            "dependsOrder": "sequence",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test commands",
+            "command": "dotnet",
+            "type": "process",
+            "group": "test",
+            "args": [
+                "test",
+                "--filter",
+                "Category=Commands",
+                "/p:CollectCoverage=true",
+                "/p:CoverletOutput=\"../coverage/\"",
+                "/p:MergeWith=\"../coverage/coverage.json\"",
+                "${workspaceFolder}/test/BlogAppCore.Application.Tests/BlogAppCore.Application.Tests.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "test queries",
+            "command": "dotnet",
+            "type": "process",
+            "group": "test",
+            "args": [
+                "test",
+                "--filter",
+                "Category=Queries",
+                "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=\"json\"",
+                "/p:CoverletOutput=\"../coverage/\"",
+                "${workspaceFolder}/test/BlogAppCore.Application.Tests/BlogAppCore.Application.Tests.csproj"
             ],
             "problemMatcher": "$msCompile"
         }

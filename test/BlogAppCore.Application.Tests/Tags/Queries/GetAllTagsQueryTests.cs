@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using BlogAppCore.Application.Tags.Commands.Queries.GetAllTags;
+using BlogAppCore.Application.Tags.Queries.GetAllTags;
 using BlogAppCore.Application.Tags.Models;
 using BlogAppCore.Application.Tests.Infrastructure;
 using BlogAppCore.Persistence;
@@ -11,6 +11,7 @@ using Xunit;
 namespace BlogAppCore.Application.Tests.Tags.Queries
 {
     [Collection("QueryCollection")]
+    [Trait("Category", "Queries")]
     public class GetAllTagsQueryTests
     {
         private readonly BlogAppCoreDbContext _context;

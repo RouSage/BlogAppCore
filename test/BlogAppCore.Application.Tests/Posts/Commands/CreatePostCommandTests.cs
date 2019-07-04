@@ -1,15 +1,14 @@
 using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using BlogAppCore.Application.Posts.Commands.Create;
 using BlogAppCore.Application.Posts.Models;
 using BlogAppCore.Application.Tests.Infrastructure;
-using MediatR;
 using Xunit;
 
 namespace BlogAppCore.Application.Tests.Posts.Commands
 {
+    [Trait("Category", "Commands")]
     public class CreatePostCommandTests : CommandTestBase
     {
         [Fact]

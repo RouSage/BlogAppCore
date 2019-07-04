@@ -11,6 +11,7 @@ using Xunit;
 namespace BlogAppCore.Application.Tests.Tags.Queries
 {
     [Collection("QueryCollection")]
+    [Trait("Category", "Queries")]
     public class GetTagDetailQueryTests
     {
         private readonly BlogAppCoreDbContext _context;

@@ -8,6 +8,7 @@ using Xunit;
 
 namespace BlogAppCore.Application.Tests.Tags.Commands
 {
+    [Trait("Category", "Commands")]
     public class CreateTagCommandTests : CommandTestBase
     {
         [Fact]

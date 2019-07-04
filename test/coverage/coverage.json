@@ -1,0 +1,3416 @@
+{
+  "BlogAppCore.Domain.dll": {
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/SlugGenerator.cs": {
+      "BlogAppCore.Domain.SlugGenerator": {
+        "System.String BlogAppCore.Domain.SlugGenerator::GenerateSlug(System.String,System.Int32)": {
+          "Lines": {
+            "11": 191,
+            "12": 191,
+            "15": 191,
+            "17": 191,
+            "19": 191,
+            "21": 191,
+            "22": 191
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 61,
+              "EndOffset": 63,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 19,
+              "Offset": 61,
+              "EndOffset": 66,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 190
+            }
+          ]
+        },
+        "System.String BlogAppCore.Domain.SlugGenerator::RemoveDiacritics(System.String)": {
+          "Lines": {
+            "25": 191,
+            "26": 191,
+            "27": 2457,
+            "28": 191,
+            "30": 191,
+            "31": 191
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 26,
+              "Offset": 14,
+              "EndOffset": 39,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 191
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/BaseEntity.cs": {
+      "BlogAppCore.Domain.Entities.BaseEntity": {
+        "System.Int32 BlogAppCore.Domain.Entities.BaseEntity::get_Id()": {
+          "Lines": {
+            "7": 3263
+          },
+          "Branches": []
+        },
+        "System.DateTime BlogAppCore.Domain.Entities.BaseEntity::get_Created()": {
+          "Lines": {
+            "9": 1158
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/Category.cs": {
+      "BlogAppCore.Domain.Entities.Category": {
+        "System.String BlogAppCore.Domain.Entities.Category::get_Name()": {
+          "Lines": {
+            "19": 463
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Domain.Entities.Category::get_Slug()": {
+          "Lines": {
+            "21": 461
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<BlogAppCore.Domain.Entities.Post> BlogAppCore.Domain.Entities.Category::get_Posts()": {
+          "Lines": {
+            "25": 8
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 8
+            }
+          ]
+        },
+        "System.Void BlogAppCore.Domain.Entities.Category::Update(System.String,System.Boolean)": {
+          "Lines": {
+            "28": 5,
+            "29": 5,
+            "30": 5,
+            "31": 5
+          },
+          "Branches": [
+            {
+              "Line": 30,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 30,
+              "Offset": 16,
+              "EndOffset": 26,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Void BlogAppCore.Domain.Entities.Category::.ctor(System.String)": {
+          "Lines": {
+            "10": 62,
+            "11": 62,
+            "12": 62,
+            "13": 62,
+            "14": 62,
+            "15": 62
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Domain.Entities.Category::.ctor()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/Post.cs": {
+      "BlogAppCore.Domain.Entities.Post": {
+        "System.String BlogAppCore.Domain.Entities.Post::get_Title()": {
+          "Lines": {
+            "37": 392
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Domain.Entities.Post::get_Slug()": {
+          "Lines": {
+            "39": 392
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Domain.Entities.Post::get_Description()": {
+          "Lines": {
+            "41": 393
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Domain.Entities.Post::get_Content()": {
+          "Lines": {
+            "43": 393
+          },
+          "Branches": []
+        },
+        "System.Boolean BlogAppCore.Domain.Entities.Post::get_Published()": {
+          "Lines": {
+            "45": 337
+          },
+          "Branches": []
+        },
+        "System.Int32 BlogAppCore.Domain.Entities.Post::get_CategoryId()": {
+          "Lines": {
+            "47": 675
+          },
+          "Branches": []
+        },
+        "BlogAppCore.Domain.Entities.Category BlogAppCore.Domain.Entities.Post::get_Category()": {
+          "Lines": {
+            "49": 378
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<BlogAppCore.Domain.Entities.PostTag> BlogAppCore.Domain.Entities.Post::get_PostTags()": {
+          "Lines": {
+            "53": 7
+          },
+          "Branches": [
+            {
+              "Line": 53,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            }
+          ]
+        },
+        "System.Void BlogAppCore.Domain.Entities.Post::Update(System.String,System.String,System.String,System.Int32,System.Collections.Generic.IEnumerable`1<System.Int32>,System.Boolean,System.Boolean)": {
+          "Lines": {
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "65": 1,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 1
+          },
+          "Branches": [
+            {
+              "Line": 59,
+              "Offset": 17,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 59,
+              "Offset": 17,
+              "EndOffset": 27,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 65,
+              "Offset": 82,
+              "EndOffset": 84,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 131,
+              "EndOffset": 108,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 131,
+              "EndOffset": 133,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 65,
+              "Offset": 82,
+              "EndOffset": 147,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void BlogAppCore.Domain.Entities.Post::AddTag(System.Int32)": {
+          "Lines": {
+            "76": 72,
+            "77": 72,
+            "78": 72
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Domain.Entities.Post::.ctor(System.String,System.String,System.String,System.Int32,System.Collections.Generic.IEnumerable`1<System.Int32>,System.Boolean)": {
+          "Lines": {
+            "10": 57,
+            "11": 57,
+            "12": 57,
+            "13": 57,
+            "14": 57,
+            "15": 57,
+            "16": 57,
+            "17": 57,
+            "18": 57,
+            "19": 57,
+            "20": 57,
+            "21": 57,
+            "22": 57,
+            "23": 57,
+            "24": 57,
+            "26": 57,
+            "27": 35,
+            "28": 249,
+            "29": 72,
+            "30": 72,
+            "31": 72,
+            "32": 35,
+            "33": 57
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 88,
+              "EndOffset": 90,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 35
+            },
+            {
+              "Line": 28,
+              "Offset": 125,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 72
+            },
+            {
+              "Line": 28,
+              "Offset": 125,
+              "EndOffset": 127,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 35
+            },
+            {
+              "Line": 26,
+              "Offset": 88,
+              "EndOffset": 141,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 57
+            }
+          ]
+        },
+        "System.Void BlogAppCore.Domain.Entities.Post::.ctor()": {
+          "Lines": {
+            "35": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/PostTag.cs": {
+      "BlogAppCore.Domain.Entities.PostTag": {
+        "System.Int32 BlogAppCore.Domain.Entities.PostTag::get_PostId()": {
+          "Lines": {
+            "13": 1300
+          },
+          "Branches": []
+        },
+        "BlogAppCore.Domain.Entities.Post BlogAppCore.Domain.Entities.PostTag::get_Post()": {
+          "Lines": {
+            "15": 612
+          },
+          "Branches": []
+        },
+        "System.Int32 BlogAppCore.Domain.Entities.PostTag::get_TagId()": {
+          "Lines": {
+            "17": 968
+          },
+          "Branches": []
+        },
+        "BlogAppCore.Domain.Entities.Tag BlogAppCore.Domain.Entities.PostTag::get_Tag()": {
+          "Lines": {
+            "19": 476
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Domain.Entities.PostTag::.ctor(System.Int32,System.Int32)": {
+          "Lines": {
+            "5": 72,
+            "6": 72,
+            "7": 72,
+            "8": 72,
+            "9": 72
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Domain.Entities.PostTag::.ctor()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Domain/Entities/Tag.cs": {
+      "BlogAppCore.Domain.Entities.Tag": {
+        "System.String BlogAppCore.Domain.Entities.Tag::get_Name()": {
+          "Lines": {
+            "19": 506
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Domain.Entities.Tag::get_Slug()": {
+          "Lines": {
+            "21": 505
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<BlogAppCore.Domain.Entities.PostTag> BlogAppCore.Domain.Entities.Tag::get_PostTags()": {
+          "Lines": {
+            "25": 8
+          },
+          "Branches": [
+            {
+              "Line": 25,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 7,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 8
+            }
+          ]
+        },
+        "System.Void BlogAppCore.Domain.Entities.Tag::Update(System.String,System.Boolean)": {
+          "Lines": {
+            "28": 5,
+            "29": 5,
+            "30": 5,
+            "31": 5
+          },
+          "Branches": [
+            {
+              "Line": 30,
+              "Offset": 16,
+              "EndOffset": 18,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 30,
+              "Offset": 16,
+              "EndOffset": 26,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Void BlogAppCore.Domain.Entities.Tag::.ctor(System.String)": {
+          "Lines": {
+            "10": 61,
+            "11": 61,
+            "12": 61,
+            "13": 61,
+            "14": 61,
+            "15": 61
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Domain.Entities.Tag::.ctor()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "BlogAppCore.Persistence.dll": {
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/BlogAppCoreDbContext.cs": {
+      "BlogAppCore.Persistence.BlogAppCoreDbContext": {
+        "Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Post> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Posts()": {
+          "Lines": {
+            "11": 53
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Category> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Categories()": {
+          "Lines": {
+            "13": 50
+          },
+          "Branches": []
+        },
+        "Microsoft.EntityFrameworkCore.DbSet`1<BlogAppCore.Domain.Entities.Tag> BlogAppCore.Persistence.BlogAppCoreDbContext::get_Tags()": {
+          "Lines": {
+            "15": 48
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Persistence.BlogAppCoreDbContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "18": 2,
+            "19": 2,
+            "21": 2,
+            "22": 2
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Persistence.BlogAppCoreDbContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<BlogAppCore.Persistence.BlogAppCoreDbContext>)": {
+          "Lines": {
+            "9": 51
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/BlogAppDbContextFactory.cs": {
+      "BlogAppCore.Persistence.BlogAppDbContextFactory": {
+        "BlogAppCore.Persistence.BlogAppCoreDbContext BlogAppCore.Persistence.BlogAppDbContextFactory::CreateDbContext(System.String[])": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        },
+        "BlogAppCore.Persistence.BlogAppCoreDbContext BlogAppCore.Persistence.BlogAppDbContextFactory::Create(System.String,System.String)": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "43": 0
+          },
+          "Branches": [
+            {
+              "Line": 34,
+              "Offset": 87,
+              "EndOffset": 89,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 87,
+              "EndOffset": 106,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 120,
+              "EndOffset": 122,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 120,
+              "EndOffset": 145,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/Migrations/20190620114628_InitialCreate.cs": {
+      "BlogAppCore.Persistence.Migrations.InitialCreate": {
+        "System.Void BlogAppCore.Persistence.Migrations.InitialCreate::Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 13,
+              "EndOffset": 15,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 13,
+              "EndOffset": 38,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 45,
+              "EndOffset": 70,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 88,
+              "EndOffset": 90,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 88,
+              "EndOffset": 113,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 120,
+              "EndOffset": 122,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 26,
+              "Offset": 120,
+              "EndOffset": 145,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 163,
+              "EndOffset": 165,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 163,
+              "EndOffset": 188,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 195,
+              "EndOffset": 197,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 41,
+              "Offset": 195,
+              "EndOffset": 220,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 238,
+              "EndOffset": 240,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 238,
+              "EndOffset": 263,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 270,
+              "EndOffset": 272,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 270,
+              "EndOffset": 295,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void BlogAppCore.Persistence.Migrations.InitialCreate::Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)": {
+          "Lines": {
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "118": 0,
+            "119": 0,
+            "121": 0,
+            "122": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/Migrations/20190620114628_InitialCreate.Designer.cs": {
+      "BlogAppCore.Persistence.Migrations.InitialCreate": {
+        "System.Void BlogAppCore.Persistence.Migrations.InitialCreate::BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "17": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "46": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "123": 0,
+            "124": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "136": 0,
+            "137": 0,
+            "139": 0
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 63,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 63,
+              "EndOffset": 88,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 48,
+              "Offset": 106,
+              "EndOffset": 108,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 48,
+              "Offset": 106,
+              "EndOffset": 131,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 149,
+              "EndOffset": 151,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 81,
+              "Offset": 149,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 94,
+              "Offset": 192,
+              "EndOffset": 194,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 94,
+              "Offset": 192,
+              "EndOffset": 217,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 235,
+              "EndOffset": 237,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 118,
+              "Offset": 235,
+              "EndOffset": 260,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 126,
+              "Offset": 278,
+              "EndOffset": 280,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 126,
+              "Offset": 278,
+              "EndOffset": 303,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/Migrations/BlogAppCoreDbContextModelSnapshot.cs": {
+      "BlogAppCore.Persistence.Migrations.BlogAppCoreDbContextModelSnapshot": {
+        "System.Void BlogAppCore.Persistence.Migrations.BlogAppCoreDbContextModelSnapshot::BuildModel(Microsoft.EntityFrameworkCore.ModelBuilder)": {
+          "Lines": {
+            "15": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "50": 0,
+            "51": 0,
+            "52": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "56": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0,
+            "66": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "73": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "84": 0,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "95": 0,
+            "96": 0,
+            "97": 0,
+            "98": 0,
+            "99": 0,
+            "100": 0,
+            "101": 0,
+            "102": 0,
+            "103": 0,
+            "104": 0,
+            "105": 0,
+            "106": 0,
+            "107": 0,
+            "108": 0,
+            "109": 0,
+            "110": 0,
+            "111": 0,
+            "112": 0,
+            "113": 0,
+            "114": 0,
+            "116": 0,
+            "117": 0,
+            "118": 0,
+            "119": 0,
+            "120": 0,
+            "121": 0,
+            "122": 0,
+            "124": 0,
+            "125": 0,
+            "126": 0,
+            "127": 0,
+            "128": 0,
+            "129": 0,
+            "130": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "134": 0,
+            "135": 0,
+            "137": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 63,
+              "EndOffset": 65,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 63,
+              "EndOffset": 88,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 46,
+              "Offset": 106,
+              "EndOffset": 108,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 46,
+              "Offset": 106,
+              "EndOffset": 131,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 149,
+              "EndOffset": 151,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 149,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 192,
+              "EndOffset": 194,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 192,
+              "EndOffset": 217,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 116,
+              "Offset": 235,
+              "EndOffset": 237,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 116,
+              "Offset": 235,
+              "EndOffset": 260,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 124,
+              "Offset": 278,
+              "EndOffset": 280,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 124,
+              "Offset": 278,
+              "EndOffset": 303,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/Configurations/CategoryConfiguration.cs": {
+      "BlogAppCore.Persistence.Configurations.CategoryConfiguration": {
+        "System.Void BlogAppCore.Persistence.Configurations.CategoryConfiguration::Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1<BlogAppCore.Domain.Entities.Category>)": {
+          "Lines": {
+            "10": 2,
+            "11": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "25": 2,
+            "26": 2,
+            "27": 2,
+            "28": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/Configurations/PostConfigurations.cs": {
+      "BlogAppCore.Persistence.Configurations.PostConfigurations": {
+        "System.Void BlogAppCore.Persistence.Configurations.PostConfigurations::Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1<BlogAppCore.Domain.Entities.Post>)": {
+          "Lines": {
+            "10": 2,
+            "11": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "25": 2,
+            "26": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/Configurations/PostTagConfiguration.cs": {
+      "BlogAppCore.Persistence.Configurations.PostTagConfiguration": {
+        "System.Void BlogAppCore.Persistence.Configurations.PostTagConfiguration::Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1<BlogAppCore.Domain.Entities.PostTag>)": {
+          "Lines": {
+            "10": 2,
+            "11": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Persistence/Configurations/TagConfiguration.cs": {
+      "BlogAppCore.Persistence.Configurations.TagConfiguration": {
+        "System.Void BlogAppCore.Persistence.Configurations.TagConfiguration::Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder`1<BlogAppCore.Domain.Entities.Tag>)": {
+          "Lines": {
+            "10": 2,
+            "11": 2,
+            "13": 2,
+            "14": 2,
+            "15": 2,
+            "17": 2,
+            "18": 2,
+            "19": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "25": 2,
+            "26": 2,
+            "27": 2,
+            "28": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "BlogAppCore.Application.dll": {
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Queries/GetTagList/GetTagListQueryHandler.cs": {
+      "BlogAppCore.Application.Tags.Queries.GetTagList.GetTagListQueryHandler": {
+        "System.Void BlogAppCore.Application.Tags.Queries.GetTagList.GetTagListQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Tags.Queries.GetTagList.GetTagListQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Tags.Queries.GetTagList.GetTagListQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 149,
+              "EndOffset": 216,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Queries/GetTagDetail/GetTagDetailQuery.cs": {
+      "BlogAppCore.Application.Tags.Queries.GetTagDetail.GetTagDetailQuery": {
+        "System.Int32 BlogAppCore.Application.Tags.Queries.GetTagDetail.GetTagDetailQuery::get_Id()": {
+          "Lines": {
+            "8": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Queries/GetTagDetail/GetTagDetailQueryHandler.cs": {
+      "BlogAppCore.Application.Tags.Queries.GetTagDetail.GetTagDetailQueryHandler": {
+        "System.Void BlogAppCore.Application.Tags.Queries.GetTagDetail.GetTagDetailQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Tags.Queries.GetTagDetail.GetTagDetailQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Tags.Queries.GetTagDetail.GetTagDetailQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 1,
+            "35": 1,
+            "38": 1,
+            "39": 1
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 238,
+              "EndOffset": 308,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 33,
+              "Offset": 353,
+              "EndOffset": 355,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 33,
+              "Offset": 353,
+              "EndOffset": 393,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Queries/GetAllTags/GetAllTagsQueryHandler.cs": {
+      "BlogAppCore.Application.Tags.Queries.GetAllTags.GetAllTagsQueryHandler": {
+        "System.Void BlogAppCore.Application.Tags.Queries.GetAllTags.GetAllTagsQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Tags.Queries.GetAllTags.GetAllTagsQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Tags.Queries.GetAllTags.GetAllTagsQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 149,
+              "EndOffset": 216,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Models/TagDetailDto.cs": {
+      "BlogAppCore.Application.Tags.Models.TagDetailDto": {
+        "System.Int32 BlogAppCore.Application.Tags.Models.TagDetailDto::get_Id()": {
+          "Lines": {
+            "7": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Tags.Models.TagDetailDto::get_Name()": {
+          "Lines": {
+            "9": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Tags.Models.TagDetailDto::get_Slug()": {
+          "Lines": {
+            "11": 5
+          },
+          "Branches": []
+        },
+        "System.DateTime BlogAppCore.Application.Tags.Models.TagDetailDto::get_Created()": {
+          "Lines": {
+            "13": 4
+          },
+          "Branches": []
+        },
+        "System.Int32 BlogAppCore.Application.Tags.Models.TagDetailDto::get_TotalPosts()": {
+          "Lines": {
+            "15": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Models/TagPreviewDto.cs": {
+      "BlogAppCore.Application.Tags.Models.TagPreviewDto": {
+        "System.String BlogAppCore.Application.Tags.Models.TagPreviewDto::get_Name()": {
+          "Lines": {
+            "5": 15
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Tags.Models.TagPreviewDto::get_Slug()": {
+          "Lines": {
+            "7": 15
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Update/UpdateTagCommand.cs": {
+      "BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommand": {
+        "System.Int32 BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommand::get_Id()": {
+          "Lines": {
+            "7": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommand::get_Name()": {
+          "Lines": {
+            "9": 3
+          },
+          "Branches": []
+        },
+        "System.Boolean BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommand::get_UpdateSlug()": {
+          "Lines": {
+            "11": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Update/UpdateTagCommandHandler.cs": {
+      "BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommandHandler": {
+        "System.Void BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)": {
+          "Lines": {
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommandHandler/<Handle>d__2": {
+        "System.Void BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommandHandler/<Handle>d__2::MoveNext()": {
+          "Lines": {
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2,
+            "25": 1,
+            "26": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 17,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 22,
+              "Offset": 211,
+              "EndOffset": 281,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 24,
+              "Offset": 326,
+              "EndOffset": 328,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 326,
+              "EndOffset": 366,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 30,
+              "Offset": 446,
+              "EndOffset": 515,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Update/UpdateTagCommandValidator.cs": {
+      "BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommandValidator": {
+        "System.Void BlogAppCore.Application.Tags.Commands.Update.UpdateTagCommandValidator::.ctor()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Delete/DeleteTagCommand.cs": {
+      "BlogAppCore.Application.Tags.Commands.Delete.DeleteTagCommand": {
+        "System.Int32 BlogAppCore.Application.Tags.Commands.Delete.DeleteTagCommand::get_Id()": {
+          "Lines": {
+            "7": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Delete/DeleteTagCommandHandler.cs": {
+      "BlogAppCore.Application.Tags.Commands.Delete.DeleteTagCommandHandler": {
+        "System.Void BlogAppCore.Application.Tags.Commands.Delete.DeleteTagCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)": {
+          "Lines": {
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Tags.Commands.Delete.DeleteTagCommandHandler/<Handle>d__2": {
+        "System.Void BlogAppCore.Application.Tags.Commands.Delete.DeleteTagCommandHandler/<Handle>d__2::MoveNext()": {
+          "Lines": {
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2,
+            "25": 1,
+            "26": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 17,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 22,
+              "Offset": 211,
+              "EndOffset": 281,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 24,
+              "Offset": 326,
+              "EndOffset": 328,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 326,
+              "EndOffset": 366,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 30,
+              "Offset": 430,
+              "EndOffset": 499,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Delete/DeleteTagCommandValidator.cs": {
+      "BlogAppCore.Application.Tags.Commands.Delete.DeleteTagCommandValidator": {
+        "System.Void BlogAppCore.Application.Tags.Commands.Delete.DeleteTagCommandValidator::.ctor()": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Create/CreateTagCommand.cs": {
+      "BlogAppCore.Application.Tags.Commands.Create.CreateTagCommand": {
+        "System.String BlogAppCore.Application.Tags.Commands.Create.CreateTagCommand::get_Name()": {
+          "Lines": {
+            "7": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Create/CreateTagCommandHandler.cs": {
+      "BlogAppCore.Application.Tags.Commands.Create.CreateTagCommandHandler": {
+        "System.Void BlogAppCore.Application.Tags.Commands.Create.CreateTagCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)": {
+          "Lines": {
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Tags.Commands.Create.CreateTagCommandHandler/<Handle>d__2": {
+        "System.Void BlogAppCore.Application.Tags.Commands.Create.CreateTagCommandHandler/<Handle>d__2::MoveNext()": {
+          "Lines": {
+            "19": 1,
+            "20": 1,
+            "22": 1,
+            "23": 1,
+            "25": 1,
+            "26": 1
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 98,
+              "EndOffset": 164,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Tags/Commands/Create/CreateTagCommandValidator.cs": {
+      "BlogAppCore.Application.Tags.Commands.Create.CreateTagCommandValidator": {
+        "System.Void BlogAppCore.Application.Tags.Commands.Create.CreateTagCommandValidator::.ctor()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsPreview/GetPostsPreviewQueryHandler.cs": {
+      "BlogAppCore.Application.Posts.Queries.GetPostsPreview.GetPostsPreviewQueryHandler": {
+        "System.Void BlogAppCore.Application.Posts.Queries.GetPostsPreview.GetPostsPreviewQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Posts.Queries.GetPostsPreview.GetPostsPreviewQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Posts.Queries.GetPostsPreview.GetPostsPreviewQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 418,
+              "EndOffset": 485,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsByTag/GetPostsByTagQuery.cs": {
+      "BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQuery": {
+        "System.String BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQuery::get_TagSlug()": {
+          "Lines": {
+            "9": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsByTag/GetPostsByTagQueryHandler.cs": {
+      "BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQueryHandler": {
+        "System.Void BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Posts.Queries.GetPostsByTag.GetPostsByTagQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 675,
+              "EndOffset": 742,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsByCategory/GetPostsByCategoryQuery.cs": {
+      "BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQuery": {
+        "System.String BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQuery::get_CategorySlug()": {
+          "Lines": {
+            "9": 4
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostsByCategory/GetPostsByCategoryQueryHandler.cs": {
+      "BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQueryHandler": {
+        "System.Void BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Posts.Queries.GetPostsByCategory.GetPostsByCategoryQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 582,
+              "EndOffset": 649,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostDetail/GetPostDetailQuery.cs": {
+      "BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQuery": {
+        "System.String BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQuery::get_Slug()": {
+          "Lines": {
+            "8": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Queries/GetPostDetail/GetPostDetailQueryHandler.cs": {
+      "BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQueryHandler": {
+        "System.Void BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Posts.Queries.GetPostDetail.GetPostDetailQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "36": 1,
+            "37": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 500,
+              "EndOffset": 570,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 35,
+              "Offset": 615,
+              "EndOffset": 617,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 35,
+              "Offset": 615,
+              "EndOffset": 650,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Models/PostDetailDto.cs": {
+      "BlogAppCore.Application.Posts.Models.PostDetailDto": {
+        "System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Title()": {
+          "Lines": {
+            "10": 3
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Slug()": {
+          "Lines": {
+            "12": 3
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Description()": {
+          "Lines": {
+            "14": 4
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Models.PostDetailDto::get_Content()": {
+          "Lines": {
+            "16": 4
+          },
+          "Branches": []
+        },
+        "System.DateTime BlogAppCore.Application.Posts.Models.PostDetailDto::get_Created()": {
+          "Lines": {
+            "18": 3
+          },
+          "Branches": []
+        },
+        "BlogAppCore.Application.Categories.Models.CategoryPreviewDto BlogAppCore.Application.Posts.Models.PostDetailDto::get_Category()": {
+          "Lines": {
+            "20": 6
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<BlogAppCore.Application.Tags.Models.TagPreviewDto> BlogAppCore.Application.Posts.Models.PostDetailDto::get_Tags()": {
+          "Lines": {
+            "22": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Models/PostPreviewDto.cs": {
+      "BlogAppCore.Application.Posts.Models.PostPreviewDto": {
+        "System.Int32 BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Id()": {
+          "Lines": {
+            "10": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Title()": {
+          "Lines": {
+            "12": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Slug()": {
+          "Lines": {
+            "14": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Description()": {
+          "Lines": {
+            "16": 5
+          },
+          "Branches": []
+        },
+        "System.DateTime BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Created()": {
+          "Lines": {
+            "18": 5
+          },
+          "Branches": []
+        },
+        "BlogAppCore.Application.Categories.Models.CategoryListDto BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Category()": {
+          "Lines": {
+            "20": 5
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.List`1<BlogAppCore.Application.Tags.Models.TagPreviewDto> BlogAppCore.Application.Posts.Models.PostPreviewDto::get_Tags()": {
+          "Lines": {
+            "22": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Update/UpdatePostCommand.cs": {
+      "BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand": {
+        "System.Int32 BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Id()": {
+          "Lines": {
+            "8": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Title()": {
+          "Lines": {
+            "10": 3
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Description()": {
+          "Lines": {
+            "12": 2
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Content()": {
+          "Lines": {
+            "14": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_CategoryId()": {
+          "Lines": {
+            "16": 2
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Tags()": {
+          "Lines": {
+            "18": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_Published()": {
+          "Lines": {
+            "20": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommand::get_UpdateSlug()": {
+          "Lines": {
+            "22": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Update/UpdatePostCommandHandler.cs": {
+      "BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandHandler": {
+        "System.Void BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)": {
+          "Lines": {
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandHandler/<Handle>d__2": {
+        "System.Void BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandHandler/<Handle>d__2::MoveNext()": {
+          "Lines": {
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2,
+            "25": 2,
+            "26": 1,
+            "27": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "34": 1,
+            "35": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 17,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 22,
+              "Offset": 273,
+              "EndOffset": 343,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 25,
+              "Offset": 388,
+              "EndOffset": 390,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 25,
+              "Offset": 388,
+              "EndOffset": 428,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 32,
+              "Offset": 588,
+              "EndOffset": 657,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Update/UpdatePostCommandValidator.cs": {
+      "BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandValidator": {
+        "System.Void BlogAppCore.Application.Posts.Commands.Update.UpdatePostCommandValidator::.ctor()": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Delete/DeletePostCommand.cs": {
+      "BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommand": {
+        "System.Int32 BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommand::get_Id()": {
+          "Lines": {
+            "7": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Delete/DeletePostCommandHandler.cs": {
+      "BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandHandler": {
+        "System.Void BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)": {
+          "Lines": {
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandHandler/<Handle>d__2": {
+        "System.Void BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandHandler/<Handle>d__2::MoveNext()": {
+          "Lines": {
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2,
+            "25": 1,
+            "26": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 17,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 22,
+              "Offset": 211,
+              "EndOffset": 281,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 24,
+              "Offset": 326,
+              "EndOffset": 328,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 326,
+              "EndOffset": 366,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 30,
+              "Offset": 430,
+              "EndOffset": 499,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Delete/DeletePostCommandValidator.cs": {
+      "BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandValidator": {
+        "System.Void BlogAppCore.Application.Posts.Commands.Delete.DeletePostCommandValidator::.ctor()": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Create/CreatePostCommand.cs": {
+      "BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand": {
+        "System.String BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Title()": {
+          "Lines": {
+            "9": 2
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Description()": {
+          "Lines": {
+            "11": 2
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Content()": {
+          "Lines": {
+            "13": 2
+          },
+          "Branches": []
+        },
+        "System.Int32 BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_CategoryId()": {
+          "Lines": {
+            "15": 2
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<System.Int32> BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Tags()": {
+          "Lines": {
+            "17": 2
+          },
+          "Branches": []
+        },
+        "System.Boolean BlogAppCore.Application.Posts.Commands.Create.CreatePostCommand::get_Published()": {
+          "Lines": {
+            "19": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Create/CreatePostCommandHandler.cs": {
+      "BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandHandler": {
+        "System.Void BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1,
+            "20": 1
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "27": 1,
+            "28": 1,
+            "30": 1,
+            "31": 1
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 156,
+              "EndOffset": 222,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Posts/Commands/Create/CreatePostCommandValidator.cs": {
+      "BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandValidator": {
+        "System.Void BlogAppCore.Application.Posts.Commands.Create.CreatePostCommandValidator::.ctor()": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Infrastructure/RequestLogger.cs": {
+      "BlogAppCore.Application.Infrastructure.RequestLogger`1": {
+        "System.Threading.Tasks.Task BlogAppCore.Application.Infrastructure.RequestLogger`1::Process(TRequest,System.Threading.CancellationToken)": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Application.Infrastructure.RequestLogger`1::.ctor(Microsoft.Extensions.Logging.ILogger`1<TRequest>)": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Infrastructure/RequestPerformanceBehaviour.cs": {
+      "BlogAppCore.Application.Infrastructure.RequestPerformanceBehaviour`2": {
+        "System.Void BlogAppCore.Application.Infrastructure.RequestPerformanceBehaviour`2::.ctor(Microsoft.Extensions.Logging.ILogger`1<TRequest>)": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Infrastructure.RequestPerformanceBehaviour`2/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Infrastructure.RequestPerformanceBehaviour`2/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "24": 0,
+            "26": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "36": 0,
+            "37": 0
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 54,
+              "EndOffset": 56,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 54,
+              "EndOffset": 123,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 205,
+              "EndOffset": 207,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 205,
+              "EndOffset": 312,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Infrastructure/RequestValidationBehaviour.cs": {
+      "BlogAppCore.Application.Infrastructure.RequestValidationBehaviour`2": {
+        "System.Threading.Tasks.Task`1<TResponse> BlogAppCore.Application.Infrastructure.RequestValidationBehaviour`2::Handle(TRequest,System.Threading.CancellationToken,MediatR.RequestHandlerDelegate`1<TResponse>)": {
+          "Lines": {
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 53,
+              "EndOffset": 78,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 89,
+              "EndOffset": 91,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 89,
+              "EndOffset": 114,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 136,
+              "EndOffset": 138,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 136,
+              "EndOffset": 146,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void BlogAppCore.Application.Infrastructure.RequestValidationBehaviour`2::.ctor(System.Collections.Generic.IEnumerable`1<FluentValidation.IValidator`1<TRequest>>)": {
+          "Lines": {
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Infrastructure/AutoMapper/CategoryProfile.cs": {
+      "BlogAppCore.Application.Infrastructure.AutoMapper.CategoryProfile": {
+        "System.Void BlogAppCore.Application.Infrastructure.AutoMapper.CategoryProfile::.ctor()": {
+          "Lines": {
+            "10": 17,
+            "11": 17,
+            "12": 17,
+            "13": 34,
+            "15": 17,
+            "16": 34,
+            "18": 17,
+            "19": 17
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 77,
+              "EndOffset": 79,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 12,
+              "Offset": 77,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 17
+            },
+            {
+              "Line": 15,
+              "Offset": 177,
+              "EndOffset": 179,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 15,
+              "Offset": 177,
+              "EndOffset": 202,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 17
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Infrastructure/AutoMapper/PostProfile.cs": {
+      "BlogAppCore.Application.Infrastructure.AutoMapper.PostProfile": {
+        "System.Void BlogAppCore.Application.Infrastructure.AutoMapper.PostProfile::.ctor()": {
+          "Lines": {
+            "10": 17,
+            "11": 17,
+            "12": 17,
+            "13": 34,
+            "14": 34,
+            "16": 17,
+            "17": 34,
+            "18": 34,
+            "19": 17
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 77,
+              "EndOffset": 79,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 12,
+              "Offset": 77,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 17
+            },
+            {
+              "Line": 12,
+              "Offset": 170,
+              "EndOffset": 172,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 12,
+              "Offset": 170,
+              "EndOffset": 195,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 17
+            },
+            {
+              "Line": 16,
+              "Offset": 270,
+              "EndOffset": 272,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 16,
+              "Offset": 270,
+              "EndOffset": 295,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 17
+            },
+            {
+              "Line": 16,
+              "Offset": 363,
+              "EndOffset": 365,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2
+            },
+            {
+              "Line": 16,
+              "Offset": 363,
+              "EndOffset": 388,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 17
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Infrastructure/AutoMapper/TagProfile.cs": {
+      "BlogAppCore.Application.Infrastructure.AutoMapper.TagProfile": {
+        "System.Void BlogAppCore.Application.Infrastructure.AutoMapper.TagProfile::.ctor()": {
+          "Lines": {
+            "10": 17,
+            "11": 17,
+            "12": 17,
+            "13": 34,
+            "15": 17,
+            "16": 17
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 77,
+              "EndOffset": 79,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 12,
+              "Offset": 77,
+              "EndOffset": 102,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 17
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Exceptions/DeleteFailureException.cs": {
+      "BlogAppCore.Application.Exceptions.DeleteFailureException": {
+        "System.Void BlogAppCore.Application.Exceptions.DeleteFailureException::.ctor(System.String,System.String,System.Object,System.String)": {
+          "Lines": {
+            "9": 1,
+            "10": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Exceptions/NotFoundException.cs": {
+      "BlogAppCore.Application.Exceptions.NotFoundException": {
+        "System.Void BlogAppCore.Application.Exceptions.NotFoundException::.ctor(System.String,System.String,System.Object)": {
+          "Lines": {
+            "10": 27
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Exceptions/ValidationException.cs": {
+      "BlogAppCore.Application.Exceptions.ValidationException": {
+        "System.Collections.Generic.IDictionary`2<System.String,System.String[]> BlogAppCore.Application.Exceptions.ValidationException::get_Failures()": {
+          "Lines": {
+            "34": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Application.Exceptions.ValidationException::.ctor()": {
+          "Lines": {
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.Void BlogAppCore.Application.Exceptions.ValidationException::.ctor(System.Collections.Generic.List`1<FluentValidation.Results.ValidationFailure>)": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 15,
+              "EndOffset": 17,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 20,
+              "Offset": 15,
+              "EndOffset": 40,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 166,
+              "EndOffset": 61,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 104,
+              "EndOffset": 106,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 25,
+              "Offset": 104,
+              "EndOffset": 129,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 23,
+              "Offset": 166,
+              "EndOffset": 168,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Queries/GetCategoryDetail/GetCategoryDetailQuery.cs": {
+      "BlogAppCore.Application.Categories.Queries.GetCategoryDetail.GetCategoryDetailQuery": {
+        "System.Int32 BlogAppCore.Application.Categories.Queries.GetCategoryDetail.GetCategoryDetailQuery::get_Id()": {
+          "Lines": {
+            "8": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Queries/GetCategoryDetail/GetCategoryDetailQueryHandler.cs": {
+      "BlogAppCore.Application.Categories.Queries.GetCategoryDetail.GetCategoryDetailQueryHandler": {
+        "System.Void BlogAppCore.Application.Categories.Queries.GetCategoryDetail.GetCategoryDetailQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Categories.Queries.GetCategoryDetail.GetCategoryDetailQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Categories.Queries.GetCategoryDetail.GetCategoryDetailQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 1,
+            "35": 1,
+            "38": 1,
+            "39": 1
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 238,
+              "EndOffset": 308,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 33,
+              "Offset": 353,
+              "EndOffset": 355,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 33,
+              "Offset": 353,
+              "EndOffset": 393,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Queries/GetCategoriesList/GetCategoriesListQueryHandler.cs": {
+      "BlogAppCore.Application.Categories.Queries.GetCategoriesList.GetCategoriesListQueryHandler": {
+        "System.Void BlogAppCore.Application.Categories.Queries.GetCategoriesList.GetCategoriesListQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Categories.Queries.GetCategoriesList.GetCategoriesListQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Categories.Queries.GetCategoriesList.GetCategoriesListQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 149,
+              "EndOffset": 216,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Queries/GetAllCategories/GetAllCategoriesQueryHandler.cs": {
+      "BlogAppCore.Application.Categories.Queries.GetAllCategories.GetAllCategoriesQueryHandler": {
+        "System.Void BlogAppCore.Application.Categories.Queries.GetAllCategories.GetAllCategoriesQueryHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext,AutoMapper.IMapper)": {
+          "Lines": {
+            "19": 1,
+            "20": 1,
+            "21": 1,
+            "22": 1,
+            "23": 1
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Categories.Queries.GetAllCategories.GetAllCategoriesQueryHandler/<Handle>d__3": {
+        "System.Void BlogAppCore.Application.Categories.Queries.GetAllCategories.GetAllCategoriesQueryHandler/<Handle>d__3::MoveNext()": {
+          "Lines": {
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 149,
+              "EndOffset": 216,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Models/CategoryDetailDto.cs": {
+      "BlogAppCore.Application.Categories.Models.CategoryDetailDto": {
+        "System.Int32 BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Id()": {
+          "Lines": {
+            "7": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Name()": {
+          "Lines": {
+            "9": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Slug()": {
+          "Lines": {
+            "11": 5
+          },
+          "Branches": []
+        },
+        "System.DateTime BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_Created()": {
+          "Lines": {
+            "13": 4
+          },
+          "Branches": []
+        },
+        "System.Int32 BlogAppCore.Application.Categories.Models.CategoryDetailDto::get_TotalPosts()": {
+          "Lines": {
+            "15": 5
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Models/CategoryListDto.cs": {
+      "BlogAppCore.Application.Categories.Models.CategoryListDto": {
+        "System.String BlogAppCore.Application.Categories.Models.CategoryListDto::get_Name()": {
+          "Lines": {
+            "5": 8
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Categories.Models.CategoryListDto::get_Slug()": {
+          "Lines": {
+            "7": 8
+          },
+          "Branches": []
+        },
+        "System.Int32 BlogAppCore.Application.Categories.Models.CategoryListDto::get_TotalPosts()": {
+          "Lines": {
+            "9": 8
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Models/CategoryPreviewDto.cs": {
+      "BlogAppCore.Application.Categories.Models.CategoryPreviewDto": {
+        "System.String BlogAppCore.Application.Categories.Models.CategoryPreviewDto::get_Name()": {
+          "Lines": {
+            "5": 2
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Categories.Models.CategoryPreviewDto::get_Slug()": {
+          "Lines": {
+            "7": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Update/UpdateCategoryCommand.cs": {
+      "BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommand": {
+        "System.Int32 BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommand::get_Id()": {
+          "Lines": {
+            "7": 5
+          },
+          "Branches": []
+        },
+        "System.String BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommand::get_Name()": {
+          "Lines": {
+            "9": 3
+          },
+          "Branches": []
+        },
+        "System.Boolean BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommand::get_UpdateSlug()": {
+          "Lines": {
+            "11": 3
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Update/UpdateCategoryCommandHandler.cs": {
+      "BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommandHandler": {
+        "System.Void BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)": {
+          "Lines": {
+            "15": 2,
+            "16": 2,
+            "17": 2,
+            "18": 2
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommandHandler/<Handle>d__2": {
+        "System.Void BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommandHandler/<Handle>d__2::MoveNext()": {
+          "Lines": {
+            "21": 2,
+            "22": 2,
+            "23": 2,
+            "24": 2,
+            "25": 1,
+            "26": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 17,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 22,
+              "Offset": 211,
+              "EndOffset": 281,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 24,
+              "Offset": 326,
+              "EndOffset": 328,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 24,
+              "Offset": 326,
+              "EndOffset": 366,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 30,
+              "Offset": 446,
+              "EndOffset": 515,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Update/UpdateCategoryCommandValidator.cs": {
+      "BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommandValidator": {
+        "System.Void BlogAppCore.Application.Categories.Commands.Update.UpdateCategoryCommandValidator::.ctor()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Delete/DeleteCategoryCommand.cs": {
+      "BlogAppCore.Application.Categories.Commands.Delete.DeleteCategoryCommand": {
+        "System.Int32 BlogAppCore.Application.Categories.Commands.Delete.DeleteCategoryCommand::get_Id()": {
+          "Lines": {
+            "7": 7
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Delete/DeleteCategoryCommandHandler.cs": {
+      "BlogAppCore.Application.Categories.Commands.Delete.DeleteCategoryCommandHandler": {
+        "System.Void BlogAppCore.Application.Categories.Commands.Delete.DeleteCategoryCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)": {
+          "Lines": {
+            "16": 3,
+            "17": 3,
+            "18": 3,
+            "19": 3
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Categories.Commands.Delete.DeleteCategoryCommandHandler/<Handle>d__2": {
+        "System.Void BlogAppCore.Application.Categories.Commands.Delete.DeleteCategoryCommandHandler/<Handle>d__2::MoveNext()": {
+          "Lines": {
+            "22": 3,
+            "23": 3,
+            "24": 3,
+            "25": 3,
+            "26": 1,
+            "27": 1,
+            "30": 2,
+            "31": 2,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "37": 1,
+            "38": 1,
+            "40": 1,
+            "41": 1
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 17,
+              "EndOffset": 24,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 23,
+              "Offset": 211,
+              "EndOffset": 281,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            },
+            {
+              "Line": 25,
+              "Offset": 336,
+              "EndOffset": 338,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 25,
+              "Offset": 336,
+              "EndOffset": 376,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 31,
+              "Offset": 531,
+              "EndOffset": 533,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 31,
+              "Offset": 531,
+              "EndOffset": 571,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 38,
+              "Offset": 640,
+              "EndOffset": 709,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Delete/DeleteCategoryCommandValidator.cs": {
+      "BlogAppCore.Application.Categories.Commands.Delete.DeleteCategoryCommandValidator": {
+        "System.Void BlogAppCore.Application.Categories.Commands.Delete.DeleteCategoryCommandValidator::.ctor()": {
+          "Lines": {
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Create/CreateCategoryCommand.cs": {
+      "BlogAppCore.Application.Categories.Commands.Create.CreateCategoryCommand": {
+        "System.String BlogAppCore.Application.Categories.Commands.Create.CreateCategoryCommand::get_Name()": {
+          "Lines": {
+            "7": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Create/CreateCategoryCommandHandler.cs": {
+      "BlogAppCore.Application.Categories.Commands.Create.CreateCategoryCommandHandler": {
+        "System.Void BlogAppCore.Application.Categories.Commands.Create.CreateCategoryCommandHandler::.ctor(BlogAppCore.Application.Interfaces.IBlogAppCoreDbContext)": {
+          "Lines": {
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1
+          },
+          "Branches": []
+        }
+      },
+      "BlogAppCore.Application.Categories.Commands.Create.CreateCategoryCommandHandler/<Handle>d__2": {
+        "System.Void BlogAppCore.Application.Categories.Commands.Create.CreateCategoryCommandHandler/<Handle>d__2::MoveNext()": {
+          "Lines": {
+            "19": 1,
+            "20": 1,
+            "22": 1,
+            "23": 1,
+            "25": 1,
+            "26": 1
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 98,
+              "EndOffset": 164,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "/home/rousage/Projects/BlogAppCore/src/BlogAppCore.Application/Categories/Commands/Create/CreateCategoryCommandValidator.cs": {
+      "BlogAppCore.Application.Categories.Commands.Create.CreateCategoryCommandValidator": {
+        "System.Void BlogAppCore.Application.Categories.Commands.Create.CreateCategoryCommandValidator::.ctor()": {
+          "Lines": {
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

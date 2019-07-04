@@ -9,7 +9,7 @@ using BlogAppCore.Application.Tags.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlogAppCore.Application.Tags.Commands.Queries.GetAllTags
+namespace BlogAppCore.Application.Tags.Queries.GetAllTags
 {
     public class GetAllTagsQueryHandler : IRequestHandler<GetAllTagsQuery, List<TagDetailDto>>
     {
