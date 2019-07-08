@@ -43,6 +43,7 @@
             "args": [
                 "test",
                 "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=\"json,lcov\"",
                 "/p:CoverletOutput=\"../coverage/\"",
                 "/p:MergeWith=../coverage/coverage.json",
                 "${workspaceFolder}/test/BlogAppCore.Domain.Tests/BlogAppCore.Domain.Tests.csproj",
@@ -64,6 +65,7 @@
                 "--filter",
                 "Category=Commands",
                 "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=\"json,lcov\"",
                 "/p:CoverletOutput=\"../coverage/\"",
                 "/p:MergeWith=\"../coverage/coverage.json\"",
                 "${workspaceFolder}/test/BlogAppCore.Application.Tests/BlogAppCore.Application.Tests.csproj"
@@ -80,7 +82,7 @@
                 "--filter",
                 "Category=Queries",
                 "/p:CollectCoverage=true",
-                "/p:CoverletOutputFormat=\"json\"",
+                "/p:CoverletOutputFormat=\"json,lcov\"",
                 "/p:CoverletOutput=\"../coverage/\"",
                 "${workspaceFolder}/test/BlogAppCore.Application.Tests/BlogAppCore.Application.Tests.csproj"
             ],

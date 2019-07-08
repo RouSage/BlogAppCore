@@ -2836,21 +2836,22 @@
       "BlogAppCore.Application.Exceptions.ValidationException": {
         "System.Collections.Generic.IDictionary`2<System.String,System.String[]> BlogAppCore.Application.Exceptions.ValidationException::get_Failures()": {
           "Lines": {
-            "34": 0
+            "33": 0
           },
           "Branches": []
         },
         "System.Void BlogAppCore.Application.Exceptions.ValidationException::.ctor()": {
           "Lines": {
+            "11": 0,
             "12": 0,
             "13": 0,
-            "14": 0,
-            "15": 0
+            "14": 0
           },
           "Branches": []
         },
         "System.Void BlogAppCore.Application.Exceptions.ValidationException::.ctor(System.Collections.Generic.List`1<FluentValidation.Results.ValidationFailure>)": {
           "Lines": {
+            "17": 0,
             "18": 0,
             "19": 0,
             "20": 0,
@@ -2861,14 +2862,13 @@
             "25": 0,
             "26": 0,
             "27": 0,
-            "28": 0,
+            "29": 0,
             "30": 0,
-            "31": 0,
-            "32": 0
+            "31": 0
           },
           "Branches": [
             {
-              "Line": 20,
+              "Line": 19,
               "Offset": 15,
               "EndOffset": 17,
               "Path": 0,
@@ -2876,7 +2876,7 @@
               "Hits": 0
             },
             {
-              "Line": 20,
+              "Line": 19,
               "Offset": 15,
               "EndOffset": 40,
               "Path": 1,
@@ -2884,7 +2884,7 @@
               "Hits": 0
             },
             {
-              "Line": 23,
+              "Line": 22,
               "Offset": 166,
               "EndOffset": 61,
               "Path": 1,
@@ -2892,7 +2892,7 @@
               "Hits": 0
             },
             {
-              "Line": 25,
+              "Line": 24,
               "Offset": 104,
               "EndOffset": 106,
               "Path": 0,
@@ -2900,7 +2900,7 @@
               "Hits": 0
             },
             {
-              "Line": 25,
+              "Line": 24,
               "Offset": 104,
               "EndOffset": 129,
               "Path": 1,
@@ -2908,7 +2908,7 @@
               "Hits": 0
             },
             {
-              "Line": 23,
+              "Line": 22,
               "Offset": 166,
               "EndOffset": 168,
               "Path": 0,
