@@ -2,14 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BlogAppCore.Application.Exceptions
 {
     public class ValidationException : Exception
     {
         public ValidationException()
-            :base("One or more validation failures have occured.")
+            : base("One or more validation failures have occured.")
         {
             Failures = new Dictionary<string, string[]>();
         }

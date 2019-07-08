@@ -16,6 +16,7 @@ using BlogAppCore.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using FluentValidation.AspNetCore;
 using BlogAppCore.Application.Posts.Commands.Create;
+using BlogAppCore.Extensions;
 
 namespace BlogAppCore
 {
@@ -66,7 +67,8 @@ namespace BlogAppCore
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                // app.UseExceptionHandler("/Error");
+                app.UseCustomExceptionMiddleware();
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
