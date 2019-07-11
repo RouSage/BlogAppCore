@@ -20,7 +20,7 @@ namespace BlogAppCore.Controllers
             return await Mediator.Send(new GetAllCategoriesQuery());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
         public async Task<ActionResult<CategoryDetailDto>> Get(int id)
         {
             return await Mediator.Send(new GetCategoryDetailQuery { Id = id });

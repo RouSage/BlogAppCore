@@ -26,7 +26,7 @@ namespace BlogAppCore.Controllers
             return await Mediator.Send(new GetTagListQuery());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
         public async Task<ActionResult<TagDetailDto>> Get(int id)
         {
             return await Mediator.Send(new GetTagDetailQuery { Id = id });
