@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export default class FetchCategory extends Component {
-  static displayName = FetchCategory.name;
+export default class CategoryTable extends Component {
+  static displayName = CategoryTable.name;
 
   constructor(props) {
     super(props);
@@ -76,6 +76,6 @@ export default class FetchCategory extends Component {
   }
 }
 
-FetchCategory.propTypes = {
+CategoryTable.propTypes = {
   history: PropTypes.object,
 };

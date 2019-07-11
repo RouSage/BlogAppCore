@@ -45,7 +45,7 @@ export default class EditCategory extends Component {
     fetch('api/Categories/Update', {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ id, name, updateSlug }),
     }).then(() => {
@@ -65,6 +65,7 @@ export default class EditCategory extends Component {
     const {
       id, name, slug, updateSlug,
     } = this.state;
+
     return (
       <form onSubmit={event => this.handleSave(event)}>
         <input type="hidden" name="id" value={id} />

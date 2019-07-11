@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Sidebar from './sidebar';
 
 export default class Home extends PureComponent {
   static displayName = Home.name;
@@ -82,6 +83,7 @@ or
           <code>npm install</code>
 .
         </p>
+        <Sidebar />
       </div>
     );
   }
