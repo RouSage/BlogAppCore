@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router';
-import Layout from './components/Layout';
-import Home from './components/Home';
-import { CreateCategory, EditCategory, CategoryTable } from './components/categories';
-import { TagTable, CreateTag, EditTag } from './components/tags';
+import Layout from '../Layout';
+import Home from '../Home';
+import { CreateCategory, EditCategory, CategoryTable } from '../categories';
+import { TagTable, CreateTag, EditTag } from '../tags';
 
 const App = () => (
   <Layout>
