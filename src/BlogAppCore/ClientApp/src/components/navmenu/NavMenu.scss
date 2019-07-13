@@ -1,0 +1,32 @@
+@import '../../assets/colors';
+
+.nav-menu {
+  // padding: 1rem;
+  font-size: 1.3em;
+  font-family: 'Montserrat', sans-serif;
+  background-color: $primary-color;
+}
+.nav-menu__list {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.nav-menu__item_active {
+  background-color: $primary-color_hover;
+}
+.nav-menu__item:not(.nam-menu__item_active):hover {
+  background-color: $primary-color_hover;
+}
+.nav-menu__item a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+}

@@ -1,0 +1,5 @@
+$primary-color: purple;
+$primary-color_hover: lighten(
+  $color: $primary-color,
+  $amount: 5
+);

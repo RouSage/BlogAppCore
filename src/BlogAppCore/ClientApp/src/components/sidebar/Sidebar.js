@@ -1,12 +1,10 @@
 import React from 'react';
-import { CategoryList } from '../categories';
-import { TagList } from '../tags';
+import PropTypes from 'prop-types';
 
-const Sidebar = () => (
-  <div className="sidebar">
-    <CategoryList />
-    <TagList />
-  </div>
-);
+const Sidebar = ({ children }) => <div className="sidebar">{children}</div>;
+
+Sidebar.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Sidebar;

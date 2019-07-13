@@ -18,17 +18,3 @@ const App = () => (
 );
 
 export default App;
-// export default class App extends Component {
-//   static displayName = App.name;
-
-//   render() {
-//     return (
-//       <Layout>
-//         <Route exact path="/" component={Home} />
-//         <Route path="/categories" component={FetchCategory} />
-//         <Route path="/create-category" component={CreateCategory} />
-//         <Route path="/edit-category/:id" component={EditCategory} />
-//       </Layout>
-//     );
-//   }
-// }
