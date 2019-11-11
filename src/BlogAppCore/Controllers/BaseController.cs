@@ -4,8 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BlogAppCore.Controllers
 {
-    [ApiController]
     [Route("api/[controller]/[action]")]
+    [ApiController]
     public class BaseController : Controller
     {
         private IMediator _mediator;

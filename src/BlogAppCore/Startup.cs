@@ -36,8 +36,7 @@ namespace BlogAppCore
         {
             if (env.IsDevelopment())
             {
-                //app.UseDatabaseErrorPage();
-                app.UseDeveloperExceptionPage();
+                app.UseDatabaseErrorPage();
             }
             else
             {

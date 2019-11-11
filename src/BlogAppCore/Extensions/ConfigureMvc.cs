@@ -21,7 +21,7 @@ namespace BlogAppCore.Extensions
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
             });
 
             return app;
