@@ -1,7 +1,6 @@
 using BlogAppCore.Application.Posts.Commands.Create;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BlogAppCore.Extensions
@@ -10,8 +9,7 @@ namespace BlogAppCore.Extensions
     {
         public static IServiceCollection ConfigureMvc(this IServiceCollection services)
         {
-            services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            services.AddControllers()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreatePostCommandValidator>());
 
             return services;
@@ -19,11 +17,11 @@ namespace BlogAppCore.Extensions
 
         public static IApplicationBuilder ConfigureRouting(this IApplicationBuilder app)
         {
-            app.UseMvc(routes =>
+            app.UseRouting();
+            app.UseAuthorization();
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
             });
 
             return app;

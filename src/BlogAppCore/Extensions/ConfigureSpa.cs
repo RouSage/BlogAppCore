@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,7 +19,7 @@ namespace BlogAppCore.Extensions
             return services;
         }
 
-        public static IApplicationBuilder ConfigureSpa(this IApplicationBuilder app, IHostingEnvironment env)
+        public static IApplicationBuilder ConfigureSpa(this IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSpa(spa =>
             {
