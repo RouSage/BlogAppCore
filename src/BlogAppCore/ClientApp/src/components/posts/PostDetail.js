@@ -63,3 +63,11 @@ export default class PostDetail extends Component {
     );
   }
 }
+
+PostDetail.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+    }),
+  }),
+};

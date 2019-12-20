@@ -12,7 +12,7 @@ export default class CategoryList extends Component {
 
   componentWillMount() {
     fetch('api/Categories/GetList', { method: 'GET' })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((data) => {
         this.setState({ categories: data });
       });
@@ -23,7 +23,7 @@ export default class CategoryList extends Component {
 
     return (
       <ul className="categories">
-        {categories.map(category => (
+        {categories.map((category) => (
           <li key={category.slug}>
             <Link to={`/posts/${category.slug}`}>
               {category.name}
