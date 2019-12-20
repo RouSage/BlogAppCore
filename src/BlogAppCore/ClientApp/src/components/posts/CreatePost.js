@@ -20,8 +20,8 @@ export default class CreatePost extends Component {
 
   componentWillMount() {
     Promise.all([
-      fetch('api/Categories/GetAll', { method: 'GET' }).then(response => response.json()),
-      fetch('api/Tags/GetAll', { method: 'GET' }).then(response => response.json()),
+      fetch('api/Categories/GetAll', { method: 'GET' }).then((response) => response.json()),
+      fetch('api/Tags/GetAll', { method: 'GET' }).then((response) => response.json()),
     ]).then((response) => {
       const [categories, tags] = response;
 
@@ -49,10 +49,12 @@ export default class CreatePost extends Component {
         tags,
         published,
       }),
-    }).then(() => {
-      const { history } = this.props;
-      history.push('/posts');
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const { history } = this.props;
+        history.push(`/post/${data.slug}`);
+      });
   }
 
   handleCancel(event) {
@@ -71,6 +73,12 @@ export default class CreatePost extends Component {
 
     this.setState({
       [name]: value,
+    });
+  }
+
+  handleCategoryChange(event) {
+    this.setState({
+      categoryId: parseInt(event.target.value),
     });
   }
 
@@ -99,7 +107,7 @@ export default class CreatePost extends Component {
     } = this.state;
 
     return (
-      <form onSubmit={event => this.handleSave(event)} className="form">
+      <form onSubmit={(event) => this.handleSave(event)} className="form">
         <label htmlFor="title" className="form__label">
           Title
           <input
@@ -107,7 +115,7 @@ export default class CreatePost extends Component {
             name="title"
             id="title"
             value={title}
-            onChange={event => this.handleInputChange(event)}
+            onChange={(event) => this.handleInputChange(event)}
           />
         </label>
         <label htmlFor="description" className="form__label">
@@ -116,7 +124,7 @@ export default class CreatePost extends Component {
             name="description"
             id="description"
             value={description}
-            onChange={event => this.handleInputChange(event)}
+            onChange={(event) => this.handleInputChange(event)}
           />
         </label>
         <label htmlFor="content" className="form__label">
@@ -125,7 +133,7 @@ export default class CreatePost extends Component {
             name="content"
             id="content"
             value={content}
-            onChange={event => this.handleInputChange(event)}
+            onChange={(event) => this.handleInputChange(event)}
           />
         </label>
         <label htmlFor="categoryId" className="form__label">
@@ -134,12 +142,12 @@ export default class CreatePost extends Component {
             name="categoryId"
             id="categoryId"
             value={categoryId}
-            onChange={event => this.handleInputChange(event)}
+            onChange={(event) => this.handleCategoryChange(event)}
           >
             <option key="0" value="0">
               Select Category
             </option>
-            {categoriesSelect.map(category => (
+            {categoriesSelect.map((category) => (
               <option key={category.id} value={category.id}>
                 {category.name}
               </option>
@@ -153,9 +161,9 @@ export default class CreatePost extends Component {
             id="tags"
             multiple
             value={tags}
-            onChange={event => this.handleTagsChange(event)}
+            onChange={(event) => this.handleTagsChange(event)}
           >
-            {tagsSelect.map(tag => (
+            {tagsSelect.map((tag) => (
               <option key={tag.id} value={tag.id}>
                 {tag.name}
               </option>
@@ -169,11 +177,11 @@ export default class CreatePost extends Component {
             name="published"
             id="published"
             checked={published}
-            onChange={event => this.handleInputChange(event)}
+            onChange={(event) => this.handleInputChange(event)}
           />
         </label>
         <div className="form-group">
-          <button type="button" className="button" onClick={event => this.handleCancel(event)}>
+          <button type="button" className="button" onClick={(event) => this.handleCancel(event)}>
             Cancel
           </button>
           <input type="submit" className="button button_primary" value="Save" />
