@@ -13,13 +13,13 @@ const App = () => (
     <Route exact path="/" component={Home} />
     <Route path="/categories" component={CategoryTable} />
     <Route path="/category/new" component={CreateCategory} />
-    <Route path="/category/edit/:id" component={EditCategory} />
+    <Route path="/edit-category/:id" component={EditCategory} />
     <Route path="/tags" component={TagTable} />
     <Route path="/tag/new" component={CreateTag} />
-    <Route path="/tag/edit/:id" component={EditTag} />
+    <Route path="/edit-tag/:id" component={EditTag} />
     <Route path="/post/new" component={CreatePost} />
+    <Route path="/edit-post/:slug" component={EditPost} />
     <Route path="/post/:slug" component={PostDetail} />
-    <Route path="/post/edit/:slug" component={EditPost} />
     <Route path="/archive/category/:categorySlug" component={GetByCategory} />
     <Route path="/archive/tag/:tagSlug" component={GetByTag} />
   </Layout>

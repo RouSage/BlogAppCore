@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class EditCategory extends Component {
-  static displayName = EditCategory.name;
+export default class EditPost extends Component {
+  static displayName = EditPost.name;
 
   constructor(props) {
     super(props);
+
     this.state = {
       id: 0,
       title: '',
@@ -23,7 +24,7 @@ export default class EditCategory extends Component {
 
   componentWillMount() {
     const { match } = this.props;
-    const postSlug = String(match.params.slug);
+    const postSlug = match.params.slug;
 
     Promise.all([
       fetch(`api/Posts/GetBySlug/${postSlug}`, { method: 'Get' }).then((response) => response.json()),
@@ -38,7 +39,7 @@ export default class EditCategory extends Component {
         slug: postSlug,
         description: post.description,
         content: post.content,
-        categoryId: post.categoryId,
+        categoryId: post.category.id,
         categoriesSelect: categories,
         tagsSelect: tags,
       });
@@ -129,6 +130,7 @@ export default class EditCategory extends Component {
       categoryId,
       tags,
       published,
+      updateSlug,
       categoriesSelect,
       tagsSelect,
     } = this.state;
@@ -208,6 +210,16 @@ export default class EditCategory extends Component {
             onChange={(event) => this.handleInputChange(event)}
           />
         </label>
+        <label htmlFor="updateSlug" className="form__label form__label_checkbox">
+          Update Slug
+          <input
+            type="checkbox"
+            name="updateSlug"
+            id="updateSlug"
+            checked={updateSlug}
+            onChange={(event) => this.handleInputChange(event)}
+          />
+        </label>
         <div className="form-group">
           <button type="button" className="button" onClick={(event) => this.handleCancel(event)}>
             Cancel
@@ -230,7 +242,7 @@ export default class EditCategory extends Component {
   }
 }
 
-EditCategory.propTypes = {
+EditPost.propTypes = {
   history: PropTypes.object,
   match: PropTypes.shape({
     params: PropTypes.shape({

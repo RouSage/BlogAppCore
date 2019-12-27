@@ -7,20 +7,19 @@ export default class GetByCategory extends Component {
 
   constructor(props) {
     super(props);
-    this.setState({
-      posts: [],
-    });
+
+    this.state = { posts: [] };
   }
 
   componentWillMount() {
     const { match } = this.props;
-    const categorySlug = String(match.params.categorySlug);
+    const { categorySlug } = match.params;
 
     fetch(`api/Posts/GetByCategory/${categorySlug}`, { method: 'GET' })
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-          posts: Array(data),
+          posts: data,
         });
       });
   }
@@ -28,7 +27,7 @@ export default class GetByCategory extends Component {
   render() {
     const { posts } = this.state;
 
-    return <PostList posts={posts} />;
+    return <div className="postsList">{posts.length > 0 && <PostList posts={posts} />}</div>;
   }
 }
 
@@ -38,4 +37,5 @@ GetByCategory.propTypes = {
       categorySlug: PropTypes.string.isRequired,
     }),
   }),
+  posts: PropTypes.arrayOf(PropTypes.object),
 };
