@@ -25,7 +25,7 @@ export default class CategoryList extends Component {
       <ul className="categories">
         {categories.map((category) => (
           <li key={category.slug}>
-            <Link to={`/posts/${category.slug}`}>
+            <Link to={`/archive/category/${category.slug}`}>
               {category.name}
               {' '}
               <span className="categories__count">{category.totalPosts}</span>

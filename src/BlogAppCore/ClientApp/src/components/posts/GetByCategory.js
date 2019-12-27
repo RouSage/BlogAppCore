@@ -20,7 +20,7 @@ export default class GetByCategory extends Component {
       .then((response) => response.json())
       .then((data) => {
         this.setState({
-          posts: data,
+          posts: Array(data),
         });
       });
   }

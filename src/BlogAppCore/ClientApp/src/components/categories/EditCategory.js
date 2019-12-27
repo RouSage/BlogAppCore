@@ -19,7 +19,7 @@ export default class EditCategory extends Component {
     const categoryId = Number(match.params.id);
 
     fetch(`api/Categories/Get?id=${categoryId}`, { method: 'GET' })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((data) => {
         this.setState({
           id: data.id,
@@ -67,7 +67,7 @@ export default class EditCategory extends Component {
     } = this.state;
 
     return (
-      <form onSubmit={event => this.handleSave(event)}>
+      <form onSubmit={(event) => this.handleSave(event)}>
         <input type="hidden" name="id" value={id} />
         <div className="form-group">
           <label htmlFor="categoryName" className="col-form-label">
@@ -78,7 +78,7 @@ export default class EditCategory extends Component {
               name="name"
               id="categoryName"
               value={name}
-              onChange={event => this.handleNameChange(event)}
+              onChange={(event) => this.handleNameChange(event)}
             />
             <small>
               Current Slug:
@@ -95,7 +95,7 @@ export default class EditCategory extends Component {
               name="updateSlug"
               id="categoryUpdateSlug"
               checked={updateSlug}
-              onChange={event => this.handleUpdateSlugChange(event)}
+              onChange={(event) => this.handleUpdateSlugChange(event)}
             />
           </label>
         </div>
@@ -103,7 +103,7 @@ export default class EditCategory extends Component {
           <button
             type="button"
             className="btn btn-danger"
-            onClick={event => this.handleCancel(event)}
+            onClick={(event) => this.handleCancel(event)}
           >
             Cancel
           </button>

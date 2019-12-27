@@ -12,7 +12,7 @@ export default class TagList extends Component {
 
   componentWillMount() {
     fetch('api/Tags/GetList', { method: 'GET' })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((data) => {
         this.setState({ tags: data });
       });
@@ -23,9 +23,9 @@ export default class TagList extends Component {
 
     return (
       <div className="tags">
-        {tags.map(tag => (
+        {tags.map((tag) => (
           <span key={tag.slug}>
-            <Link to={`/posts/${tag.slug}`}>{tag.name}</Link>
+            <Link to={`/archive/tag/${tag.slug}`}>{tag.name}</Link>
             {' '}
           </span>
         ))}
