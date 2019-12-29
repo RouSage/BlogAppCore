@@ -6,14 +6,22 @@ import { CategoryList } from './categories';
 import { TagList } from './tags';
 
 const Layout = ({ children }) => (
-  <div className="container">
-    <NavMenu />
-    {children}
-    <Sidebar>
-      <CategoryList />
-      <TagList />
-    </Sidebar>
-  </div>
+  <>
+    <header className="header">
+      <NavMenu />
+    </header>
+    <div className="container">
+      <div className="main-content">
+        <div className="content">{children}</div>
+        <aside className="sidebar-container">
+          <Sidebar>
+            <CategoryList />
+            <TagList />
+          </Sidebar>
+        </aside>
+      </div>
+    </div>
+  </>
 );
 
 Layout.propTypes = {

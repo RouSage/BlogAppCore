@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import './PostDetail.scss';
 
 export default class PostDetail extends Component {
   static displayName = PostDetail.name;
@@ -48,17 +50,34 @@ export default class PostDetail extends Component {
 
     return (
       <div className="post">
-        <h1>{title}</h1>
-        <h4>{category.name}</h4>
-        <span>{category.slug}</span>
-        <span>{created}</span>
-        <p>{description}</p>
-        <p>{content}</p>
-        <ul>
-          {tags.map((tag) => (
-            <li key={tag.slug}>{tag.name}</li>
+        <div className="post-title">{title}</div>
+        <div className="post-meta">
+          <span>
+            <Link to={`/archive/category/${category.slug}`}>
+              <small>{category.name}</small>
+            </Link>
+          </span>
+          &bull;
+          <span>
+            <small>{created}</small>
+          </span>
+        </div>
+        <hr />
+        <div className="post-content">
+          <p>{description}</p>
+          <p>{content}</p>
+        </div>
+        {tags.length > 0
+          && tags.map((tag) => (
+            <span key={tag.slug}>
+              <Link to={`/archive/tag/${tag.slug}`}>
+                <small>
+                  {tag.name}
+                  {', '}
+                </small>
+              </Link>
+            </span>
           ))}
-        </ul>
       </div>
     );
   }

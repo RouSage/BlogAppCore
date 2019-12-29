@@ -1,0 +1,36 @@
+@import '../../assets/colors';
+
+.post {
+  padding-top: 20px;
+}
+.post .post-title {
+  font-size: 2em;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+
+.post .post-meta {
+  display: flex;
+  color: gray;
+  padding-bottom: 5px;
+}
+.post-meta span {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.post-meta span:first-child {
+  margin-left: 0;
+}
+.post-meta a {
+  color: $primary-color;
+}
+.post-meta a:hover {
+  color: $primary-color_hover;
+}
+
+.post .post-content {
+  font-size: 1em;
+  text-indent: 5%;
+  padding: 10px;
+  padding-top: 0;
+}
