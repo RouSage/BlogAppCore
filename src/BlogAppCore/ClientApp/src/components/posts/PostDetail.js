@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './PostDetail.scss';
+import './Posts.scss';
 
 export default class PostDetail extends Component {
   static displayName = PostDetail.name;

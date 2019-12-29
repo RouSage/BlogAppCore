@@ -37,5 +37,4 @@ GetByCategory.propTypes = {
       categorySlug: PropTypes.string.isRequired,
     }),
   }),
-  posts: PropTypes.arrayOf(PropTypes.object),
 };

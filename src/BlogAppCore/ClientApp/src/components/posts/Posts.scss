@@ -8,6 +8,12 @@
   font-weight: 500;
   padding-bottom: 5px;
 }
+.post-title a {
+  color: black;
+}
+.post-title a:hover {
+  color: $primary-color_hover;
+}
 
 .post .post-meta {
   display: flex;
@@ -33,4 +39,21 @@
   text-indent: 5%;
   padding: 10px;
   padding-top: 0;
+}
+
+.posts-list {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.posts-list .posts-list-item {
+  padding: 0 10px 0 10px;
+}
+
+.posts-list-item .posts-list-item__divider {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
