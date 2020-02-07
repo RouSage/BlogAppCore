@@ -24,7 +24,7 @@ const PostList = ({ posts }) => (
               <small>{post.created}</small>
             </span>
           </div>
-          <hr />
+          <hr className="divider" />
           <div className="post-content">
             <p>{post.description}</p>
           </div>
@@ -40,7 +40,7 @@ const PostList = ({ posts }) => (
               </span>
             ))}
         </div>
-        <hr className="posts-list-item__divider" />
+        <hr className="divider" />
       </li>
     ))}
   </ul>

@@ -36,6 +36,20 @@ h4 {
   width: 1170px;
 }
 
+.main-title {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.divider {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 10px 0;
+}
+
 .container {
   padding-right: 15px;
   padding-left: 15px;
@@ -70,4 +84,63 @@ h4 {
   -webkit-box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.75);
+}
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.form .form-group {
+  margin-bottom: 15px;
+}
+.form .form-group .form-control {
+  display: block;
+  margin-top: 5px;
+}
+.form-group button,
+.button {
+  margin-right: 5px;
+}
+.form__label {
+  font-size: 1em;
+}
+.form__label_checkbox .form-checkbox {
+  margin-left: 5px;
+}
+.form-control {
+  font-size: 1em;
+}
+
+.button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 10%;
+  padding: 5px 10px;
+  font-size: 1em;
+  transition: color 0.15s;
+}
+.button:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.button-primary {
+  color: #ffffff;
+  background-color: purple;
+  border-color: purple;
+}
+.button-primary:hover {
+  background-color: #9a009a;
+  border-color: #9a009a;
+}
+.button-danger {
+  color: #ffffff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+.button-danger:hover {
+  background-color: #dc3546e7;
+  border-color: #dc3546e7;
 }

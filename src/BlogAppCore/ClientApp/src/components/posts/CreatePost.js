@@ -78,7 +78,7 @@ export default class CreatePost extends Component {
 
   handleCategoryChange(event) {
     this.setState({
-      categoryId: parseInt(event.target.value),
+      categoryId: parseInt(event.target.value, 10),
     });
   }
 
@@ -108,83 +108,109 @@ export default class CreatePost extends Component {
 
     return (
       <form onSubmit={(event) => this.handleSave(event)} className="form">
-        <label htmlFor="title" className="form__label">
-          Title
-          <input
-            type="text"
-            name="title"
-            id="title"
-            value={title}
-            onChange={(event) => this.handleInputChange(event)}
-          />
-        </label>
-        <label htmlFor="description" className="form__label">
-          Description
-          <textarea
-            name="description"
-            id="description"
-            value={description}
-            onChange={(event) => this.handleInputChange(event)}
-          />
-        </label>
-        <label htmlFor="content" className="form__label">
-          Content
-          <textarea
-            name="content"
-            id="content"
-            value={content}
-            onChange={(event) => this.handleInputChange(event)}
-          />
-        </label>
-        <label htmlFor="categoryId" className="form__label">
-          Category
-          <select
-            name="categoryId"
-            id="categoryId"
-            value={categoryId}
-            onChange={(event) => this.handleCategoryChange(event)}
-          >
-            <option key="0" value="0">
-              Select Category
-            </option>
-            {categoriesSelect.map((category) => (
-              <option key={category.id} value={category.id}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label htmlFor="tags" className="form__label">
-          Tags
-          <select
-            name="tags"
-            id="tags"
-            multiple
-            value={tags}
-            onChange={(event) => this.handleTagsChange(event)}
-          >
-            {tagsSelect.map((tag) => (
-              <option key={tag.id} value={tag.id}>
-                {tag.name}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label htmlFor="published" className="form__label form__label_checkbox">
-          Published
-          <input
-            type="checkbox"
-            name="published"
-            id="published"
-            checked={published}
-            onChange={(event) => this.handleInputChange(event)}
-          />
-        </label>
         <div className="form-group">
-          <button type="button" className="button" onClick={(event) => this.handleCancel(event)}>
+          <label htmlFor="title" className="form__label">
+            Title
+            <input
+              className="form-control"
+              type="text"
+              name="title"
+              id="title"
+              value={title}
+              onChange={(event) => this.handleInputChange(event)}
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="description" className="form__label">
+            Description
+            <textarea
+              className="form-control"
+              cols="50"
+              rows="25"
+              name="description"
+              id="description"
+              value={description}
+              onChange={(event) => this.handleInputChange(event)}
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="content" className="form__label">
+            Content
+            <textarea
+              className="form-control"
+              cols="50"
+              rows="25"
+              name="content"
+              id="content"
+              value={content}
+              onChange={(event) => this.handleInputChange(event)}
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="categoryId" className="form__label">
+            Category
+            <select
+              className="form-control"
+              name="categoryId"
+              id="categoryId"
+              value={categoryId}
+              onChange={(event) => this.handleCategoryChange(event)}
+            >
+              <option key="0" value="0">
+                Select Category
+              </option>
+              {categoriesSelect.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="tags" className="form__label">
+            Tags
+            <select
+              className="form-control"
+              name="tags"
+              id="tags"
+              multiple
+              value={tags}
+              onChange={(event) => this.handleTagsChange(event)}
+            >
+              {tagsSelect.map((tag) => (
+                <option key={tag.id} value={tag.id}>
+                  {tag.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div className="form-group">
+          <label htmlFor="published" className="form__label form__label_checkbox">
+            Published
+            <input
+              className="form-checkbox"
+              type="checkbox"
+              name="published"
+              id="published"
+              checked={published}
+              onChange={(event) => this.handleInputChange(event)}
+            />
+          </label>
+        </div>
+        <div className="form-group">
+          <button
+            type="button"
+            className="button button-danger"
+            onClick={(event) => this.handleCancel(event)}
+          >
             Cancel
           </button>
-          <input type="submit" className="button button_primary" value="Save" />
+          <input type="submit" className="button button-primary" value="Save" />
         </div>
       </form>
     );
@@ -194,8 +220,9 @@ export default class CreatePost extends Component {
     const contents = this.renderCreateForm();
 
     return (
-      <div>
-        <h1>Create a new Post</h1>
+      <div className="create-post-wrapper">
+        <h1 className="main-title">Create a new Post</h1>
+        <hr className="divider" />
         {contents}
       </div>
     );

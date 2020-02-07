@@ -62,7 +62,7 @@ export default class PostDetail extends Component {
             <small>{created}</small>
           </span>
         </div>
-        <hr />
+        <hr className="divider" />
         <div className="post-content">
           <p>{description}</p>
           <p>{content}</p>
