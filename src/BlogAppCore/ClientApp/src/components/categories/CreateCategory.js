@@ -40,9 +40,9 @@ export default class CreateCategory extends Component {
   renderCreateForm() {
     const { name } = this.state;
     return (
-      <form onSubmit={event => this.handleSave(event)}>
-        <div className="form-group row">
-          <label htmlFor="categoryName" className="col-form-label col-md-12">
+      <form onSubmit={(event) => this.handleSave(event)} className="form">
+        <div className="form-group">
+          <label htmlFor="categoryName" className="form__label">
             Name
             <input
               className="form-control"
@@ -50,19 +50,19 @@ export default class CreateCategory extends Component {
               name="name"
               id="categoryName"
               value={name}
-              onChange={event => this.handleChange(event)}
+              onChange={(event) => this.handleChange(event)}
             />
           </label>
         </div>
         <div className="form-group">
           <button
             type="button"
-            className="btn btn-danger"
-            onClick={event => this.handleCancel(event)}
+            className="button button-danger"
+            onClick={(event) => this.handleCancel(event)}
           >
             Cancel
           </button>
-          <input type="submit" className="btn btn-dark" value="Save" />
+          <input type="submit" className="button button-primary" value="Save" />
         </div>
       </form>
     );
@@ -72,8 +72,9 @@ export default class CreateCategory extends Component {
     const contents = this.renderCreateForm();
 
     return (
-      <div>
-        <h1>Create a new Category</h1>
+      <div className="wrapper">
+        <h1 className="main-title">Create a new Category</h1>
+        <hr className="divider" />
         {contents}
       </div>
     );
