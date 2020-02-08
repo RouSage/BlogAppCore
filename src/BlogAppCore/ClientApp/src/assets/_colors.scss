@@ -3,3 +3,9 @@ $primary-color_hover: lighten(
   $color: $primary-color,
   $amount: 5
 );
+$danger-color: #dc3545;
+$danger-color_hover: lighten(
+  $color: $danger-color,
+  $amount: 5
+);
+$thead-light-color: #e9ecef;

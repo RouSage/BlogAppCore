@@ -12,7 +12,7 @@ const App = () => (
   <Layout>
     <Route exact path="/" component={Home} />
     <Route path="/categories" component={CategoryTable} />
-    <Route path="/category/new" component={CreateCategory} />
+    <Route path="/create-category" component={CreateCategory} />
     <Route path="/edit-category/:id" component={EditCategory} />
     <Route path="/tags" component={TagTable} />
     <Route path="/tag/new" component={CreateTag} />

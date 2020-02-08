@@ -58,6 +58,10 @@ h4 {
   width: 1170px;
 }
 
+.wrapper {
+  padding: 20px 10px 0 10px;
+}
+
 .main-content {
   padding: 20px 0px 20px 0px;
   display: -webkit-box;
@@ -128,12 +132,12 @@ h4 {
 }
 .button-primary {
   color: #ffffff;
-  background-color: purple;
-  border-color: purple;
+  background-color: #800080;
+  border-color: #800080;
 }
 .button-primary:hover {
-  background-color: #9a009a;
-  border-color: #9a009a;
+  background-color: #a506a5;
+  border-color: #a506a5;
 }
 .button-danger {
   color: #ffffff;
@@ -141,6 +145,31 @@ h4 {
   border-color: #dc3545;
 }
 .button-danger:hover {
-  background-color: #dc3546e7;
-  border-color: #dc3546e7;
+  background-color: #d45562;
+  border-color: #d45562;
+}
+
+table {
+  border-collapse: collapse;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  background-color: transparent;
+}
+.table thead th {
+  border-bottom: 2px solid #dee2e6;
+}
+.table .thead-light th {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+.table td,
+.table th {
+  vertical-align: middle;
+  padding: 15px;
+  border-top: 1px solid #dee2e6;
+}
+.table td {
+  text-align: center;
 }

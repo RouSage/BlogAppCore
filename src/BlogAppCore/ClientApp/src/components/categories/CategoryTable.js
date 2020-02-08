@@ -10,7 +10,7 @@ export default class CategoryTable extends Component {
     this.state = { categories: [], loading: true };
 
     fetch('api/Categories/GetAll')
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((data) => {
         this.setState({ categories: data, loading: false });
       });
@@ -23,21 +23,21 @@ export default class CategoryTable extends Component {
 
   renderCategoriesTable(categories) {
     return (
-      <table className="table table-striped">
-        <thead>
+      <table className="table">
+        <thead className="thead-light">
           <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Slug</th>
-            <th>Created</th>
-            <th>Total Posts</th>
-            <th>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Slug</th>
+            <th scope="col">Created</th>
+            <th scope="col">Total Posts</th>
+            <th scope="col">
               <Link to="/create-category">Create New</Link>
             </th>
           </tr>
         </thead>
         <tbody>
-          {categories.map(category => (
+          {categories.map((category) => (
             <tr key={category.id}>
               <td>{category.id}</td>
               <td>{category.name}</td>
@@ -67,9 +67,9 @@ export default class CategoryTable extends Component {
     );
 
     return (
-      <div>
-        <h1>Categories</h1>
-        <p>This component demonstrates fetching data from the server.</p>
+      <div className="wrapper">
+        <h1 className="main-title">Categories</h1>
+        <hr className="divider" />
         {contents}
       </div>
     );

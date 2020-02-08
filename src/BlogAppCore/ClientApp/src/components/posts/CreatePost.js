@@ -220,7 +220,7 @@ export default class CreatePost extends Component {
     const contents = this.renderCreateForm();
 
     return (
-      <div className="post-form-wrapper">
+      <div className="wrapper">
         <h1 className="main-title">Create a new Post</h1>
         <hr className="divider" />
         {contents}

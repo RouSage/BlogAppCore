@@ -263,7 +263,7 @@ export default class EditPost extends Component {
     const contents = this.renderEditForm();
 
     return (
-      <div className="post-form-wrapper">
+      <div className="wrapper">
         <h1 className="main-title">Edit the Post</h1>
         <hr className="divider" />
         {contents}
