@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Categories.scss';
 
 export default class EditCategory extends Component {
   static displayName = EditCategory.name;
@@ -67,11 +68,11 @@ export default class EditCategory extends Component {
     } = this.state;
 
     return (
-      <form onSubmit={(event) => this.handleSave(event)}>
+      <form onSubmit={(event) => this.handleSave(event)} className="form">
         <input type="hidden" name="id" value={id} />
         <div className="form-group">
-          <label htmlFor="categoryName" className="col-form-label">
-            Name:
+          <label htmlFor="categoryName" className="form__label">
+            Name
             <input
               className="form-control"
               type="text"
@@ -80,18 +81,15 @@ export default class EditCategory extends Component {
               value={name}
               onChange={(event) => this.handleNameChange(event)}
             />
-            <small>
-              Current Slug:
-              {slug}
-            </small>
+            <small className="category-meta">{`Current Slug: ${slug}`}</small>
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="categoryUpdateSlug" className="form-check-label">
-            Update Slug:
+          <label htmlFor="categoryUpdateSlug" className="form__label form__label_checkbox">
+            Update Slug
             <input
+              className="form-checkbox"
               type="checkbox"
-              className="form-check-inline"
               name="updateSlug"
               id="categoryUpdateSlug"
               checked={updateSlug}
@@ -101,13 +99,13 @@ export default class EditCategory extends Component {
         </div>
         <div className="form-group">
           <button
+            className="button button-danger"
             type="button"
-            className="btn btn-danger"
             onClick={(event) => this.handleCancel(event)}
           >
             Cancel
           </button>
-          <input type="submit" className="btn btn-dark" value="Save" />
+          <input type="submit" className="button button-primary" value="Save" />
         </div>
       </form>
     );
@@ -117,8 +115,9 @@ export default class EditCategory extends Component {
     const contents = this.renderEditForm();
 
     return (
-      <div>
-        <h1>Edit the Category</h1>
+      <div className="wrapper">
+        <h1 className="main-title">Edit the Category</h1>
+        <hr className="divider" />
         {contents}
       </div>
     );
