@@ -40,9 +40,9 @@ export default class CreateTag extends Component {
   renderCreateForm() {
     const { name } = this.state;
     return (
-      <form onSubmit={event => this.handleSave(event)}>
-        <div className="form-group row">
-          <label htmlFor="tagName" className="col-form-label col-md-12">
+      <form onSubmit={(event) => this.handleSave(event)} className="form">
+        <div className="form-group">
+          <label htmlFor="tagName" className="form__label">
             Name
             <input
               className="form-control"
@@ -50,19 +50,19 @@ export default class CreateTag extends Component {
               name="name"
               id="tagName"
               value={name}
-              onChange={event => this.handleChange(event)}
+              onChange={(event) => this.handleChange(event)}
             />
           </label>
         </div>
         <div className="form-group">
           <button
+            className="button button-danger"
             type="button"
-            className="btn btn-danger"
-            onClick={event => this.handleCancel(event)}
+            onClick={(event) => this.handleCancel(event)}
           >
             Cancel
           </button>
-          <input type="submit" className="btn btn-dark" value="Save" />
+          <input type="submit" className="button button-primary" value="Save" />
         </div>
       </form>
     );
@@ -72,8 +72,9 @@ export default class CreateTag extends Component {
     const contents = this.renderCreateForm();
 
     return (
-      <div>
-        <h1>Create a new Tag</h1>
+      <div className="wrapper">
+        <h1 className="main-title">Create a new Tag</h1>
+        <hr className="divider" />
         {contents}
       </div>
     );

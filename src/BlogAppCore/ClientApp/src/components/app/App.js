@@ -15,7 +15,7 @@ const App = () => (
     <Route path="/create-category" component={CreateCategory} />
     <Route path="/edit-category/:id" component={EditCategory} />
     <Route path="/tags" component={TagTable} />
-    <Route path="/tag/new" component={CreateTag} />
+    <Route path="/create-tag" component={CreateTag} />
     <Route path="/edit-tag/:id" component={EditTag} />
     <Route path="/create-post" component={CreatePost} />
     <Route path="/edit-post/:slug" component={EditPost} />
