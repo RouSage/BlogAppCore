@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Tags.scss';
 
 export default class EditTag extends Component {
   static displayName = EditTag.name;
@@ -19,7 +20,7 @@ export default class EditTag extends Component {
     const tagId = Number(match.params.id);
 
     fetch(`api/Tags/Get?id=${tagId}`, { method: 'GET' })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((data) => {
         this.setState({
           id: data.id,
@@ -67,47 +68,44 @@ export default class EditTag extends Component {
     } = this.state;
 
     return (
-      <form onSubmit={event => this.handleSave(event)}>
+      <form onSubmit={(event) => this.handleSave(event)} className="form">
         <input type="hidden" name="id" value={id} />
         <div className="form-group">
-          <label htmlFor="tagName" className="col-form-label">
-            Name:
+          <label htmlFor="tagName" className="form__label">
+            Name
             <input
               className="form-control"
               type="text"
               name="name"
               id="tagName"
               value={name}
-              onChange={event => this.handleNameChange(event)}
+              onChange={(event) => this.handleNameChange(event)}
             />
-            <small>
-              Current Slug:
-              {slug}
-            </small>
+            <small className="tag-meta">{`Current Slug: ${slug}`}</small>
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="tagUpdateSlug" className="form-check-label">
-            Update Slug:
+          <label htmlFor="tagUpdateSlug" className="form__label form__label_checkbox">
+            Update Slug
             <input
+              className="form-checkbox"
               type="checkbox"
-              className="form-check-inline"
               name="updateSlug"
               id="tagUpdateSlug"
               checked={updateSlug}
-              onChange={event => this.handleUpdateSlugChange(event)}
+              onChange={(event) => this.handleUpdateSlugChange(event)}
             />
           </label>
         </div>
         <div className="form-group">
           <button
+            className="button button-danger"
             type="button"
-            className="btn btn-danger"
-            onClick={event => this.handleCancel(event)}
+            onClick={(event) => this.handleCancel(event)}
           >
             Cancel
           </button>
-          <input type="submit" className="btn btn-dark" value="Save" />
+          <input type="submit" className="button button-primary" value="Save" />
         </div>
       </form>
     );
@@ -117,8 +115,9 @@ export default class EditTag extends Component {
     const contents = this.renderEditForm();
 
     return (
-      <div>
-        <h1>Edit the Category</h1>
+      <div className="wrapper">
+        <h1 className="main-title">Edit the Category</h1>
+        <hr className="divider" />
         {contents}
       </div>
     );
