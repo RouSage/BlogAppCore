@@ -41,6 +41,11 @@ h4 {
   font-weight: 500;
   margin-bottom: 10px;
 }
+.secondary-title {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
 
 .divider {
   border: 0;
@@ -83,7 +88,6 @@ h4 {
 .sidebar-container {
   padding: 20px;
   flex-grow: 0;
-  flex-shrink: 0;
   background-color: white;
   -webkit-box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 4px 6px 0px rgba(0, 0, 0, 0.75);

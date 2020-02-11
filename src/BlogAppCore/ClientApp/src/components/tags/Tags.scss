@@ -3,3 +3,28 @@
 .tag-meta {
   color: $meta-color;
 }
+
+.tags {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.tags-list {
+  width: 250px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.tags-list span {
+  margin-right: 5px;
+}
+.tags-list span:last-child {
+  margin-right: 0;
+}
+
+.tags-list a {
+  color: $primary-color;
+}
+.tags-list a:hover {
+  text-decoration: underline;
+  color: $primary-color_hover;
+}

@@ -23,12 +23,16 @@ export default class TagList extends Component {
 
     return (
       <div className="tags">
-        {tags.map((tag) => (
-          <span key={tag.slug}>
-            <Link to={`/archive/tag/${tag.slug}`}>{tag.name}</Link>
-            {' '}
-          </span>
-        ))}
+        <h2 className="secondary-title">Tags</h2>
+        <div className="tags-list">
+          {tags.map((tag, index) => (
+            <span key={tag.slug}>
+              <Link to={`/archive/tag/${tag.slug}`}>
+                {tag.name + (index >= 0 && index < tags.length - 1 ? ',' : '')}
+              </Link>
+            </span>
+          ))}
+        </div>
       </div>
     );
   }
