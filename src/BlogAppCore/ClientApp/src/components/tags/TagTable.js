@@ -10,7 +10,7 @@ export default class TagTable extends Component {
     this.state = { tags: [], loading: true };
 
     fetch('api/Tags/GetAll')
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((data) => {
         this.setState({ tags: data, loading: false });
       });
@@ -23,21 +23,21 @@ export default class TagTable extends Component {
 
   renderCategoriesTable(tags) {
     return (
-      <table className="table table-striped">
-        <thead>
+      <table className="table">
+        <thead className="thead-light">
           <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Slug</th>
-            <th>Created</th>
-            <th>Total Posts</th>
-            <th>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Slug</th>
+            <th scope="col">Created</th>
+            <th scope="col">Total Posts</th>
+            <th scope="col">
               <Link to="/create-tag">Create New</Link>
             </th>
           </tr>
         </thead>
         <tbody>
-          {tags.map(tag => (
+          {tags.map((tag) => (
             <tr key={tag.id}>
               <td>{tag.id}</td>
               <td>{tag.name}</td>
@@ -67,9 +67,9 @@ export default class TagTable extends Component {
     );
 
     return (
-      <div>
-        <h1>Tags</h1>
-        <p>This component demonstrates fetching data from the server.</p>
+      <div className="wrapper">
+        <h1 className="main-title">Tags</h1>
+        <hr className="divider" />
         {contents}
       </div>
     );
