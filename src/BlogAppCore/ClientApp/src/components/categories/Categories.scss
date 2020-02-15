@@ -3,3 +3,43 @@
 .category-meta {
   color: $meta-color;
 }
+
+.categories {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+}
+.categories-list-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.categories-list-item:last-child {
+  margin-bottom: 0;
+}
+.categories-list-item a {
+  color: $primary-color;
+}
+.categories-list-item a:hover {
+  text-decoration: underline;
+  color: $primary-color_hover;
+}
+.categories__count {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 70%;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border-radius: 20%;
+}
+.categories__count_primary {
+  color: #ffffff;
+  background-color: $primary-color;
+}

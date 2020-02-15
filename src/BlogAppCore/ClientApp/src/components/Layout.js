@@ -16,6 +16,7 @@ const Layout = ({ children }) => (
         <aside className="sidebar-container">
           <Sidebar>
             <CategoryList />
+            <hr className="divider" />
             <TagList />
           </Sidebar>
         </aside>

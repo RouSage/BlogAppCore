@@ -22,17 +22,19 @@ export default class CategoryList extends Component {
     const { categories } = this.state;
 
     return (
-      <ul className="categories">
-        {categories.map((category) => (
-          <li key={category.slug}>
-            <Link to={`/archive/category/${category.slug}`}>
-              {category.name}
-              {' '}
-              <span className="categories__count">{category.totalPosts}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="categories">
+        <h2 className="secondary-title">Cateogires</h2>
+        <ul className="categories-list">
+          {categories.map((category) => (
+            <li key={category.slug} className="categories-list-item">
+              <Link to={`/archive/category/${category.slug}`}>{category.name}</Link>
+              <span className="categories__count categories__count_primary">
+                {category.totalPosts}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 }
