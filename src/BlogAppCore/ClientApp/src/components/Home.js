@@ -1,87 +1,35 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+import PostList from './posts/PostList';
 
-export default class Home extends PureComponent {
+export default class Home extends Component {
   static displayName = Home.name;
 
+  constructor(props) {
+    super(props);
+
+    this.state = { latestPosts: [] };
+  }
+
+  componentWillMount() {
+    fetch('api/Posts/GetList', { method: 'GET' })
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ latestPosts: data });
+      });
+  }
+
   render() {
+    const { latestPosts } = this.state;
+
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li>
-            <a href="https://get.asp.net/">ASP.NET Core</a>
-            {' '}
-and
-            {' '}
-            <a href="https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx">C#</a>
-            {' '}
-for
-            cross-platform server-side code
-          </li>
-          <li>
-            <a href="https://facebook.github.io/react/">React</a>
-            {' '}
-for client-side code
-          </li>
-          <li>
-            <a href="http://getbootstrap.com/">Bootstrap</a>
-            {' '}
-for layout and styling
-          </li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li>
-            <strong>Client-side navigation</strong>
-. For example, click
-            <em>Counter</em>
-            {' '}
-then
-            <em>Back</em>
-            {' '}
-to return here.
-          </li>
-          <li>
-            <strong>Development server integration</strong>
-. In development mode, the development
-            server from
-            <code>create-react-app</code>
-            {' '}
-runs in the background automatically, so your client-side
-            resources are dynamically built on demand and the page refreshes when you modify any
-            file.
-          </li>
-          <li>
-            <strong>Efficient production builds</strong>
-. In production mode, development-time
-            features are disabled, and your
-            <code>dotnet publish</code>
-            {' '}
-configuration produces minified, efficiently bundled
-            JavaScript files.
-          </li>
-        </ul>
-        <p>
-          The
-          {' '}
-          <code>ClientApp</code>
-          {' '}
-subdirectory is a standard React application based on the
-          {' '}
-          <code>create-react-app</code>
-          {' '}
-template. If you open a command prompt in that directory,
-          you can run
-          <code>npm</code>
-          {' '}
-commands such as
-          <code>npm test</code>
-          {' '}
-or
-          <code>npm install</code>
-.
-        </p>
+      <div className="postsList">
+        <h1 className="main-title">Latest Posts</h1>
+        <hr className="divider" />
+        {latestPosts.length > 0 ? (
+          <PostList posts={latestPosts} />
+        ) : (
+          <h1 className="main-title">There&apos;re no posts yet!</h1>
+        )}
       </div>
     );
   }
