@@ -1,21 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './NavMenu.scss';
 
-const NavMenu = () => (
-  <nav className="nav-menu">
-    <ul className="nav-menu__list">
-      <li className="nav-menu__item nav-menu__item_active">
-        <Link to="/">Home</Link>
-      </li>
-      <li className="nav-menu__item">
-        <Link to="/about">About</Link>
-      </li>
-      <li className="nav-menu__item">
-        <Link to="/contact">Contact</Link>
-      </li>
-    </ul>
-  </nav>
-);
+export default class NavMenu extends Component {
+  static displayName = NavMenu.name;
 
-export default NavMenu;
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      links: [
+        { name: 'Home', to: '/' },
+        { name: 'About', to: '/about' },
+        { name: 'Contact', to: '/contact' },
+      ],
+    };
+  }
+
+  render() {
+    const { links } = this.state;
+
+    return (
+      <nav className="nav-menu">
+        <ul className="nav-menu__list">
+          {links.map((link) => (
+            <li key={link.name} className="nav-menu__item">
+              <Link to={link.to}>{link.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    );
+  }
+}
