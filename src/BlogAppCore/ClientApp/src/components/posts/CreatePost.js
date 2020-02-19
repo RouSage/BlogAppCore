@@ -20,8 +20,12 @@ export default class CreatePost extends Component {
 
   componentWillMount() {
     Promise.all([
-      fetch('api/Categories/GetAll', { method: 'GET' }).then((response) => response.json()),
-      fetch('api/Tags/GetAll', { method: 'GET' }).then((response) => response.json()),
+      fetch('api/Categories/GetAll', { method: 'GET' }).then((response) =>
+        response.json()
+      ),
+      fetch('api/Tags/GetAll', { method: 'GET' }).then((response) =>
+        response.json()
+      ),
     ]).then((response) => {
       const [categories, tags] = response;
 
@@ -33,7 +37,12 @@ export default class CreatePost extends Component {
     event.preventDefault();
 
     const {
-      title, description, content, categoryId, tags, published,
+      title,
+      description,
+      content,
+      categoryId,
+      tags,
+      published,
     } = this.state;
 
     fetch('api/Posts/Create', {
@@ -61,7 +70,7 @@ export default class CreatePost extends Component {
     event.preventDefault();
 
     const { history } = this.props;
-    history.push('/posts');
+    history.push('/');
   }
 
   handleInputChange(event) {
@@ -83,13 +92,16 @@ export default class CreatePost extends Component {
   }
 
   handleTagsChange(event) {
-    const selectedTags = Array.from(event.target.options).reduce((tags, tag) => {
-      if (tag.selected) {
-        tags.push(tag.value);
-      }
+    const selectedTags = Array.from(event.target.options).reduce(
+      (tags, tag) => {
+        if (tag.selected) {
+          tags.push(parseInt(tag.value, 10));
+        }
 
-      return tags;
-    }, []);
+        return tags;
+      },
+      []
+    );
 
     this.setState({ tags: selectedTags });
   }
@@ -190,7 +202,10 @@ export default class CreatePost extends Component {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="published" className="form__label form__label_checkbox">
+          <label
+            htmlFor="published"
+            className="form__label form__label_checkbox"
+          >
             Published
             <input
               className="form-checkbox"

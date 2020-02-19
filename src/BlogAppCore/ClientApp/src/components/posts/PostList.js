@@ -28,8 +28,8 @@ const PostList = ({ posts }) => (
           <div className="post-content">
             <p>{post.description}</p>
           </div>
-          {post.tags.length > 0
-            && post.tags.map((tag) => (
+          {post.tags.length > 0 &&
+            post.tags.map((tag) => (
               <span key={tag.slug}>
                 <Link to={`/archive/tag/${tag.slug}`}>
                   <small>

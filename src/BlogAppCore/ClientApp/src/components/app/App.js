@@ -5,7 +5,11 @@ import Home from '../Home';
 import { CreateCategory, EditCategory, CategoryTable } from '../categories';
 import { TagTable, CreateTag, EditTag } from '../tags';
 import {
-  CreatePost, PostDetail, EditPost, GetByCategory, GetByTag,
+  CreatePost,
+  PostDetail,
+  EditPost,
+  GetByCategory,
+  GetByTag,
 } from '../posts';
 
 const App = () => (

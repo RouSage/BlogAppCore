@@ -12,9 +12,28 @@ export default class GetByCategory extends Component {
   }
 
   componentWillMount() {
-    const { match } = this.props;
-    const { categorySlug } = match.params;
+    const {
+      match: {
+        params: { categorySlug },
+      },
+    } = this.props;
 
+    this.getPosts(categorySlug);
+  }
+
+  componentWillReceiveProps(newProps) {
+    const {
+      match: {
+        params: { categorySlug },
+      },
+    } = this.props;
+
+    if (categorySlug !== newProps.match.params.categorySlug) {
+      this.getPosts(newProps.match.params.categorySlug);
+    }
+  }
+
+  getPosts = (categorySlug) => {
     fetch(`api/Posts/GetByCategory/${categorySlug}`, { method: 'GET' })
       .then((response) => response.json())
       .then((data) => {
@@ -22,12 +41,16 @@ export default class GetByCategory extends Component {
           posts: data,
         });
       });
-  }
+  };
 
   render() {
     const { posts } = this.state;
 
-    return <div className="postsList">{posts.length > 0 && <PostList posts={posts} />}</div>;
+    return (
+      <div className="postsList">
+        {posts.length > 0 && <PostList posts={posts} />}
+      </div>
+    );
   }
 }
 
