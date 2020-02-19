@@ -7,15 +7,33 @@ export default class GetByTag extends Component {
 
   constructor(props) {
     super(props);
-    this.setState({
-      posts: [],
-    });
+
+    this.state = { posts: [] };
   }
 
   componentWillMount() {
-    const { match } = this.props;
-    const tagSlug = String(match.params.tagSlug);
+    const {
+      match: {
+        params: { tagSlug },
+      },
+    } = this.props;
 
+    this.getPosts(tagSlug);
+  }
+
+  componentWillReceiveProps(newProps) {
+    const {
+      match: {
+        params: { tagSlug },
+      },
+    } = this.props;
+
+    if (tagSlug !== newProps.match.params.tagSlug) {
+      this.getPosts(newProps.match.params.tagSlug);
+    }
+  }
+
+  getPosts = (tagSlug) => {
     fetch(`api/Posts/GetByTag/${tagSlug}`, { method: 'GET' })
       .then((response) => response.json())
       .then((data) => {
@@ -23,12 +41,16 @@ export default class GetByTag extends Component {
           posts: data,
         });
       });
-  }
+  };
 
   render() {
     const { posts } = this.state;
 
-    return <PostList posts={posts} />;
+    return (
+      <div className="postsList">
+        {posts.length > 0 && <PostList posts={posts} />}
+      </div>
+    );
   }
 }
 
