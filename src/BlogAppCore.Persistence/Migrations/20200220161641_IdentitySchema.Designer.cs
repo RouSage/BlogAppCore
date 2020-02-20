@@ -3,15 +3,17 @@ using System;
 using BlogAppCore.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BlogAppCore.Persistence.Migrations
 {
     [DbContext(typeof(BlogAppCoreDbContext))]
-    partial class BlogAppCoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200220161641_IdentitySchema")]
+    partial class IdentitySchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

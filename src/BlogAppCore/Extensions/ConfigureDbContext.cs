@@ -9,8 +9,7 @@ namespace BlogAppCore.Extensions
     {
         public static IServiceCollection ConfigureDbContext(this IServiceCollection services, string connectionString)
         {
-            services.AddEntityFrameworkNpgsql()
-                .AddDbContext<IBlogAppCoreDbContext, BlogAppCoreDbContext>(options =>
+            services.AddDbContext<IBlogAppCoreDbContext, BlogAppCoreDbContext>(options =>
                     options.UseNpgsql(connectionString))
                 .BuildServiceProvider();
 
