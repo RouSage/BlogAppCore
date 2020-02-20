@@ -1,20 +1,23 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using BlogAppCore.Domain.Entities;
 using BlogAppCore.Persistence;
+using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace BlogAppCore.Application.Tests.Infrastructure
 {
     public class BlogAppCoreContextFactory
     {
+        private static readonly IOptions<OperationalStoreOptions> _operationalStoreOptions;
+
         public static BlogAppCoreDbContext Create()
         {
             var optionsBuilder = new DbContextOptionsBuilder<BlogAppCoreDbContext>()
                 .UseInMemoryDatabase(Guid.NewGuid().ToString());
 
-            var context = new BlogAppCoreDbContext(optionsBuilder.Options);
+            var context = new BlogAppCoreDbContext(optionsBuilder.Options, _operationalStoreOptions);
             context.Database.EnsureCreated();
 
             // Seed database

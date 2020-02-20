@@ -1,13 +1,16 @@
 using System;
 using System.IO;
+using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace BlogAppCore.Persistence
 {
     public class BlogAppDbContextFactory : IDesignTimeDbContextFactory<BlogAppCoreDbContext>
     {
+        private readonly IOptions<OperationalStoreOptions> _operationalStoreOptions;
         private const string UserSecretsId = "9b3fd8b3-34c8-4d7c-b2de-edf0381518fb";
         private const string ConnectionStringName = "BlogAppCore";
         private const string AspNetCoreEnvironment = "ASPNETCORE_ENVIRONMENT";
@@ -23,8 +26,8 @@ namespace BlogAppCore.Persistence
         {
             var config = new ConfigurationBuilder()
                 .SetBasePath(basePath)
-                .AddJsonFile("appsettings.json", optional : false, reloadOnChange : true)
-                .AddJsonFile($"appsettings.{environmentName}.json", optional : true)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{environmentName}.json", optional: true)
                 .AddUserSecrets(UserSecretsId)
                 .AddEnvironmentVariables()
                 .Build();
@@ -39,7 +42,7 @@ namespace BlogAppCore.Persistence
             var optionsBuilder = new DbContextOptionsBuilder<BlogAppCoreDbContext>();
             optionsBuilder.UseNpgsql(connectionString, opt => opt.MigrationsAssembly(typeof(BlogAppCoreDbContext).Assembly.FullName));
 
-            return new BlogAppCoreDbContext(optionsBuilder.Options);
+            return new BlogAppCoreDbContext(optionsBuilder.Options, _operationalStoreOptions);
         }
     }
 }
