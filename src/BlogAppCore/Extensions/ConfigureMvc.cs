@@ -18,7 +18,6 @@ namespace BlogAppCore.Extensions
         public static IApplicationBuilder ConfigureRouting(this IApplicationBuilder app)
         {
             app.UseRouting();
-            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -24,7 +24,7 @@ namespace BlogAppCore
             // Add MediatR
             services.ConfigureMediatR();
             // Add DbContext using PostgreSQL provider
-            services.ConfigureDbContext(Configuration.GetConnectionString("BlogAppCore"));
+            // services.ConfigureDbContext(Configuration.GetConnectionString("BlogAppCore"));
             // Add Mvc
             services.ConfigureMvc();
             // Add Spa static files
@@ -50,6 +50,7 @@ namespace BlogAppCore
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
             app.ConfigureRouting();
+            app.ConfigureAuthentication();
             app.ConfigureSpa(env);
         }
     }
