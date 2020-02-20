@@ -11,6 +11,9 @@ import {
   GetByCategory,
   GetByTag,
 } from '../posts';
+import AuthorizeRoute from '../api-authorization/AuthorizeRoute';
+import ApiAuthorizationRoutes from '../api-authorization/ApiAuthorizationRoutes';
+import { ApplicationPaths } from '../api-authorization/ApiAuthorizationConstants';
 
 const App = () => (
   <Layout>
@@ -26,6 +29,10 @@ const App = () => (
     <Route path="/post/:slug" component={PostDetail} />
     <Route path="/archive/category/:categorySlug" component={GetByCategory} />
     <Route path="/archive/tag/:tagSlug" component={GetByTag} />
+    <Route
+      path={ApplicationPaths.ApiAuthorizationPrefix}
+      component={ApiAuthorizationRoutes}
+    />
   </Layout>
 );
 
