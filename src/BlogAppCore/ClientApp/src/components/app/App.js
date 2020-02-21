@@ -18,7 +18,7 @@ import { ApplicationPaths } from '../api-authorization/ApiAuthorizationConstants
 const App = () => (
   <Layout>
     <Route exact path="/" component={Home} />
-    <Route path="/categories" component={CategoryTable} />
+    <AuthorizeRoute path="/categories" component={CategoryTable} />
     <Route path="/create-category" component={CreateCategory} />
     <Route path="/edit-category/:id" component={EditCategory} />
     <Route path="/tags" component={TagTable} />

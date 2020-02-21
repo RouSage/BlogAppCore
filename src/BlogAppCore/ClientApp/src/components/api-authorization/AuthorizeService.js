@@ -8,7 +8,7 @@ export class AuthorizeService {
 
   user = null;
 
-  isAuthenticated = false;
+  _isAuthenticated = false;
 
   // By default pop ups are disabled because they don't work properly on Edge.
   // If you want to enable pop up authentication simply set this flag to false.
@@ -143,7 +143,7 @@ export class AuthorizeService {
 
   updateState(user) {
     this.user = user;
-    this.isAuthenticated = !!this.user;
+    this._isAuthenticated = !!this.user;
     this.notifySubscribers();
   }
 

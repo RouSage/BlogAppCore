@@ -9,8 +9,9 @@ namespace BlogAppCore.Extensions
     {
         public static IServiceCollection ConfigureMvc(this IServiceCollection services)
         {
-            services.AddControllers()
+            services.AddControllersWithViews()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreatePostCommandValidator>());
+            services.AddRazorPages();
 
             return services;
         }
@@ -21,6 +22,7 @@ namespace BlogAppCore.Extensions
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapRazorPages();
             });
 
             return app;
