@@ -33,6 +33,7 @@
     ],
     "react/require-default-props": "off",
     "react/static-property-placement": "off",
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error", "windows"],
+    "no-plusplus": "off"
   }
 }
