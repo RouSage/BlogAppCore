@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import LoginMenu from '../api-authorization/LoginMenu';
 import './NavMenu.scss';
 
 export default class NavMenu extends Component {
@@ -29,6 +30,7 @@ export default class NavMenu extends Component {
             </li>
           ))}
         </ul>
+        <LoginMenu></LoginMenu>
       </nav>
     );
   }

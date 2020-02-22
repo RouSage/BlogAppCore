@@ -21,7 +21,9 @@ namespace BlogAppCore.Extensions
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
 

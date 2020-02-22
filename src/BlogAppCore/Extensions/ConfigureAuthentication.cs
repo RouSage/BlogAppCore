@@ -25,6 +25,12 @@ namespace BlogAppCore.Extensions
                 .AddEntityFrameworkStores<BlogAppCoreDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+                options.LoginPath = "/Identity/Account/Logout";
+            });
+
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, BlogAppCoreDbContext>();
 

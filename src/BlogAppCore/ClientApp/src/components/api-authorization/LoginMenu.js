@@ -26,31 +26,26 @@ export default class LoginMenu extends Component {
     return (
       <>
         <div>
-          <span tag={Link} className="text-dark" to={profilePath}>
+          <Link className="text-dark" to={profilePath}>
             {userName}
-          </span>
+          </Link>
         </div>
         <div>
-          <span tag={Link} className="text-dark" to={logoutPath}>
+          <Link className="text-dark" to={logoutPath}>
             Logout
-          </span>
+          </Link>
         </div>
       </>
     );
   };
 
-  anonymousView = (registerPath, loginPath) => {
+  anonymousView = (loginPath) => {
     return (
       <>
         <div>
-          <span tag={Link} className="text-dark" to={registerPath}>
-            Register
-          </span>
-        </div>
-        <div>
-          <span tag={Link} className="text-dark" to={loginPath}>
+          <Link className="text-dark" to={loginPath}>
             Login
-          </span>
+          </Link>
         </div>
       </>
     );
@@ -70,9 +65,8 @@ export default class LoginMenu extends Component {
   render() {
     const { isAuthenticated, userName } = this.state;
     if (!isAuthenticated) {
-      const registerPath = `${ApplicationPaths.Register}`;
       const loginPath = `${ApplicationPaths.Login}`;
-      return this.anonymousView(registerPath, loginPath);
+      return this.anonymousView(loginPath);
     }
     const profilePath = `${ApplicationPaths.Profile}`;
     const logoutPath = {

@@ -51,8 +51,8 @@ namespace BlogAppCore
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-            app.ConfigureRouting();
             app.ConfigureAuthentication();
+            app.ConfigureRouting();
             app.ConfigureSpa(env);
         }
     }
