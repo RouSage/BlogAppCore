@@ -146,5 +146,5 @@ export default class Login extends Component {
 }
 
 Login.propTypes = {
-  action: PropTypes.object,
+  action: PropTypes.string,
 };
