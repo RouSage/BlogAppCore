@@ -10,6 +10,7 @@ import {
   EditPost,
   GetByCategory,
   GetByTag,
+  PostTable,
 } from '../posts';
 import AuthorizeRoute from '../api-authorization/AuthorizeRoute';
 import ApiAuthorizationRoutes from '../api-authorization/ApiAuthorizationRoutes';
@@ -24,6 +25,7 @@ const App = () => (
     <Route path="/tags" component={TagTable} />
     <Route path="/create-tag" component={CreateTag} />
     <Route path="/edit-tag/:id" component={EditTag} />
+    <Route path="/posts" component={PostTable} />
     <Route path="/create-post" component={CreatePost} />
     <Route path="/edit-post/:slug" component={EditPost} />
     <Route path="/post/:slug" component={PostDetail} />
