@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import LoginMenu from '../api-authorization/LoginMenu';
+import authService from '../api-authorization/AuthorizeService';
 import './NavMenu.scss';
 
 export default class NavMenu extends Component {
@@ -10,16 +11,33 @@ export default class NavMenu extends Component {
     super(props);
 
     this.state = {
-      links: [
+      navLinks: [
         { name: 'Home', to: '/' },
         { name: 'About', to: '/about' },
         { name: 'Contact', to: '/contact' },
       ],
+      adminLinks: [
+        { name: 'Posts', to: '/posts' },
+        { name: 'Categories', to: '/categories' },
+        { name: 'Tags', to: '/tags' },
+      ],
+      isAuthenticated: false,
     };
   }
 
+  componentDidMount() {
+    this.populateState();
+  }
+
+  async populateState() {
+    const isAuthenticated = await authService.isAuthenticated();
+    this.setState({
+      isAuthenticated,
+    });
+  }
+
   render() {
-    const { links } = this.state;
+    const { navLinks: links, adminLinks, isAuthenticated } = this.state;
 
     return (
       <nav className="nav-menu">
@@ -29,8 +47,14 @@ export default class NavMenu extends Component {
               <Link to={link.to}>{link.name}</Link>
             </li>
           ))}
+          {isAuthenticated &&
+            adminLinks.map((adminLink) => (
+              <li key={adminLink.name} className="nav-menu__item">
+                <Link to={adminLink.to}>{adminLink.name}</Link>
+              </li>
+            ))}
         </ul>
-        <LoginMenu></LoginMenu>
+        <LoginMenu />
       </nav>
     );
   }

@@ -5,6 +5,8 @@
   font-size: 1.3em;
   font-family: 'Montserrat', sans-serif;
   background-color: $primary-color;
+  display: flex;
+  justify-content: space-between;
 }
 .nav-menu__list {
   overflow: hidden;
