@@ -20,8 +20,11 @@ namespace BlogAppCore.Areas.Identity.Pages.Account
             _logger = logger;
         }
 
-        public void OnGet()
+        public IActionResult OnGet(string returnUrl = null)
         {
+            // There was a bug when user tried to log in and was redirected to
+            // Logout page. So this OnGet just redirects to Login page keeping returnUrl
+            return RedirectToPage("./Login", new { returnUrl });
         }
 
         public async Task<IActionResult> OnPost(string returnUrl = null)

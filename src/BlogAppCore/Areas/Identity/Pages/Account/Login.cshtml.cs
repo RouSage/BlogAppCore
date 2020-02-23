@@ -51,7 +51,7 @@ namespace BlogAppCore.Areas.Identity.Pages.Account
             public bool RememberMe { get; set; }
         }
 
-        public void OnGet(string returnUrl = null)
+        public async Task OnGet(string returnUrl = null)
         {
             if (!string.IsNullOrEmpty(ErrorMessage))
             {
@@ -61,7 +61,7 @@ namespace BlogAppCore.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
 
             // Clear the existing external cookie to ensure a clean login process
-            // await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+            await HttpContext.SignOutAsync(IdentityConstants.ApplicationScheme);
 
             ReturnUrl = returnUrl;
         }
