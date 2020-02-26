@@ -27,9 +27,15 @@ export default class EditPost extends Component {
     const postSlug = match.params.slug;
 
     Promise.all([
-      fetch(`api/Posts/GetBySlug/${postSlug}`, { method: 'Get' }).then((response) => response.json()),
-      fetch('api/Categories/GetAll', { method: 'GET' }).then((response) => response.json()),
-      fetch('api/Tags/GetAll', { method: 'GET' }).then((response) => response.json()),
+      fetch(`api/Posts/GetBySlug/${postSlug}`, {
+        method: 'Get',
+      }).then((response) => response.json()),
+      fetch('api/Categories/GetAll', { method: 'GET' }).then((response) =>
+        response.json()
+      ),
+      fetch('api/Tags/GetAll', { method: 'GET' }).then((response) =>
+        response.json()
+      ),
     ]).then((response) => {
       const [post, categories, tags] = response;
 
@@ -78,7 +84,7 @@ export default class EditPost extends Component {
       }),
     }).then(() => {
       const { history } = this.props;
-      history.push(`/post/${slug}`);
+      history.push('/posts');
     });
   }
 
@@ -88,7 +94,7 @@ export default class EditPost extends Component {
     const { history } = this.props;
     const { slug } = this.state;
 
-    history.push(`/post/${slug}`);
+    history.push('/posts');
   }
 
   handleInputChange(event) {
@@ -110,13 +116,16 @@ export default class EditPost extends Component {
   }
 
   handleTagsChange(event) {
-    const selectedTags = Array.from(event.target.options).reduce((tags, tag) => {
-      if (tag.selected) {
-        tags.push(tag.value);
-      }
+    const selectedTags = Array.from(event.target.options).reduce(
+      (tags, tag) => {
+        if (tag.selected) {
+          tags.push(tag.value);
+        }
 
-      return tags;
-    }, []);
+        return tags;
+      },
+      []
+    );
 
     this.setState({ tags: selectedTags });
   }
@@ -220,7 +229,10 @@ export default class EditPost extends Component {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="published" className="form__label form__label_checkbox">
+          <label
+            htmlFor="published"
+            className="form__label form__label_checkbox"
+          >
             Published
             <input
               className="form-checkbox"
@@ -233,7 +245,10 @@ export default class EditPost extends Component {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="updateSlug" className="form__label form__label_checkbox">
+          <label
+            htmlFor="updateSlug"
+            className="form__label form__label_checkbox"
+          >
             Update Slug
             <input
               className="form-checkbox"

@@ -8,6 +8,7 @@ using BlogAppCore.Application.Posts.Queries.GetPostDetail;
 using BlogAppCore.Application.Posts.Queries.GetPostsByCategory;
 using BlogAppCore.Application.Posts.Queries.GetPostsByTag;
 using BlogAppCore.Application.Posts.Queries.GetPostsPreview;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogAppCore.Controllers
@@ -39,6 +40,7 @@ namespace BlogAppCore.Controllers
             return await Mediator.Send(new GetPostsByTagQuery { TagSlug = tagSlug });
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpPost]
         public async Task<ActionResult<PostDetailDto>> Create(CreatePostCommand command)
         {
@@ -47,6 +49,7 @@ namespace BlogAppCore.Controllers
             return CreatedAtAction(nameof(GetBySlug), new { slug = newPost.Slug }, newPost);
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpPut]
         public async Task<IActionResult> Update(UpdatePostCommand command)
         {
@@ -55,6 +58,7 @@ namespace BlogAppCore.Controllers
             return NoContent();
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

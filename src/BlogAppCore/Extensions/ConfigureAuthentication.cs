@@ -34,6 +34,12 @@ namespace BlogAppCore.Extensions
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, BlogAppCoreDbContext>();
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireAdminRole",
+                    policy => policy.RequireRole(SeedIdentity.ADMIN_ROLE_NAME));
+            });
+
             services.AddAuthentication()
                 .AddIdentityServerJwt();
 
@@ -43,7 +49,6 @@ namespace BlogAppCore.Extensions
         {
             app.UseAuthentication();
             app.UseIdentityServer();
-            app.UseAuthorization();
 
             return app;
         }

@@ -7,6 +7,7 @@ using BlogAppCore.Application.Tags.Models;
 using BlogAppCore.Application.Tags.Queries.GetAllTags;
 using BlogAppCore.Application.Tags.Queries.GetTagDetail;
 using BlogAppCore.Application.Tags.Queries.GetTagList;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogAppCore.Controllers
@@ -14,6 +15,7 @@ namespace BlogAppCore.Controllers
     [ApiConventionType(typeof(DefaultApiConventions))]
     public class TagsController : BaseController
     {
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TagDetailDto>>> GetAll()
         {
@@ -26,12 +28,14 @@ namespace BlogAppCore.Controllers
             return await Mediator.Send(new GetTagListQuery());
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpGet]
         public async Task<ActionResult<TagDetailDto>> Get(int id)
         {
             return await Mediator.Send(new GetTagDetailQuery { Id = id });
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpPost]
         public async Task<IActionResult> Create(CreateTagCommand command)
         {
@@ -40,6 +44,7 @@ namespace BlogAppCore.Controllers
             return NoContent();
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpPut]
         public async Task<IActionResult> Update(UpdateTagCommand command)
         {
@@ -48,6 +53,7 @@ namespace BlogAppCore.Controllers
             return NoContent();
         }
 
+        [Authorize(Policy = "RequireAdminRole")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
