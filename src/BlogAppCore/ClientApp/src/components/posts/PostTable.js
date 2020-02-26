@@ -25,7 +25,7 @@ export default class PostTable extends Component {
   renderPostsTable(posts) {
     return (
       <table className="table">
-        <thead className="thead">
+        <thead className="thead-light">
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Title</th>

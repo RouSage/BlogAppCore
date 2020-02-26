@@ -20,14 +20,14 @@ const App = () => (
   <Layout>
     <Route exact path="/" component={Home} />
     <AuthorizeRoute path="/categories" component={CategoryTable} />
-    <Route path="/create-category" component={CreateCategory} />
-    <Route path="/edit-category/:id" component={EditCategory} />
-    <Route path="/tags" component={TagTable} />
-    <Route path="/create-tag" component={CreateTag} />
-    <Route path="/edit-tag/:id" component={EditTag} />
-    <Route path="/posts" component={PostTable} />
-    <Route path="/create-post" component={CreatePost} />
-    <Route path="/edit-post/:slug" component={EditPost} />
+    <AuthorizeRoute path="/create-category" component={CreateCategory} />
+    <AuthorizeRoute path="/edit-category/:id" component={EditCategory} />
+    <AuthorizeRoute path="/tags" component={TagTable} />
+    <AuthorizeRoute path="/create-tag" component={CreateTag} />
+    <AuthorizeRoute path="/edit-tag/:id" component={EditTag} />
+    <AuthorizeRoute path="/posts" component={PostTable} />
+    <AuthorizeRoute path="/create-post" component={CreatePost} />
+    <AuthorizeRoute path="/edit-post/:slug" component={EditPost} />
     <Route path="/post/:slug" component={PostDetail} />
     <Route path="/archive/category/:categorySlug" component={GetByCategory} />
     <Route path="/archive/tag/:tagSlug" component={GetByTag} />
