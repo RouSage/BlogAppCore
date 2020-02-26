@@ -10,7 +10,6 @@ export default class PostDetail extends Component {
     super(props);
     this.state = {
       title: '',
-      // slug: '',
       description: '',
       content: '',
       created: '',
@@ -23,10 +22,13 @@ export default class PostDetail extends Component {
   }
 
   componentWillMount() {
-    const { match } = this.props;
-    const postSlug = String(match.params.slug);
+    const {
+      match: {
+        params: { slug },
+      },
+    } = this.props;
 
-    fetch(`api/Posts/GetBySlug/${postSlug}`, { method: 'GET' })
+    fetch(`api/Posts/GetBySlug/${slug}`, { method: 'GET' })
       .then((respone) => respone.json())
       .then((data) => {
         this.setState({
@@ -44,9 +46,7 @@ export default class PostDetail extends Component {
   }
 
   render() {
-    const {
-      title, description, content, created, category, tags,
-    } = this.state;
+    const { title, description, content, created, category, tags } = this.state;
 
     return (
       <div className="post">
@@ -67,8 +67,8 @@ export default class PostDetail extends Component {
           <p>{description}</p>
           <p>{content}</p>
         </div>
-        {tags.length > 0
-          && tags.map((tag) => (
+        {tags.length > 0 &&
+          tags.map((tag) => (
             <span key={tag.slug}>
               <Link to={`/archive/tag/${tag.slug}`}>
                 <small>

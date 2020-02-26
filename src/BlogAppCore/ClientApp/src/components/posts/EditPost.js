@@ -58,7 +58,6 @@ export default class EditPost extends Component {
     const {
       id,
       title,
-      slug,
       description,
       content,
       categoryId,
@@ -92,8 +91,6 @@ export default class EditPost extends Component {
     event.preventDefault();
 
     const { history } = this.props;
-    const { slug } = this.state;
-
     history.push('/posts');
   }
 
@@ -134,6 +131,7 @@ export default class EditPost extends Component {
     const {
       id,
       title,
+      slug,
       description,
       content,
       categoryId,
@@ -158,6 +156,7 @@ export default class EditPost extends Component {
               value={title}
               onChange={(event) => this.handleInputChange(event)}
             />
+            <small className="post-meta">{`Current Slug: ${slug}`}</small>
           </label>
         </div>
         <div className="form-group">

@@ -140,5 +140,5 @@ export default class Logout extends Component {
 }
 
 Logout.propTypes = {
-  action: PropTypes.object,
+  action: PropTypes.string,
 };

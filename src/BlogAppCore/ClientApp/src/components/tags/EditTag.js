@@ -16,10 +16,14 @@ export default class EditTag extends Component {
   }
 
   componentWillMount() {
-    const { match } = this.props;
-    const tagId = Number(match.params.id);
+    const {
+      match: {
+        params: { id },
+      },
+    } = this.props;
+    // const tagId = Number(match.params.id);
 
-    fetch(`api/Tags/Get?id=${tagId}`, { method: 'GET' })
+    fetch(`api/Tags/Get?id=${id}`, { method: 'GET' })
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -63,9 +67,7 @@ export default class EditTag extends Component {
   }
 
   renderEditForm() {
-    const {
-      id, name, slug, updateSlug,
-    } = this.state;
+    const { id, name, slug, updateSlug } = this.state;
 
     return (
       <form onSubmit={(event) => this.handleSave(event)} className="form">
@@ -85,7 +87,10 @@ export default class EditTag extends Component {
           </label>
         </div>
         <div className="form-group">
-          <label htmlFor="tagUpdateSlug" className="form__label form__label_checkbox">
+          <label
+            htmlFor="tagUpdateSlug"
+            className="form__label form__label_checkbox"
+          >
             Update Slug
             <input
               className="form-checkbox"

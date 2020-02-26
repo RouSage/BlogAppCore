@@ -45,7 +45,10 @@ export default class CategoryTable extends Component {
               <td>{category.created}</td>
               <td>{category.totalPosts}</td>
               <td>
-                <button type="button" onClick={() => this.handleEdit(category.id)}>
+                <button
+                  type="button"
+                  onClick={() => this.handleEdit(category.id)}
+                >
                   Edit
                 </button>
               </td>
