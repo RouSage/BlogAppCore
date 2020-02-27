@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import RichTextEditor from 'react-rte';
 
 export default class CreatePost extends Component {
   static displayName = CreatePost.name;
@@ -8,8 +9,8 @@ export default class CreatePost extends Component {
     super(props);
     this.state = {
       title: '',
-      description: '',
-      content: '',
+      description: RichTextEditor.createEmptyValue(),
+      content: RichTextEditor.createEmptyValue(),
       categoryId: 0,
       tags: [],
       published: false,
@@ -45,6 +46,9 @@ export default class CreatePost extends Component {
       published,
     } = this.state;
 
+    const descriptionValue = description.toString('html');
+    const contentValue = content.toString('html');
+
     fetch('api/Posts/Create', {
       method: 'POST',
       headers: {
@@ -52,7 +56,7 @@ export default class CreatePost extends Component {
       },
       body: JSON.stringify({
         title,
-        description,
+        description: descriptionValue,
         content,
         categoryId,
         tags,
@@ -80,15 +84,18 @@ export default class CreatePost extends Component {
     } = event;
     const value = type === 'checkbox' ? target.checked : target.value;
 
-    this.setState({
-      [name]: value,
-    });
+    this.updateInputState(name, value);
+  }
+
+  updateInputState(name, value) {
+    this.setState({ [name]: value });
   }
 
   handleCategoryChange(event) {
-    this.setState({
-      categoryId: parseInt(event.target.value, 10),
-    });
+    const {
+      target: { name, value },
+    } = event;
+    this.updateInputState(name, parseInt(value, 10));
   }
 
   handleTagsChange(event) {
@@ -103,7 +110,15 @@ export default class CreatePost extends Component {
       []
     );
 
-    this.setState({ tags: selectedTags });
+    this.updateInputState(event.target.name, selectedTags);
+  }
+
+  handleDescriptionChange(value) {
+    this.updateInputState('description', value);
+  }
+
+  handleContentChange(value) {
+    this.updateInputState('content', value);
   }
 
   renderCreateForm() {
@@ -136,28 +151,18 @@ export default class CreatePost extends Component {
         <div className="form-group">
           <label htmlFor="description" className="form__label">
             Description
-            <textarea
-              className="form-control"
-              cols="50"
-              rows="25"
-              name="description"
-              id="description"
+            <RichTextEditor
               value={description}
-              onChange={(event) => this.handleInputChange(event)}
+              onChange={(value) => this.handleDescriptionChange(value)}
             />
           </label>
         </div>
         <div className="form-group">
           <label htmlFor="content" className="form__label">
             Content
-            <textarea
-              className="form-control"
-              cols="50"
-              rows="25"
-              name="content"
-              id="content"
+            <RichTextEditor
               value={content}
-              onChange={(event) => this.handleInputChange(event)}
+              onChange={(value) => this.handleContentChange(value)}
             />
           </label>
         </div>

@@ -4,7 +4,10 @@
     "es6": true
   },
   "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier"],
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -16,24 +19,38 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "jsx-a11y", "import"],
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import",
+    "flowtype"
+  ],
   "rules": {
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     ],
     "jsx-a11y/label-has-for": "off",
     "react/forbid-prop-types": [
       "error",
       {
-        "forbid": ["any", "array"]
+        "forbid": [
+          "any",
+          "array"
+        ]
       }
     ],
     "react/require-default-props": "off",
     "react/static-property-placement": "off",
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": [
+      "error",
+      "windows"
+    ],
     "no-plusplus": "off"
   }
 }
