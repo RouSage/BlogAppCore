@@ -15,7 +15,7 @@ export default class CreatePost extends Component {
       tags: [],
       published: false,
       categoriesSelect: [],
-      tagsSelect: [],
+      tagsSelect: []
     };
   }
 
@@ -26,7 +26,7 @@ export default class CreatePost extends Component {
       ),
       fetch('api/Tags/GetAll', { method: 'GET' }).then((response) =>
         response.json()
-      ),
+      )
     ]).then((response) => {
       const [categories, tags] = response;
 
@@ -43,7 +43,7 @@ export default class CreatePost extends Component {
       content,
       categoryId,
       tags,
-      published,
+      published
     } = this.state;
 
     const descriptionValue = description.toString('html');
@@ -52,16 +52,16 @@ export default class CreatePost extends Component {
     fetch('api/Posts/Create', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json;charset=UTF-8',
+        'Content-Type': 'application/json;charset=UTF-8'
       },
       body: JSON.stringify({
         title,
         description: descriptionValue,
-        content,
+        content: contentValue,
         categoryId,
         tags,
-        published,
-      }),
+        published
+      })
     })
       .then((response) => response.json())
       .then((data) => {
@@ -80,7 +80,7 @@ export default class CreatePost extends Component {
   handleInputChange(event) {
     const {
       target,
-      target: { name, type },
+      target: { name, type }
     } = event;
     const value = type === 'checkbox' ? target.checked : target.value;
 
@@ -93,7 +93,7 @@ export default class CreatePost extends Component {
 
   handleCategoryChange(event) {
     const {
-      target: { name, value },
+      target: { name, value }
     } = event;
     this.updateInputState(name, parseInt(value, 10));
   }
@@ -130,7 +130,7 @@ export default class CreatePost extends Component {
       tags,
       published,
       categoriesSelect,
-      tagsSelect,
+      tagsSelect
     } = this.state;
 
     return (
@@ -250,5 +250,5 @@ export default class CreatePost extends Component {
 }
 
 CreatePost.propTypes = {
-  history: PropTypes.object,
+  history: PropTypes.object
 };
