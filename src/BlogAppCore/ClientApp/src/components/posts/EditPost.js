@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import RichTextEditor from 'react-rte';
 
 export default class EditPost extends Component {
   static displayName = EditPost.name;
@@ -11,14 +13,14 @@ export default class EditPost extends Component {
       id: 0,
       title: '',
       slug: '',
-      description: '',
-      content: '',
+      description: RichTextEditor.createEmptyValue(),
+      content: RichTextEditor.createEmptyValue(),
       categoryId: 0,
       tags: [],
       published: false,
       updateSlug: false,
       categoriesSelect: [],
-      tagsSelect: [],
+      tagsSelect: []
     };
   }
 
@@ -28,26 +30,36 @@ export default class EditPost extends Component {
 
     Promise.all([
       fetch(`api/Posts/GetBySlug/${postSlug}`, {
-        method: 'Get',
+        method: 'Get'
       }).then((response) => response.json()),
       fetch('api/Categories/GetAll', { method: 'GET' }).then((response) =>
         response.json()
       ),
       fetch('api/Tags/GetAll', { method: 'GET' }).then((response) =>
         response.json()
-      ),
+      )
     ]).then((response) => {
       const [post, categories, tags] = response;
+
+      // Convert html strings back to EditorValue type so editor can understand it
+      const postDescriptionValue = RichTextEditor.createValueFromString(
+        post.description,
+        'html'
+      );
+      const postContentValue = RichTextEditor.createValueFromString(
+        post.content,
+        'html'
+      );
 
       this.setState({
         id: post.id,
         title: post.title,
         slug: postSlug,
-        description: post.description,
-        content: post.content,
+        description: postDescriptionValue,
+        content: postContentValue,
         categoryId: post.category.id,
         categoriesSelect: categories,
-        tagsSelect: tags,
+        tagsSelect: tags
       });
     });
   }
@@ -63,24 +75,28 @@ export default class EditPost extends Component {
       categoryId,
       tags,
       published,
-      updateSlug,
+      updateSlug
     } = this.state;
+
+    // Convert EditorValue objects to html strings
+    const descriptionValue = description.toString('html');
+    const contentValue = content.toString('html');
 
     fetch('api/Posts/Update', {
       method: 'PUT',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         id,
         title,
-        description,
-        content,
+        description: descriptionValue,
+        content: contentValue,
         categoryId,
         tags,
         published,
-        updateSlug,
-      }),
+        updateSlug
+      })
     }).then(() => {
       const { history } = this.props;
       history.push('/posts');
@@ -97,26 +113,29 @@ export default class EditPost extends Component {
   handleInputChange(event) {
     const {
       target,
-      target: { name, type },
+      target: { name, type }
     } = event;
     const value = type === 'checkbox' ? target.checked : target.value;
 
-    this.setState({
-      [name]: value,
-    });
+    this.updateInputState(name, value);
+  }
+
+  updateInputState(name, value) {
+    this.setState({ [name]: value });
   }
 
   handleCategoryChange(event) {
-    this.setState({
-      categoryId: parseInt(event.target.value, 10),
-    });
+    const {
+      target: { name, value }
+    } = event;
+    this.updateInputState(name, parseInt(value, 10));
   }
 
   handleTagsChange(event) {
     const selectedTags = Array.from(event.target.options).reduce(
       (tags, tag) => {
         if (tag.selected) {
-          tags.push(tag.value);
+          tags.push(parseInt(tag.value, 10));
         }
 
         return tags;
@@ -124,7 +143,15 @@ export default class EditPost extends Component {
       []
     );
 
-    this.setState({ tags: selectedTags });
+    this.updateInputState(event.target.name, selectedTags);
+  }
+
+  handleDescriptionChange(value) {
+    this.updateInputState('description', value);
+  }
+
+  handleContentChange(value) {
+    this.updateInputState('content', value);
   }
 
   renderEditForm() {
@@ -139,7 +166,7 @@ export default class EditPost extends Component {
       published,
       updateSlug,
       categoriesSelect,
-      tagsSelect,
+      tagsSelect
     } = this.state;
 
     return (
@@ -162,28 +189,18 @@ export default class EditPost extends Component {
         <div className="form-group">
           <label htmlFor="description" className="form__label">
             Description
-            <textarea
-              className="form-control"
-              cols="50"
-              rows="25"
-              name="description"
-              id="description"
+            <RichTextEditor
               value={description}
-              onChange={(event) => this.handleInputChange(event)}
+              onChange={(value) => this.handleDescriptionChange(value)}
             />
           </label>
         </div>
         <div className="form-group">
           <label htmlFor="content" className="form__label">
             Content
-            <textarea
-              className="form-control"
-              cols="50"
-              rows="25"
-              name="content"
-              id="content"
+            <RichTextEditor
               value={content}
-              onChange={(event) => this.handleInputChange(event)}
+              onChange={(value) => this.handleContentChange(value)}
             />
           </label>
         </div>
@@ -290,7 +307,7 @@ EditPost.propTypes = {
   history: PropTypes.object,
   match: PropTypes.shape({
     params: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-    }),
-  }),
+      slug: PropTypes.string.isRequired
+    })
+  })
 };

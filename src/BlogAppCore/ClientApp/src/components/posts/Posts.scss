@@ -36,9 +36,13 @@
 
 .post .post-content {
   font-size: 1em;
-  text-indent: 5%;
+  // text-indent: 5%;
   padding: 10px;
   padding-top: 0;
+}
+.post-content ul {
+  list-style-type: disc;
+  padding-left: 40px;
 }
 
 .posts-list {

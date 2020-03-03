@@ -26,7 +26,7 @@ const PostList = ({ posts }) => (
           </div>
           <hr className="divider" />
           <div className="post-content">
-            <p>{post.description}</p>
+            <div dangerouslySetInnerHTML={{ __html: post.description }} />
           </div>
           {post.tags.length > 0 &&
             post.tags.map((tag) => (
@@ -47,7 +47,7 @@ const PostList = ({ posts }) => (
 );
 
 PostList.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.object),
+  posts: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default PostList;

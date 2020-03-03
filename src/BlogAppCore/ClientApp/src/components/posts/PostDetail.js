@@ -15,17 +15,17 @@ export default class PostDetail extends Component {
       created: '',
       category: {
         name: '',
-        slug: '',
+        slug: ''
       },
-      tags: [],
+      tags: []
     };
   }
 
   componentWillMount() {
     const {
       match: {
-        params: { slug },
-      },
+        params: { slug }
+      }
     } = this.props;
 
     fetch(`api/Posts/GetBySlug/${slug}`, { method: 'GET' })
@@ -38,9 +38,9 @@ export default class PostDetail extends Component {
           created: data.created,
           category: {
             name: data.category.name,
-            slug: data.category.slug,
+            slug: data.category.slug
           },
-          tags: data.tags,
+          tags: data.tags
         });
       });
   }
@@ -64,8 +64,8 @@ export default class PostDetail extends Component {
         </div>
         <hr className="divider" />
         <div className="post-content">
-          <p>{description}</p>
-          <p>{content}</p>
+          <div dangerouslySetInnerHTML={{ __html: description }} />
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
         {tags.length > 0 &&
           tags.map((tag) => (
@@ -86,7 +86,7 @@ export default class PostDetail extends Component {
 PostDetail.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-    }),
-  }),
+      slug: PropTypes.string.isRequired
+    })
+  })
 };
