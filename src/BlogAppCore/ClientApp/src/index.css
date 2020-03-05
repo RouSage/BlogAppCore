@@ -153,6 +153,19 @@ h4 {
   border-color: #d45562;
 }
 
+.button-icon {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.color-danger {
+  color: #dc3545;
+}
+.color-green {
+  color: green;
+}
+
 table {
   border-collapse: collapse;
 }

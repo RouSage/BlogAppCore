@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class CategoryTable extends Component {
   static displayName = CategoryTable.name;
@@ -32,7 +33,9 @@ export default class CategoryTable extends Component {
             <th scope="col">Created</th>
             <th scope="col">Total Posts</th>
             <th scope="col">
-              <Link to="/create-category">Create New</Link>
+              <Link to="/create-category">
+                <FontAwesomeIcon icon="plus" className="color-green" />
+              </Link>
             </th>
           </tr>
         </thead>
@@ -48,8 +51,9 @@ export default class CategoryTable extends Component {
                 <button
                   type="button"
                   onClick={() => this.handleEdit(category.id)}
+                  className="button-icon"
                 >
-                  Edit
+                  <FontAwesomeIcon icon="edit" />
                 </button>
               </td>
             </tr>
@@ -80,5 +84,5 @@ export default class CategoryTable extends Component {
 }
 
 CategoryTable.propTypes = {
-  history: PropTypes.object,
+  history: PropTypes.object
 };

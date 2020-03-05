@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class PostTable extends Component {
   static displayName = PostTable.name;
@@ -43,7 +44,9 @@ export default class PostTable extends Component {
             <th scope="col">Created</th>
             <th scope="col">Category</th>
             <th scope="col">
-              <Link to="/create-post">Create New</Link>
+              <Link to="/create-post">
+                <FontAwesomeIcon icon="plus" className="color-green" />
+              </Link>
             </th>
           </tr>
         </thead>
@@ -59,14 +62,16 @@ export default class PostTable extends Component {
                 <button
                   type="button"
                   onClick={() => this.handleEdit(post.slug)}
+                  className="button-icon"
                 >
-                  Edit
+                  <FontAwesomeIcon icon="edit" />
                 </button>
                 <button
                   type="button"
                   onClick={() => this.handleDelete(post.id)}
+                  className="button-icon"
                 >
-                  Delete
+                  <FontAwesomeIcon icon="trash-alt" className="color-danger" />
                 </button>
               </td>
             </tr>

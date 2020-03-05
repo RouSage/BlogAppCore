@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faEdit, faTrashAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../Layout';
 import Home from '../Home';
 import { CreateCategory, EditCategory, CategoryTable } from '../categories';
@@ -10,11 +12,13 @@ import {
   EditPost,
   GetByCategory,
   GetByTag,
-  PostTable,
+  PostTable
 } from '../posts';
 import AuthorizeRoute from '../api-authorization/AuthorizeRoute';
 import ApiAuthorizationRoutes from '../api-authorization/ApiAuthorizationRoutes';
 import { ApplicationPaths } from '../api-authorization/ApiAuthorizationConstants';
+
+library.add(faEdit, faTrashAlt, faPlus);
 
 const App = () => (
   <Layout>

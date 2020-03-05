@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class TagTable extends Component {
   static displayName = TagTable.name;
@@ -32,7 +33,9 @@ export default class TagTable extends Component {
             <th scope="col">Created</th>
             <th scope="col">Total Posts</th>
             <th scope="col">
-              <Link to="/create-tag">Create New</Link>
+              <Link to="/create-tag">
+                <FontAwesomeIcon icon="plus" className="color-green" />
+              </Link>
             </th>
           </tr>
         </thead>
@@ -45,8 +48,12 @@ export default class TagTable extends Component {
               <td>{tag.created}</td>
               <td>{tag.totalPosts}</td>
               <td>
-                <button type="button" onClick={() => this.handleEdit(tag.id)}>
-                  Edit
+                <button
+                  type="button"
+                  onClick={() => this.handleEdit(tag.id)}
+                  className="button-icon"
+                >
+                  <FontAwesomeIcon icon="edit" />
                 </button>
               </td>
             </tr>
@@ -77,5 +84,5 @@ export default class TagTable extends Component {
 }
 
 TagTable.propTypes = {
-  history: PropTypes.object,
+  history: PropTypes.object
 };
