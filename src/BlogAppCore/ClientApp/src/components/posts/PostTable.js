@@ -10,7 +10,7 @@ export default class PostTable extends Component {
 
     this.state = { posts: [] };
 
-    fetch('api/Posts/GetList')
+    fetch('api/Posts/GetList', { method: 'GET' })
       .then((response) => response.json())
       .then((data) => {
         this.setState({ posts: data });
@@ -20,6 +20,16 @@ export default class PostTable extends Component {
   handleEdit(slug) {
     const { history } = this.props;
     history.push(`/edit-post/${slug}`);
+  }
+
+  handleDelete(id) {
+    const { posts } = this.state;
+
+    fetch(`api/Posts/Delete/${id}`, { method: 'DELETE' }).then(() => {
+      this.setState({
+        posts: posts.filter((post) => post.id !== id)
+      });
+    });
   }
 
   renderPostsTable(posts) {
@@ -52,6 +62,12 @@ export default class PostTable extends Component {
                 >
                   Edit
                 </button>
+                <button
+                  type="button"
+                  onClick={() => this.handleDelete(post.id)}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
@@ -74,5 +90,5 @@ export default class PostTable extends Component {
 }
 
 PostTable.propTypes = {
-  history: PropTypes.object,
+  history: PropTypes.object
 };
